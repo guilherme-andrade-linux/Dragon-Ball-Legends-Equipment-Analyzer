@@ -2,9 +2,7 @@
 
 An advanced tool for Dragon Ball Legends players to analyze equipment effects, calculate stat boosts, and optimize character builds.
 
-![Project Preview](https://via.placeholder.com/800x400?text=DBL+Equipment+Analyzer)
-
-## 📋 Overview
+## Overview
 
 The **DBL Equipment Analyzer** is a web-based dashboard that allows users to:
 1.  **Browse & Select Characters**: Import your character roster or browse the full database.
@@ -12,7 +10,7 @@ The **DBL Equipment Analyzer** is a web-based dashboard that allows users to:
 3.  **Analyze Stats**: Instantly see how equipment buffs (Strike/Blast Attack, Defense, Health, etc.) stack up.
 4.  **Smart Filtering**: The tool automatically filters equipment based on the selected character's compatibility (Tags, Element, Rarity).
 
-## ✨ Key Features
+## Key Features
 
 -   **Character Management**
     -   Search by name.
@@ -35,18 +33,18 @@ The **DBL Equipment Analyzer** is a web-based dashboard that allows users to:
     -   Interactive hover states and smooth transitions.
     -   Grid-based layout for efficient browsing.
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 -   **HTML5 / CSS3**: Semantic structure and modern styling.
 -   **Tailwind CSS**: Utility-first CSS framework for rapid and consistent UI development.
 -   **JavaScript (ES6+)**: Core logic for state management, filtering, and stats calculation.
 -   **Firebase Firestore**: Cloud database integration for storing and retrieving character/equipment data.
 
-## 🚀 How to Run
+## How to Run
 
 1.  **Clone the Repository**:
     ```bash
-    git clone https://github.com/your-username/dbl-equipment-analyzer.git
+    git clone https://github.com/guilherme-andrade-linux/DBL_Equips.git
     ```
 2.  **Open the Project**:
     Simply open `Index.html` in your modern web browser.
@@ -58,16 +56,12 @@ The **DBL Equipment Analyzer** is a web-based dashboard that allows users to:
     -   **Middle Panel**: Load equipment (Firebase/JSON). Click an equipment to add it to a slot.
     -   **Right Panel**: View the selected unit, manage slots, and analyze the calculated stats.
 
-## 📂 Project Structure
+## Project Structure
 
 -   `Index.html`: Main entry point and UI layout.
 -   `script.js`: Application logic (Firebase init, event handling, calculating stats).
 -   `style.css`: Custom overrides and specific styles.
 -   `dbl_characters_full.json` / `dbl_equipment_full.json`: Reference data files (if available locally).
-
-## 🤝 Contributing
-
-Contributions are welcome! If you find a bug or want to suggest a feature, please open an issue or submit a pull request.
 
 ---
 

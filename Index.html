@@ -69,7 +69,7 @@
     <!-- Left Panel: Character Roster -->
     <aside class="w-80 flex flex-col border-r border-border-dark bg-panel-dark shrink-0">
       <!-- Search Header -->
-      <div class="p-4 border-b border-border-dark">
+      <div class="p-4 border-b border-border-dark flex flex-col gap-3">
         <label class="flex flex-col w-full">
           <div
             class="flex w-full items-stretch rounded-lg h-10 bg-[#1e233b] border border-[#2d3455] focus-within:border-primary transition-colors">
@@ -81,8 +81,23 @@
               placeholder="Search unit..." value="" />
           </div>
         </label>
+
+        <!-- Tag Filter Section -->
+        <div class="flex flex-col gap-2">
+          <button id="toggleTagsBtn"
+            class="text-xs text-[#929bc9] hover:text-white flex items-center gap-1 transition-colors">
+            <span class="material-symbols-outlined text-[14px]">filter_list</span>
+            <span>Filter by Tags</span>
+            <span id="tagCount" class="bg-primary/20 text-primary px-1.5 rounded text-[10px] hidden">0</span>
+          </button>
+          <div id="tagFiltersContainer"
+            class="hidden flex-wrap gap-1.5 max-h-32 overflow-y-auto custom-scrollbar p-1 border border-[#2d3455] rounded bg-[#151a2d]">
+            <!-- Tags injected here -->
+          </div>
+        </div>
+
         <!-- Quick Filter Icons -->
-        <div class="flex justify-between mt-3 gap-2">
+        <div class="flex justify-between gap-2">
           <button id="btnClearSearch"
             class="flex-1 h-8 bg-[#1e233b] hover:bg-[#2d3455] rounded flex items-center justify-center text-xs text-[#929bc9] transition-colors border border-transparent hover:border-[#3e477a]">
             Clear
@@ -125,6 +140,39 @@
           <span class="material-symbols-outlined text-[16px]">dark_mode</span>
         </button>
       </div>
+
+      <!-- Filters -->
+      <div class="p-2 flex flex-col gap-2 bg-[#151a2d] border-b border-border-dark overflow-hidden">
+        <!-- Effect Filter -->
+        <div class="flex flex-col gap-1">
+          <button id="toggleEquipEffectBtn"
+            class="text-xs text-[#929bc9] hover:text-white flex items-center gap-1 transition-colors w-full text-left">
+            <span class="material-symbols-outlined text-[14px]">filter_list</span>
+            <span>Filter by Effect</span>
+            <span id="equipEffectCount" class="bg-primary/20 text-primary px-1.5 rounded text-[10px] hidden">0</span>
+          </button>
+          <div id="equipEffectContainer"
+            class="hidden flex-wrap gap-1.5 max-h-32 overflow-y-auto custom-scrollbar p-1 border border-[#2d3455] rounded bg-[#1e233b]">
+            <!-- Dynamic Effects -->
+          </div>
+        </div>
+
+        <!-- Condition Filter -->
+        <div class="flex flex-col gap-1">
+          <button id="toggleEquipConditionBtn"
+            class="text-xs text-[#929bc9] hover:text-white flex items-center gap-1 transition-colors w-full text-left">
+            <span class="material-symbols-outlined text-[14px]">rule</span>
+            <span>Filter by Condition</span>
+            <span id="equipConditionCount" class="bg-primary/20 text-primary px-1.5 rounded text-[10px] hidden">0</span>
+          </button>
+          <div id="equipConditionContainer"
+            class="hidden flex-wrap gap-1.5 max-h-32 overflow-y-auto custom-scrollbar p-1 border border-[#2d3455] rounded bg-[#1e233b]">
+            <!-- Dynamic Conditions (based on selected unit) -->
+            <span class="text-[10px] text-gray-500 italic p-1">Select a unit first...</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Equipment List -->
       <div id="equipList" class="flex-1 overflow-y-auto p-3 flex flex-col gap-3 custom-scrollbar">
         <!-- Dynamic content will be injected here -->

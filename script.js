@@ -18,6 +18,9 @@ const db = getFirestore(app);
 // --- STATE ---
 let allCharacters = [];
 let allEquipments = [];
+let selectedTags = new Set();
+let selectedEquipEffects = new Set();
+let selectedEquipConditions = new Set();
 
 // --- INIT ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,7 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const btnClearSearch = document.getElementById('btnClearSearch');
 
+    // Tag Filter Elements
+    const toggleTagsBtn = document.getElementById('toggleTagsBtn');
+    const tagFiltersContainer = document.getElementById('tagFiltersContainer');
+
     if (fileInput) fileInput.addEventListener('change', handleFileUpload);
+    if (toggleTagsBtn) {
+        toggleTagsBtn.addEventListener('click', () => {
+            tagFiltersContainer.classList.toggle('hidden');
+            tagFiltersContainer.classList.toggle('flex'); // Ensure it becomes flex when visible
+        });
+    }
 
     if (btnImportFirebase) {
         btnImportFirebase.addEventListener('click', fetchFromFirebase);
@@ -40,21 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const filtered = allCharacters.filter(char =>
-                char.name.toLowerCase().includes(searchTerm)
-            );
-            renderGrid(filtered);
+        searchInput.addEventListener('input', () => {
+            filterAndRenderCharacters();
         });
     }
 
     if (btnClearSearch) {
         btnClearSearch.addEventListener('click', () => {
-            if (searchInput) {
-                searchInput.value = '';
-                renderGrid(allCharacters);
-            }
+            if (searchInput) searchInput.value = '';
+            selectedTags.clear();
+            updateTagFilterUI(); // Clear visual selection
+            filterAndRenderCharacters();
         });
     }
 
@@ -63,6 +72,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnImportEquipFirebase = document.getElementById('btnImportEquipFirebase');
     const btnImportEquipJson = document.getElementById('btnImportEquipJson');
 
+    // New Collapsible Filter Buttons
+    const toggleEquipEffectBtn = document.getElementById('toggleEquipEffectBtn');
+    const equipEffectContainer = document.getElementById('equipEffectContainer');
+    const toggleEquipConditionBtn = document.getElementById('toggleEquipConditionBtn');
+    const equipConditionContainer = document.getElementById('equipConditionContainer');
+
+    if (toggleEquipEffectBtn && equipEffectContainer) {
+        toggleEquipEffectBtn.addEventListener('click', () => {
+            equipEffectContainer.classList.toggle('hidden');
+            equipEffectContainer.classList.toggle('flex');
+        });
+    }
+
+    if (toggleEquipConditionBtn && equipConditionContainer) {
+        toggleEquipConditionBtn.addEventListener('click', () => {
+            equipConditionContainer.classList.toggle('hidden');
+            equipConditionContainer.classList.toggle('flex');
+        });
+    }
+
     if (equipFileInput) equipFileInput.addEventListener('change', handleEquipFileUpload);
     if (btnImportEquipFirebase) btnImportEquipFirebase.addEventListener('click', fetchEquipmentsFromFirebase);
     if (btnImportEquipJson) {
@@ -70,6 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (equipFileInput) equipFileInput.click();
         });
     }
+
+    // Initial Render of Effect Filters (static)
+    renderEquipEffectFilters();
 });
 
 // --- FUNCTIONS ---
@@ -82,7 +114,8 @@ function handleFileUpload(event) {
     reader.onload = function (e) {
         try {
             allCharacters = JSON.parse(e.target.result);
-            renderGrid(allCharacters);
+            initializeTags();
+            filterAndRenderCharacters();
             alert(`Sucesso! ${allCharacters.length} personagens carregados.`);
         } catch (error) {
             alert("Erro ao ler JSON. Verifica o formato.");
@@ -110,7 +143,8 @@ async function fetchFromFirebase() {
         if (allCharacters.length === 0) {
             alert("Nenhum personagem encontrado no Firebase.");
         } else {
-            renderGrid(allCharacters);
+            initializeTags();
+            filterAndRenderCharacters();
             alert(`Sucesso! ${allCharacters.length} personagens carregados do Firebase.`);
         }
 
@@ -181,6 +215,8 @@ function selectCharacter(char) {
     };
 
     // 1.1 Update Equipment List based on new character
+    // Refresh Condition Filters for this new character
+    renderEquipConditionFilters(char);
     updateEquipmentList();
 
     // 2. Update DOM Elements
@@ -228,6 +264,113 @@ function getElementColor(el) {
     };
     return map[el] || '#fff';
 }
+
+function filterAndRenderCharacters() {
+    const searchInput = document.getElementById('searchInput');
+    const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+
+    const filtered = allCharacters.filter(char => {
+        // 1. Name Filter
+        const nameMatch = char.name.toLowerCase().includes(searchTerm);
+
+        // 2. Tag Filter (AND Logic: Must have ALL selected tags)
+        let tagsMatch = true;
+        if (selectedTags.size > 0) {
+            const charTags = new Set(char.visual_tags || []); // Assuming visual_tags array
+            for (const tag of selectedTags) {
+                if (!charTags.has(tag)) {
+                    tagsMatch = false;
+                    break;
+                }
+            }
+        }
+
+        return nameMatch && tagsMatch;
+    });
+
+    renderGrid(filtered);
+}
+
+function initializeTags() {
+    const tagCounts = new Map();
+    allCharacters.forEach(char => {
+        if (Array.isArray(char.visual_tags)) {
+            char.visual_tags.forEach(tag => {
+                tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+            });
+        }
+    });
+
+    // Sort tags alphabetically but ignore singletons
+    const validTags = [];
+    tagCounts.forEach((count, tag) => {
+        if (count > 1) {
+            validTags.push(tag);
+        }
+    });
+    validTags.sort();
+
+    renderTagFilters(validTags);
+}
+
+function renderTagFilters(tags) {
+    const container = document.getElementById('tagFiltersContainer');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    tags.forEach(tag => {
+        const btn = document.createElement('button');
+        // Default Style
+        btn.className = "px-2 py-0.5 rounded text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
+        btn.textContent = tag;
+
+        btn.onclick = () => {
+            if (selectedTags.has(tag)) {
+                selectedTags.delete(tag);
+                btn.classList.remove('bg-primary/20', 'border-primary', 'text-primary');
+                btn.classList.add('bg-[#1e233b]', 'border-[#2d3455]', 'text-[#929bc9]');
+            } else {
+                selectedTags.add(tag);
+                btn.classList.remove('bg-[#1e233b]', 'border-[#2d3455]', 'text-[#929bc9]');
+                btn.classList.add('bg-primary/20', 'border-primary', 'text-primary');
+            }
+            updateTagCount();
+            filterAndRenderCharacters();
+        };
+
+        container.appendChild(btn);
+    });
+}
+
+function updateTagFilterUI() {
+    const container = document.getElementById('tagFiltersContainer');
+    if (!container) return;
+
+    const btns = container.querySelectorAll('button');
+    btns.forEach(btn => {
+        const tag = btn.textContent;
+        if (selectedTags.has(tag)) {
+            btn.className = "px-2 py-0.5 rounded text-[10px] border border-primary text-primary bg-primary/20 transition-all";
+        } else {
+            btn.className = "px-2 py-0.5 rounded text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
+        }
+    });
+    updateTagCount();
+}
+
+function updateTagCount() {
+    const countSpan = document.getElementById('tagCount');
+    if (countSpan) {
+        if (selectedTags.size > 0) {
+            countSpan.textContent = selectedTags.size;
+            countSpan.classList.remove('hidden');
+        } else {
+            countSpan.classList.add('hidden');
+        }
+    }
+}
+
 
 // --- EQUIPMENT SLOTS FUNCTIONS ---
 
@@ -366,7 +509,6 @@ function handleEquipFileUpload(event) {
     const reader = new FileReader();
     reader.onload = function (e) {
         try {
-            allEquipments = JSON.parse(e.target.result);
             allEquipments = JSON.parse(e.target.result);
             updateEquipmentList(); // Use update function to handle filtering
             alert(`Sucesso! ${allEquipments.length} equipamentos carregados.`);
@@ -508,59 +650,195 @@ renderSlots();
 
 // --- FILTERING LOGIC ---
 
+// Helper to render filter buttons
+function renderGenericFilterButtons(containerId, items, selectedSet, updateCallback, countId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    items.forEach(item => {
+        const btn = document.createElement('button');
+        const isSelected = selectedSet.has(item);
+
+        btn.className = isSelected
+            ? "px-2 py-0.5 rounded text-[10px] border border-primary text-primary bg-primary/20 transition-all font-medium"
+            : "px-2 py-0.5 rounded text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
+
+        btn.textContent = item;
+
+        btn.onclick = () => {
+            if (selectedSet.has(item)) {
+                selectedSet.delete(item);
+                btn.className = "px-2 py-0.5 rounded text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
+            } else {
+                selectedSet.add(item);
+                btn.className = "px-2 py-0.5 rounded text-[10px] border border-primary text-primary bg-primary/20 transition-all font-medium";
+            }
+            if (countId) {
+                const countSpan = document.getElementById(countId);
+                if (countSpan) {
+                    countSpan.textContent = selectedSet.size;
+                    countSpan.classList.toggle('hidden', selectedSet.size === 0);
+                }
+            }
+            updateCallback();
+        };
+
+        container.appendChild(btn);
+    });
+}
+
+function renderEquipEffectFilters() {
+    // Populate from STAT_MAPPING keys
+    const effects = Object.keys(STAT_MAPPING).sort();
+    renderGenericFilterButtons('equipEffectContainer', effects, selectedEquipEffects, updateEquipmentList, 'equipEffectCount');
+}
+
+function renderEquipConditionFilters(char) {
+    if (!char) {
+        const container = document.getElementById('equipConditionContainer');
+        if (container) container.innerHTML = '<span class="text-[10px] text-gray-500 italic p-1">Select a unit...</span>';
+        return;
+    }
+
+    // Collect tags from the character
+    const tags = new Set();
+    if (char.name) tags.add(char.name);
+    // Add other relevant single properties if they are used in conditions often?
+    // Usually only Tags (Arrays) are useful for "filters".
+    // "Saiyan" is a tag. "Goku" is a name (sometimes used).
+
+    if (Array.isArray(char.visual_tags)) {
+        char.visual_tags.forEach(t => tags.add(t));
+    }
+
+    // Sort
+    const sortedTags = Array.from(tags).sort();
+
+    // Clear selections that are no longer valid for this character
+    const newSelection = new Set();
+    selectedEquipConditions.forEach(sel => {
+        if (tags.has(sel)) newSelection.add(sel);
+    });
+    selectedEquipConditions = newSelection;
+
+    // Update count UI immediatelly
+    const countSpan = document.getElementById('equipConditionCount');
+    if (countSpan) {
+        countSpan.textContent = selectedEquipConditions.size;
+        countSpan.classList.toggle('hidden', selectedEquipConditions.size === 0);
+    }
+
+    renderGenericFilterButtons('equipConditionContainer', sortedTags, selectedEquipConditions, updateEquipmentList, 'equipConditionCount');
+}
+
 function filterEquipments(char, equips) {
-    if (!char) return equips; // If no char selected, show all (or could be empty)
+    if (!char) return equips;
 
-    // Construct a set of all attributes the character possesses
-    // We combine name, visual_tags, element, rarity, and any ID fields if present
     const charAttributes = new Set();
-
     if (char.name) charAttributes.add(char.name);
     if (char.element) charAttributes.add(char.element);
     if (char.rarity) charAttributes.add(char.rarity);
-    // Add IDs if they exist. Common fields: id, code, characterId
     if (char.id) charAttributes.add(char.id);
     if (char.code) charAttributes.add(char.code);
-
     if (Array.isArray(char.visual_tags)) {
         char.visual_tags.forEach(tag => charAttributes.add(tag));
     }
 
     return equips.filter(equip => {
-        // Rule 1: Empty conditions_data = Generic Equipment (Always Show)
-        if (!equip.conditions_data || equip.conditions_data.length === 0) {
-            return true;
+        // 1. Character Applicability (Existing Logic)
+        // Rule 1: Empty conditions_data = Generic (Show if no specific condition filters applied? Or always?)
+        // Actually, if I filter by "Saiyan" condition, generic equipments do NOT have that condition.
+        // But usually "Condition Filter" means "Show me equips that require X".
+        // If I select "Saiyan", I want equips that explicitly list "Saiyan".
+
+        let charMatch = true;
+        if (equip.conditions_data && equip.conditions_data.length > 0) {
+            const groups = equip.conditions_data;
+            const logic = equip.condition_logic || "AND";
+            const matchesGroup = (group) => {
+                let requirements = group;
+                if (!Array.isArray(group) && group && Array.isArray(group.tags)) requirements = group.tags;
+                if (!Array.isArray(requirements) || requirements.length === 0) return true;
+                return requirements.every(req => charAttributes.has(req));
+            };
+            if (logic === "OR") charMatch = groups.some(matchesGroup);
+            else charMatch = groups.every(matchesGroup);
         }
 
-        const groups = equip.conditions_data;
-        const logic = equip.condition_logic || "AND";
+        if (!charMatch) return false;
 
-        // Helper: Check if Character meets ONE specific Group of requirements
-        // A Group is met if the Character has ALL the tags in that Group.
-        const matchesGroup = (group) => {
-            // Handle both legacy Array format (from JSON) and new Object format (from Firebase)
-            let requirements = group;
-            if (!Array.isArray(group) && group && Array.isArray(group.tags)) {
-                requirements = group.tags;
-            }
+        // 2. Effect Filter
+        // Logic: Show equip if it provides ANY of the selected effects (OR logic usually best for stats)
+        // User: "Show me Blast Atk or Strike Atk".
+        if (selectedEquipEffects.size > 0) {
+            const hasSelectedEffect = equip.slots && equip.slots.some(slot => {
+                if (!slot.effect) return false;
+                // We need to check if slot.effect string matches any of the selected Description Keys
+                // This is tricky because slot.effect is "Base Strike Attack +10%"
+                // And selected key is "Base Strike Attack".
+                // Simple string includes is good enough.
+                for (const effectKey of selectedEquipEffects) {
+                    // Check if simple string inclusion works
+                    // e.g. "Base Strike Attack" inside "Base Strike Attack +15%" -> Yes
+                    // "Base Critical" inside "Base Critical +10%" -> Yes
 
-            if (!Array.isArray(requirements) || requirements.length === 0) return true;
+                    // Helper: Handle "Strike & Blast"
+                    // If I select "Strike Attack", "Strike & Blast Attack" should probably count?
+                    // My STAT_MAPPING regex logic handles this parsing.
+                    // For simple filtering, string includes is approximate but fast.
 
-            return requirements.every(req => {
-                // Check if the requirement (string) exists in charAttributes
-                return charAttributes.has(req);
+                    // Special case handling for "Strike & Blast" to match "Strike Attack" filter?
+                    // If filter is "Strike Attack", and text is "Strike & Blast", technically it provides Strike Attack.
+                    // But strictly, string "Strike Attack" is NOT in "Strike & Blast Attack".
+                    // Users might expect it to show.
+
+                    // Let's rely on basic string matching first.
+                    if (slot.effect.includes(effectKey)) return true;
+
+                    // Handle the "&" cases for better UX
+                    if (effectKey === "Strike Attack" && slot.effect.includes("Strike & Blast Attack")) return true;
+                    if (effectKey === "Blast Attack" && slot.effect.includes("Strike & Blast Attack")) return true;
+                    if (effectKey === "Strike Defense" && slot.effect.includes("Strike & Blast Defense")) return true;
+                    if (effectKey === "Blast Defense" && slot.effect.includes("Strike & Blast Defense")) return true;
+                    if (effectKey === "Base Strike Attack" && slot.effect.includes("Base Strike & Blast Attack")) return true;
+                    if (effectKey === "Base Blast Attack" && slot.effect.includes("Base Strike & Blast Attack")) return true;
+                    if (effectKey === "Base Strike Defense" && slot.effect.includes("Base Strike & Blast Defense")) return true;
+                    if (effectKey === "Base Blast Defense" && slot.effect.includes("Base Strike & Blast Defense")) return true;
+                }
+                return false;
             });
-        };
-
-        if (logic === "OR") {
-            // Character must match AT LEAST ONE group
-            return groups.some(group => matchesGroup(group));
-        } else {
-            // AND (default): Character must match ALL groups
-            return groups.every(group => matchesGroup(group));
+            if (!hasSelectedEffect) return false;
         }
+
+        // 3. Condition Filter
+        // Logic: Show equip if it explicitly requires ALL selected conditions (AND logic, similar to char tags)
+        // If I select "Saiyan", it MUST have Saiyan in conditions.
+        // If I select "Saiyan" and "Frieza Force", it MUST have both? (Rare).
+        // Or IS AT LEAST Restricted to?
+        if (selectedEquipConditions.size > 0) {
+            // If equip has no conditions, it fails this filter (it doesn't have "Saiyan").
+            if (!equip.conditions_data || equip.conditions_data.length === 0) return false;
+
+            // Flatten tags
+            const allEquipTags = new Set();
+            equip.conditions_data.forEach(group => {
+                let tags = group;
+                if (!Array.isArray(group) && group && Array.isArray(group.tags)) tags = group.tags;
+                if (Array.isArray(tags)) tags.forEach(t => allEquipTags.add(t));
+            });
+
+            // Check if ALL selected conditions are present in the equipment's requirements
+            for (const sel of selectedEquipConditions) {
+                if (!allEquipTags.has(sel)) return false;
+            }
+        }
+
+        return true;
     });
 }
+
 
 function updateEquipmentList() {
     // Re-render the equipment list based on current selection
