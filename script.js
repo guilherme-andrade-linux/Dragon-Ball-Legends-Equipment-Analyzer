@@ -791,22 +791,51 @@ function filterEquipments(char, equips) {
     }
 
     return equips.filter(equip => {
-        // 1. Character Applicability (Existing Logic)
-        // Rule 1: Empty conditions_data = Generic (Show if no specific condition filters applied? Or always?)
-        // Actually, if I filter by "Saiyan" condition, generic equipments do NOT have that condition.
-        // But usually "Condition Filter" means "Show me equips that require X".
-        // If I select "Saiyan", I want equips that explicitly list "Saiyan".
-
+        // 1. Character Applicability
         let charMatch = true;
         if (equip.conditions_data && equip.conditions_data.length > 0) {
             const groups = equip.conditions_data;
             const logic = equip.condition_logic || "AND";
             const matchesGroup = (group) => {
-                let requirements = group;
-                if (!Array.isArray(group) && group && Array.isArray(group.tags)) requirements = group.tags;
+                let requirements = [];
+
+                // DATA NORMALIZATION: Handle various formats of "Group"
+                if (Array.isArray(group)) {
+                    requirements = group;
+                } else if (group && typeof group === 'object') {
+                    if (Array.isArray(group.tags)) {
+                        requirements = group.tags;
+                    } else if (group.value) {
+                        // Format: { value: "Saiyan", category: "Tag", ... }
+                        requirements = [group.value];
+                    } else if (group.original_text) {
+                        requirements = [group.original_text];
+                    }
+                } else if (typeof group === 'string') {
+                    requirements = [group];
+                }
+
                 if (!Array.isArray(requirements) || requirements.length === 0) return true;
-                return requirements.every(req => charAttributes.has(req));
+
+                // Check if ALL requirements in this group are met by the character
+                return requirements.every(req => {
+                    if (typeof req !== 'string') return false;
+
+                    // 1. Exact Match
+                    if (charAttributes.has(req)) return true;
+
+                    // 2. Prefix Match (e.g. "Tag: Saiyan" vs "Saiyan")
+                    // Relaxed Regex: Optional space after colon
+                    const cleanReq = req.replace(/^(Tag:|Episode:|Element:|Character:|Rarity:)\s*/, "");
+                    if (charAttributes.has(cleanReq)) return true;
+
+                    // 3. Name Match Fallback (e.g. "Goku" in name)
+                    if (char.name.includes(cleanReq)) return true;
+
+                    return false;
+                });
             };
+
             if (logic === "OR") charMatch = groups.some(matchesGroup);
             else charMatch = groups.every(matchesGroup);
         }
@@ -814,54 +843,32 @@ function filterEquipments(char, equips) {
         if (!charMatch) return false;
 
         // 2. Effect Filter
-        // Logic: Show equip if it provides ANY of the selected effects (OR logic usually best for stats)
-        // User: "Show me Blast Atk or Strike Atk".
         if (selectedEquipEffects.size > 0) {
             const hasSelectedEffect = equip.slots && equip.slots.some(slot => {
                 if (!slot.effect) return false;
-                // We need to check if slot.effect string matches any of the selected Description Keys
-                // This is tricky because slot.effect is "Base Strike Attack +10%"
-                // And selected key is "Base Strike Attack".
-                // Simple string includes is good enough.
-                // Strict Filter Logic
                 for (const effectKey of selectedEquipEffects) {
                     const text = slot.effect;
                     const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
                     if (effectKey.startsWith("Base ")) {
-                        // For Base stats, we just need to ensure it includes the full Base string.
-                        // "Base Strike Attack" -> matches "Base Strike Attack" or "Base Strike & Blast Attack"
-
                         if (text.includes(effectKey)) return true;
-
-                        // Handle Compounded Base Stats
                         if (effectKey === "Base Strike Attack" && text.includes("Base Strike & Blast Attack")) return true;
                         if (effectKey === "Base Blast Attack" && text.includes("Base Strike & Blast Attack")) return true;
                         if (effectKey === "Base Strike Defense" && text.includes("Base Strike & Blast Defense")) return true;
                         if (effectKey === "Base Blast Defense" && text.includes("Base Strike & Blast Defense")) return true;
-
                     } else {
-                        // For Pure stats (e.g. "Strike Attack"), we MUST exclude "Base Strike Attack".
-                        // Use Negative Lookbehind: Match effectKey NOT preceded by "Base "
-
-                        // 1. Check strict match for the key itself
-                        // Regex: (?<!Base\s+)Strike Attack
                         try {
                             const strictRegex = new RegExp(`(?<!Base\\s+)${escape(effectKey)}`);
                             if (strictRegex.test(text)) return true;
                         } catch (e) {
-                            // Fallback for environment not supporting lookbehind (safe fallback)
                             if (text.includes(effectKey)) {
                                 const idx = text.indexOf(effectKey);
-                                // Check previous 5 chars for "Base "
                                 const start = Math.max(0, idx - 5);
                                 const prefix = text.substring(start, idx);
                                 if (!prefix.includes("Base ")) return true;
                             }
                         }
 
-                        // 2. Handle Compounded Pure Stats (e.g. Strike & Blast Attack)
-                        // If searching "Strike Attack", we also accept "Strike & Blast Attack" (PURE)
                         let compoundKey = "";
                         if (effectKey === "Strike Attack" || effectKey === "Blast Attack") compoundKey = "Strike & Blast Attack";
                         if (effectKey === "Strike Defense" || effectKey === "Blast Defense") compoundKey = "Strike & Blast Defense";
@@ -887,23 +894,38 @@ function filterEquipments(char, equips) {
         }
 
         // 3. Condition Filter
-        // Logic: Show equip if it explicitly requires ALL selected conditions (AND logic, similar to char tags)
-        // If I select "Saiyan", it MUST have Saiyan in conditions.
-        // If I select "Saiyan" and "Frieza Force", it MUST have both? (Rare).
-        // Or IS AT LEAST Restricted to?
         if (selectedEquipConditions.size > 0) {
-            // If equip has no conditions, it fails this filter (it doesn't have "Saiyan").
             if (!equip.conditions_data || equip.conditions_data.length === 0) return false;
 
-            // Flatten tags
             const allEquipTags = new Set();
             equip.conditions_data.forEach(group => {
-                let tags = group;
-                if (!Array.isArray(group) && group && Array.isArray(group.tags)) tags = group.tags;
-                if (Array.isArray(tags)) tags.forEach(t => allEquipTags.add(t));
+                let tags = [];
+                // DATA NORMALIZATION (Same as above)
+                if (Array.isArray(group)) {
+                    tags = group;
+                } else if (group && typeof group === 'object') {
+                    if (Array.isArray(group.tags)) {
+                        tags = group.tags;
+                    } else if (group.value) {
+                        tags = [group.value];
+                    } else if (group.original_text) {
+                        tags = [group.original_text];
+                    }
+                } else if (typeof group === 'string') {
+                    tags = [group];
+                }
+
+                if (Array.isArray(tags)) {
+                    tags.forEach(t => {
+                        if (typeof t === 'string') {
+                            allEquipTags.add(t);
+                            const cleanT = t.replace(/^(Tag:|Episode:|Element:|Character:|Rarity:)\s*/, "");
+                            allEquipTags.add(cleanT);
+                        }
+                    });
+                }
             });
 
-            // Check if ALL selected conditions are present in the equipment's requirements
             for (const sel of selectedEquipConditions) {
                 if (!allEquipTags.has(sel)) return false;
             }
