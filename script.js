@@ -577,7 +577,32 @@ async function fetchEquipmentsFromFirebase() {
 
         if (allEquipments.length === 0) {
             alert("Nenhum equipamento encontrado no Firebase.");
-        } else {
+        } else { // NORMALIZE DATA: Convert Firebase object structure back to arrays if needed
+            allEquipments = allEquipments.map(eq => {
+                if (Array.isArray(eq.conditions_data)) {
+                    // Check if elements are objects (Firebase structure) instead of arrays (Local JSON structure)
+                    // The user mentioned "value" as key, and code uses "tags". checking both.
+                    const isFirebaseStructure = eq.conditions_data.some(item => !Array.isArray(item) && typeof item === 'object');
+
+                    if (isFirebaseStructure) {
+                        const normalizedConditions = eq.conditions_data.map(item => {
+                            if (Array.isArray(item)) return item; // Already array
+
+                            // Firebase stores as { values: [...] } (PLURAL!)
+                            if (item.values && Array.isArray(item.values)) return item.values;
+
+                            // Fallback checks for other possible keys
+                            if (item.tags && Array.isArray(item.tags)) return item.tags;
+                            if (item.value && Array.isArray(item.value)) return item.value;
+
+                            return []; // Fallback
+                        });
+                        return { ...eq, conditions_data: normalizedConditions };
+                    }
+                }
+                return eq;
+            });
+
             updateEquipmentList(); // Use update function to handle filtering
             alert(`Sucesso! ${allEquipments.length} equipamentos carregados do Firebase.`);
         }
@@ -781,21 +806,33 @@ function filterEquipments(char, equips) {
     if (!char) return equips;
 
     const charAttributes = new Set();
-    if (char.name) charAttributes.add(char.name);
-    if (char.element) charAttributes.add(char.element);
-    if (char.rarity) charAttributes.add(char.rarity);
-    if (char.id) charAttributes.add(char.id);
-    if (char.code) charAttributes.add(char.code);
-    if (Array.isArray(char.visual_tags)) {
-        char.visual_tags.forEach(tag => charAttributes.add(tag));
+    // STRICT FILTERING: Only use visual_tags
+    let visualTags = char.visual_tags;
+
+    // DATA NORMALIZATION: Handle Firestore Map for visual_tags
+    if (!Array.isArray(visualTags) && visualTags && typeof visualTags === 'object') {
+        visualTags = Object.values(visualTags);
     }
 
-    return equips.filter(equip => {
+    if (Array.isArray(visualTags)) {
+        visualTags.forEach(tag => charAttributes.add(tag));
+    }
+
+    // DEBUG LOG
+    // console.log(`[Filter Debug] Character: ${char.name}`, Array.from(charAttributes));
+
+    return equips.filter((equip, index) => {
         // 1. Character Applicability
         let charMatch = true;
         if (equip.conditions_data && equip.conditions_data.length > 0) {
             const groups = equip.conditions_data;
             const logic = equip.condition_logic || "AND";
+
+            // DEBUG LOGGING (First 10 items with conditions ONLY)
+            // if (index < 10 && equip.conditions_data.length > 0) {
+            //     console.log(`[Filter Debug] Equip: ${equip.name} (${equip.id})`, JSON.stringify(equip.conditions_data));
+            // }
+
             const matchesGroup = (group) => {
                 let requirements = [];
 
@@ -803,19 +840,41 @@ function filterEquipments(char, equips) {
                 if (Array.isArray(group)) {
                     requirements = group;
                 } else if (group && typeof group === 'object') {
+                    // Log unknown object structure
+                    // console.log(`[Filter Debug] Unknown Group Object for ${equip.name}:`, group);
+
                     if (Array.isArray(group.tags)) {
                         requirements = group.tags;
+                    } else if (group.tags && typeof group.tags === 'object') {
+                        // Handle Firestore Map {0: "Tag", 1: "Tag"}
+                        requirements = Object.values(group.tags);
                     } else if (group.value) {
-                        // Format: { value: "Saiyan", category: "Tag", ... }
-                        requirements = [group.value];
+                        // Format: { value: "Saiyan", ... } OR { value: ["Saiyan", "GT"] }
+                        if (Array.isArray(group.value)) {
+                            requirements = group.value;
+                        } else {
+                            requirements = [group.value];
+                        }
                     } else if (group.original_text) {
                         requirements = [group.original_text];
+                    } else {
+                        // Fallback: Check if group itself is an array-like object (Firestore Map)
+                        // Heuristic: has numeric keys?
+                        const values = Object.values(group);
+                        if (values.length > 0 && values.every(v => typeof v === 'string')) {
+                            requirements = values;
+                        }
                     }
                 } else if (typeof group === 'string') {
                     requirements = [group];
                 }
 
-                if (!Array.isArray(requirements) || requirements.length === 0) return true;
+                if (!Array.isArray(requirements) || requirements.length === 0) {
+                    // IF group exists but we found no requirements.
+                    // Case: "[]" or "[[]]" in conditions_data means "No specific tags required" -> Universal.
+                    // So return TRUE.
+                    return true;
+                }
 
                 // Check if ALL requirements in this group are met by the character
                 return requirements.every(req => {
@@ -827,10 +886,12 @@ function filterEquipments(char, equips) {
                     // 2. Prefix Match (e.g. "Tag: Saiyan" vs "Saiyan")
                     // Relaxed Regex: Optional space after colon
                     const cleanReq = req.replace(/^(Tag:|Episode:|Element:|Character:|Rarity:)\s*/, "");
-                    if (charAttributes.has(cleanReq)) return true;
+                    const isMatch = charAttributes.has(cleanReq);
 
-                    // 3. Name Match Fallback (e.g. "Goku" in name)
-                    if (char.name.includes(cleanReq)) return true;
+                    if (!isMatch && index < 5) {
+                        console.log(`[Filter Debug] FAIL: Reqs: "${req}" (Clean: "${cleanReq}") NOT FOUND in Char Attributes.`, Array.from(charAttributes));
+                    }
+                    if (isMatch) return true;
 
                     return false;
                 });
