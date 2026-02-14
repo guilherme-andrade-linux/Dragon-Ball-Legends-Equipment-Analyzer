@@ -34,7 +34,21 @@ def scrape_equip_details(equip_url, basic_info):
     if h2_tag:
         details['name'] = h2_tag.get_text(strip=True)
     
-    # --- 2. Extrair Slots (card-body) ---
+    # --- 2. Extrair Raridade (rarity class) ---
+    # A raridade está numa div com class "rarity [tipo]" dentro do container "equip-thumb"
+    rarity = "unknown"
+    equip_thumb = soup.find("div", class_="equip-thumb")
+    if equip_thumb:
+        rarity_div = equip_thumb.find("div", class_=lambda c: c and "rarity" in c)
+        if rarity_div:
+            # A class é algo como "rarity platinum", queremos extrair o nome completo
+            rarity = rarity_div.get("class", [])
+            # rarity é uma lista de classes, vamos juntar todas
+            if isinstance(rarity, list):
+                rarity = " ".join(rarity)
+    details['rarity'] = rarity
+    
+    # --- 3. Extrair Slots (card-body) ---
     # O site usa card-body para os slots. Vamos apanhar todos e limpar o texto.
     slots = []
     # Procuramos especificamente dentro da zona principal para evitar apanhar lixo do footer/header
@@ -52,7 +66,7 @@ def scrape_equip_details(equip_url, basic_info):
             })
     details['slots'] = slots
 
-    # --- 3. Extrair Condições (Lógica AND/OR) ---
+    # --- 4. Extrair Condições (Lógica AND/OR) ---
     # Classe indicada: "trait-container-equip mb-4 ms-4"
     # Usamos apenas "trait-container-equip" no find_all para ser mais robusto, 
     # pois o mb-4 e ms-4 são espaçamentos visuais.

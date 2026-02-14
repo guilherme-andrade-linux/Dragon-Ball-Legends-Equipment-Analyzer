@@ -1,0 +1,41 @@
+# Virtual Environment
+/Python/venv
+
+# Python Cache
+__pycache__
+*.pyc
+
+# Firebase
+firebase-service-account.json
+
+# Node.js
+node_modules
+
+# Build
+dist
+build
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.temp
+
+# Markdown files
+#*.md
+# txt files
+#*.txt

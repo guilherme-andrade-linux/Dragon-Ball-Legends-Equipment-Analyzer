@@ -377,6 +377,31 @@ function updateTagCount() {
 
 // --- EQUIPMENT SLOTS FUNCTIONS ---
 
+// Helper function to get rarity border image
+function getRarityBorder(rarity) {
+    if (!rarity) return null;
+
+    // Map rarity class to image filename based on assets/rarity.md
+    const rarityMap = {
+        'rarity awakenedbronze': 'Awakened_Bronze.png',
+        'rarity awakenedgold': 'Awakened_Gold.png',
+        'rarity awakenedsilver': 'Awakened_Silver.png',
+        'rarity awakenedunique': 'Awakened_Unique.png',
+        'rarity bronze': 'Bronze.png',
+        'rarity event': 'Event.png',
+        'rarity gold': 'Gold.png',
+        'rarity iron': 'Iron.png',
+        'rarity platinum': 'Platinum.png',
+        'rarity silver': 'Silver.png',
+        'rarity unique': 'Unique.png'
+    };
+
+    const normalizedRarity = rarity.toLowerCase().trim();
+    const imageName = rarityMap[normalizedRarity];
+
+    return imageName ? `assets/${imageName}` : null;
+}
+
 function renderSlots() {
     const container = document.getElementById('equipmentSlotsContainer');
     if (!container) return;
@@ -402,17 +427,31 @@ function renderSlots() {
             dot.className = "absolute top-1 right-1 size-2 rounded-full bg-green-500 shadow-[0_0_5px_rgba(34,197,94,0.8)]";
             card.appendChild(dot);
 
-            // Image Container
+            // Image Container with Rarity Border
             const imgContainer = document.createElement('div');
-            imgContainer.className = "w-[86px] h-[86px] rounded-lg overflow-hidden bg-gradient-to-br from-amber-700 to-yellow-500 p-[2px]";
+            const borderImage = getRarityBorder(equip.rarity);
 
             const imageUrl = equip.image || 'https://dblegends.net/assets/equips/EqIco_1578.webp';
 
-            imgContainer.innerHTML = `
-                <div class="w-full h-full bg-[#101322] flex items-center justify-center bg-cover bg-center"
-                     style='background-image: url("${imageUrl}");'>
-                </div>
-            `;
+            // Structure: Container with equipment image as background, border PNG on top
+            if (borderImage) {
+                imgContainer.className = "w-[86px] h-[86px] rounded-lg overflow-hidden relative";
+                imgContainer.innerHTML = `
+                    <div class="absolute inset-0 bg-cover bg-center" 
+                         style='background-image: url("${imageUrl}"); background-color: #101322;'>
+                    </div>
+                    <div class="absolute inset-0 pointer-events-none"
+                         style='background-image: url("${borderImage}"); background-size: 110%; background-position: center; background-repeat: no-repeat;'>
+                    </div>
+                `;
+            } else {
+                imgContainer.className = "w-[86px] h-[86px] rounded-lg overflow-hidden bg-gradient-to-br from-amber-700 to-yellow-500 p-[2px]";
+                imgContainer.innerHTML = `
+                    <div class="w-full h-full bg-[#101322] flex items-center justify-center bg-cover bg-center"
+                         style='background-image: url("${imageUrl}");'>
+                    </div>
+                `;
+            }
 
             // Add Click Listener to Open URL
             if (equip.url) {
@@ -689,15 +728,33 @@ function renderEquipList(equips) {
 
         // Image
         const imageUrl = equip.image || 'https://dblegends.net/assets/equips/EqIco_1578.webp'; // Fallback
+        const borderImage = getRarityBorder(equip.rarity);
+
+        // Build the image container HTML with rarity border on top
+        let imageContainerHTML;
+        if (borderImage) {
+            imageContainerHTML = `
+              <div class="relative size-14 shrink-0 rounded overflow-hidden shadow-md">
+                <div class="absolute inset-0 bg-cover bg-center"
+                     style='background-image: url("${imageUrl}"); background-color: #101322;'>
+                </div>
+                <div class="absolute inset-0 pointer-events-none"
+                     style='background-image: url("${borderImage}"); background-size: 110%; background-position: center; background-repeat: no-repeat;'>
+                </div>
+              </div>`;
+        } else {
+            imageContainerHTML = `
+              <div class="relative size-14 shrink-0 rounded bg-gradient-to-br from-gray-700 to-gray-500 p-0.5 shadow-md">
+                <div class="w-full h-full bg-[#101322] rounded-[2px] flex items-center justify-center overflow-hidden">
+                  <div class="w-full h-full bg-cover bg-center opacity-90"
+                    style='background-image: url("${imageUrl}");'>
+                  </div>
+                </div>
+              </div>`;
+        }
 
         div.innerHTML = `
-          <div class="relative size-14 shrink-0 rounded bg-gradient-to-br from-gray-700 to-gray-500 p-0.5 shadow-md">
-            <div class="w-full h-full bg-[#101322] rounded-[2px] flex items-center justify-center overflow-hidden">
-              <div class="w-full h-full bg-cover bg-center opacity-90"
-                style='background-image: url("${imageUrl}");'>
-              </div>
-            </div>
-          </div>
+          ${imageContainerHTML}
           <div class="flex flex-col flex-1 min-w-0 justify-center">
             <h4 class="text-sm font-bold text-white truncate group-hover:text-primary transition-colors">${equip.name || 'Unknown Equipment'}</h4>
           </div>
