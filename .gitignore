@@ -38,4 +38,6 @@ Thumbs.db
 # Markdown files
 #*.md
 # txt files
-#*.txt
+*.txt
+
+/Python/a.html
