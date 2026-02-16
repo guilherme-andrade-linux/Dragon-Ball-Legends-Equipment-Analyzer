@@ -1,7 +1,7 @@
 import { db } from './firebase-config.js';
 import { collection, getDocs, doc, writeBatch } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 import { allEquipments, setAllEquipments } from './state.js';
-import { updateEquipmentList } from './equipment-filters.js';
+import { updateEquipmentList, renderEquipRarityFilters } from './equipment-filters.js';
 import { getRarityBorder } from './equipment-slots.js';
 import { addEquipment } from './equipment-slots.js';
 
@@ -13,7 +13,9 @@ export function handleEquipFileUpload(event) {
     reader.onload = function (e) {
         try {
             const equipments = JSON.parse(e.target.result);
+
             setAllEquipments(equipments);
+            renderEquipRarityFilters(); // Populate rarity filter options
             updateEquipmentList(); // Use update function to handle filtering
             alert(`Sucesso! ${allEquipments.length} equipamentos carregados.`);
         } catch (error) {
@@ -64,6 +66,7 @@ export async function fetchEquipmentsFromFirebase() {
             });
 
             setAllEquipments(equipments);
+            renderEquipRarityFilters(); // Populate rarity filter options
             updateEquipmentList(); // Use update function to handle filtering
             alert(`Sucesso! ${allEquipments.length} equipamentos carregados do Firebase.`);
         }

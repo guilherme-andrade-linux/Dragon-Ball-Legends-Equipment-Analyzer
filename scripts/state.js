@@ -4,6 +4,7 @@ export let allEquipments = [];
 export let selectedTags = new Set();
 export let selectedEquipEffects = new Set();
 export let selectedEquipConditions = new Set();
+export let selectedEquipRarities = new Set();
 
 // Global selection state
 export let currentSelectedCharacter = null; // { image, visual_tags, name }

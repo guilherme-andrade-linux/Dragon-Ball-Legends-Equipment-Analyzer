@@ -3,7 +3,7 @@ import { handleFileUpload, fetchFromFirebase, filterAndRenderCharacters } from '
 import { updateTagFilterUI, initializeTags } from './scripts/character-tags.js';
 import { handleEquipFileUpload, fetchEquipmentsFromFirebase } from './scripts/equipment-manager.js';
 import { renderSlots } from './scripts/equipment-slots.js';
-import { renderEquipEffectFilters } from './scripts/equipment-filters.js';
+import { renderEquipEffectFilters, renderEquipRarityFilters } from './scripts/equipment-filters.js';
 import { clearSelectedTags } from './scripts/state.js';
 
 // --- INIT ---
@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const equipEffectContainer = document.getElementById('equipEffectContainer');
     const toggleEquipConditionBtn = document.getElementById('toggleEquipConditionBtn');
     const equipConditionContainer = document.getElementById('equipConditionContainer');
+    const toggleEquipRarityBtn = document.getElementById('toggleEquipRarityBtn');
+    const equipRarityContainer = document.getElementById('equipRarityContainer');
 
     if (toggleEquipEffectBtn && equipEffectContainer) {
         toggleEquipEffectBtn.addEventListener('click', () => {
@@ -76,6 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (toggleEquipRarityBtn && equipRarityContainer) {
+        toggleEquipRarityBtn.addEventListener('click', () => {
+            equipRarityContainer.classList.toggle('hidden');
+            equipRarityContainer.classList.toggle('flex');
+        });
+    }
+
     if (equipFileInput) equipFileInput.addEventListener('change', handleEquipFileUpload);
     if (btnImportEquipFirebase) btnImportEquipFirebase.addEventListener('click', fetchEquipmentsFromFirebase);
     if (btnImportEquipJson) {
@@ -86,6 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial Render of Effect Filters (static)
     renderEquipEffectFilters();
+
+    // Initial Render of Rarity Filters
+    renderEquipRarityFilters();
 
     // Initial Slot Render
     renderSlots();

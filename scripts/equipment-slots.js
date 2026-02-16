@@ -6,21 +6,25 @@ export function getRarityBorder(rarity) {
     if (!rarity) return null;
 
     // Map rarity class to image filename based on assets/rarity.md
+    // Keys are normalized (lowercase, no spaces) to handle both:
+    // - JSON format: "rarity event" (with space)
+    // - Firebase format: "rarityevent" (without space)
     const rarityMap = {
-        'rarity awakenedbronze': 'Awakened_Bronze.png',
-        'rarity awakenedgold': 'Awakened_Gold.png',
-        'rarity awakenedsilver': 'Awakened_Silver.png',
-        'rarity awakenedunique': 'Awakened_Unique.png',
-        'rarity bronze': 'Bronze.png',
-        'rarity event': 'Event.png',
-        'rarity gold': 'Gold.png',
-        'rarity iron': 'Iron.png',
-        'rarity platinum': 'Platinum.png',
-        'rarity silver': 'Silver.png',
-        'rarity unique': 'Unique.png'
+        'rarityawakenedbronze': 'Awakened_Bronze.png',
+        'rarityawakenedgold': 'Awakened_Gold.png',
+        'rarityawakenedsilver': 'Awakened_Silver.png',
+        'rarityawakenedunique': 'Awakened_Unique.png',
+        'raritybronze': 'Bronze.png',
+        'rarityevent': 'Event.png',
+        'raritygold': 'Gold.png',
+        'rarityiron': 'Iron.png',
+        'rarityplatinum': 'Platinum.png',
+        'raritysilver': 'Silver.png',
+        'rarityunique': 'Unique.png'
     };
 
-    const normalizedRarity = rarity.toLowerCase().trim();
+    // Normalize: lowercase, trim, and remove all spaces
+    const normalizedRarity = rarity.toLowerCase().trim().replace(/\s+/g, '');
     const imageName = rarityMap[normalizedRarity];
 
     return imageName ? `assets/${imageName}` : null;

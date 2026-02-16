@@ -1,4 +1,4 @@
-import { allEquipments, currentSelectedCharacter, selectedEquipEffects, selectedEquipConditions } from './state.js';
+import { allEquipments, currentSelectedCharacter, selectedEquipEffects, selectedEquipConditions, selectedEquipRarities } from './state.js';
 import { renderEquipList } from './equipment-manager.js';
 import { STAT_MAPPING } from './stats-calculator.js';
 
@@ -85,6 +85,32 @@ export function renderEquipConditionFilters(char) {
     }
 
     renderGenericFilterButtons('equipConditionContainer', sortedTags, selectedEquipConditions, updateEquipmentList, 'equipConditionCount');
+}
+
+export function renderEquipRarityFilters() {
+    // Extract all unique rarities from equipment
+    const rarities = new Set();
+    allEquipments.forEach(equip => {
+        if (equip.rarity) {
+            rarities.add(equip.rarity);
+        }
+    });
+
+    // Create display-friendly labels
+    const rarityOptions = Array.from(rarities).map(rarity => {
+        // Convert "rarity gold" to "Gold", "rarity awakenedgold" to "Awakened Gold"
+        const cleaned = rarity.replace(/^rarity\s*/i, '');
+        // Split on capital letters and space them properly
+        const formatted = cleaned
+            .replace(/awakened/i, 'Awakened ')
+            .split(/(?=[A-Z])/)
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' ')
+            .trim();
+        return formatted || rarity; // Fallback to original if formatting fails
+    }).sort();
+
+    renderGenericFilterButtons('equipRarityContainer', rarityOptions, selectedEquipRarities, updateEquipmentList, 'equipRarityCount');
 }
 
 export function filterEquipments(char, equips) {
@@ -275,6 +301,24 @@ export function filterEquipments(char, equips) {
             for (const sel of selectedEquipConditions) {
                 if (!allEquipTags.has(sel)) return false;
             }
+        }
+
+        // 4. Rarity Filter
+        if (selectedEquipRarities.size > 0) {
+            // Normalize the equipment rarity for comparison
+            const normalizeRarity = (rarity) => {
+                if (!rarity) return '';
+                const cleaned = rarity.replace(/^rarity\s*/i, '');
+                return cleaned
+                    .replace(/awakened/i, 'Awakened ')
+                    .split(/(?=[A-Z])/)
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                    .join(' ')
+                    .trim();
+            };
+
+            const equipRarity = normalizeRarity(equip.rarity);
+            if (!selectedEquipRarities.has(equipRarity)) return false;
         }
 
         return true;

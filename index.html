@@ -171,6 +171,20 @@
             <span class="text-[10px] text-gray-500 italic p-1">Select a unit first...</span>
           </div>
         </div>
+
+        <!-- Rarity Filter -->
+        <div class="flex flex-col gap-1">
+          <button id="toggleEquipRarityBtn"
+            class="text-xs text-[#929bc9] hover:text-white flex items-center gap-1 transition-colors w-full text-left">
+            <span class="material-symbols-outlined text-[14px]">star</span>
+            <span>Filter by Rarity</span>
+            <span id="equipRarityCount" class="bg-primary/20 text-primary px-1.5 rounded text-[10px] hidden">0</span>
+          </button>
+          <div id="equipRarityContainer"
+            class="hidden flex-wrap gap-1.5 max-h-32 overflow-y-auto custom-scrollbar p-1 border border-[#2d3455] rounded bg-[#1e233b]">
+            <!-- Dynamic Rarities -->
+          </div>
+        </div>
       </div>
 
       <!-- Equipment List -->
