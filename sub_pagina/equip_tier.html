@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DBL Equipment Tier List</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Noto+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1337ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101322",
+                        "panel-dark": "#151a2d",
+                        "border-dark": "#232948",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        /* Tier badge colours */
+        .tier-badge-kami {
+            background: linear-gradient(135deg, #0ef0ff 0%, #1391ff 100%);
+            color: #001e3c;
+            box-shadow: 0 0 10px #0ef0ff88;
+        }
+
+        .tier-badge-zplus {
+            background: linear-gradient(135deg, #ff3a3a 0%, #c00000 100%);
+            color: #fff;
+            box-shadow: 0 0 10px #ff3a3a88;
+        }
+
+        .tier-badge-z {
+            background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+            color: #111;
+            box-shadow: 0 0 10px #ffd70088;
+        }
+
+        .tier-badge-s {
+            background: linear-gradient(135deg, #9b59b6 0%, #6c2fa0 100%);
+            color: #fff;
+            box-shadow: 0 0 10px #9b59b688;
+        }
+
+        .tier-badge-a {
+            background: linear-gradient(135deg, #3498db 0%, #1a5fa3 100%);
+            color: #fff;
+            box-shadow: 0 0 10px #3498db44;
+        }
+
+        .tier-badge-b {
+            background: linear-gradient(135deg, #27ae60 0%, #1a7a43 100%);
+            color: #fff;
+            box-shadow: 0 0 10px #27ae6044;
+        }
+
+        .tier-badge-c {
+            background: linear-gradient(135deg, #7f8c8d 0%, #4d5859 100%);
+            color: #fff;
+        }
+
+        /* Section header colours */
+        .section-header-kami {
+            border-color: #0ef0ff;
+            color: #0ef0ff;
+            text-shadow: 0 0 12px #0ef0ff88;
+        }
+
+        .section-header-zplus {
+            border-color: #ff3a3a;
+            color: #ff3a3a;
+            text-shadow: 0 0 12px #ff3a3a88;
+        }
+
+        .section-header-z {
+            border-color: #ffd700;
+            color: #ffd700;
+            text-shadow: 0 0 12px #ffd70088;
+        }
+
+        .section-header-s {
+            border-color: #9b59b6;
+            color: #9b59b6;
+            text-shadow: 0 0 12px #9b59b688;
+        }
+
+        .section-header-a {
+            border-color: #3498db;
+            color: #3498db;
+        }
+
+        .section-header-b {
+            border-color: #27ae60;
+            color: #27ae60;
+        }
+
+        .section-header-c {
+            border-color: #7f8c8d;
+            color: #7f8c8d;
+        }
+
+        .equip-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .equip-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display h-screen flex flex-col overflow-hidden">
+
+    <!-- Top Navigation -->
+    <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-dark bg-panel-dark px-6 py-3 shrink-0 z-20">
+        <div class="flex items-center gap-4 text-white">
+            <!-- Back Button -->
+            <a href="../index.html"
+                class="flex items-center gap-2 px-3 py-2 rounded-lg bg-border-dark text-white text-sm font-bold hover:bg-[#323b67] transition-colors">
+                <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                Back
+            </a>
+            <div class="size-8 flex items-center justify-center bg-primary/20 rounded-lg text-primary">
+                <span class="material-symbols-outlined">leaderboard</span>
+            </div>
+            <h2 class="text-white text-xl font-bold leading-tight tracking-tight">Equipment Tier List</h2>
+        </div>
+        <div class="flex items-center gap-3">
+            <!-- Tier Legend -->
+            <div class="flex items-center gap-2 flex-wrap justify-end">
+                <span class="px-2 py-0.5 rounded text-xs font-bold tier-badge-kami">神</span>
+                <span class="px-2 py-0.5 rounded text-xs font-bold tier-badge-zplus">Z+</span>
+                <span class="px-2 py-0.5 rounded text-xs font-bold tier-badge-z">Z</span>
+                <span class="px-2 py-0.5 rounded text-xs font-bold tier-badge-s">S</span>
+                <span class="px-2 py-0.5 rounded text-xs font-bold tier-badge-a">A</span>
+                <span class="px-2 py-0.5 rounded text-xs font-bold tier-badge-b">B</span>
+                <span class="px-2 py-0.5 rounded text-xs font-bold tier-badge-c">C</span>
+            </div>
+            <!-- Search -->
+            <div
+                class="flex w-48 items-stretch rounded-lg h-9 bg-[#1e233b] border border-[#2d3455] focus-within:border-primary transition-colors">
+                <div class="text-[#929bc9] flex items-center justify-center pl-3">
+                    <span class="material-symbols-outlined text-[18px]">search</span>
+                </div>
+                <input id="searchInput"
+                    class="flex w-full min-w-0 flex-1 resize-none bg-transparent text-white focus:outline-0 placeholder:text-[#6b7280] px-3 text-sm font-normal"
+                    placeholder="Search equipment..." />
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="flex-1 overflow-y-auto custom-scrollbar">
+        <div
+            class="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-[#1337ec]/10 to-transparent pointer-events-none z-0">
+        </div>
+
+        <!-- Loading spinner -->
+        <div id="loadingState" class="flex flex-col items-center justify-center h-64 gap-4">
+            <span class="material-symbols-outlined text-[48px] text-primary animate-spin">progress_activity</span>
+            <p class="text-[#929bc9] text-sm">Loading equipment data…</p>
+        </div>
+
+        <!-- Note container (hidden until loaded) -->
+        <div id="tierNote" class="hidden p-6 pb-0 max-w-screen-2xl mx-auto relative z-10">
+            <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 flex gap-3 text-sm text-[#929bc9]">
+                <span class="material-symbols-outlined text-amber-500 shrink-0 mt-0.5">info</span>
+                <div class="flex flex-col gap-1">
+                    <p><strong class="text-amber-500">Sobre a Tier List (Em Desenvolvimento):</strong> Esta lista serve
+                        apenas como um guia para te ajudar nas escolhas e <strong>não representa uma verdade
+                            universal</strong>.</p>
+                    <p><strong>Como funciona & Limitações:</strong> A classificação baseia-se exclusivamente nos valores
+                        de buff dos atributos (stats). No entanto, <strong>não consegue analisar efeitos
+                            especiais</strong> (ex: anulação de desvantagem, regeneração de vida ou destruição de
+                        cartas).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content container (hidden until loaded) -->
+        <div id="tierContent" class="hidden p-6 max-w-screen-2xl mx-auto flex flex-col gap-10 relative z-10"></div>
+    </main>
+
+    <script>
+        const TIERS = ['神', 'Z+', 'Z', 'S', 'A', 'B', 'C'];
+
+        const TIER_META = {
+            '神': { cssClass: 'kami', label: '神 — God Tier', badgeClass: 'tier-badge-kami' },
+            'Z+': { cssClass: 'zplus', label: 'Z+ Tier', badgeClass: 'tier-badge-zplus' },
+            'Z': { cssClass: 'z', label: 'Z Tier', badgeClass: 'tier-badge-z' },
+            'S': { cssClass: 's', label: 'S Tier', badgeClass: 'tier-badge-s' },
+            'A': { cssClass: 'a', label: 'A Tier', badgeClass: 'tier-badge-a' },
+            'B': { cssClass: 'b', label: 'B Tier', badgeClass: 'tier-badge-b' },
+            'C': { cssClass: 'c', label: 'C Tier', badgeClass: 'tier-badge-c' },
+        };
+
+        const RARITY_MAP = {
+            'rarityawakenedbronze': '../assets/Awakened_Bronze.png',
+            'rarityawakenedgold': '../assets/Awakened_Gold.png',
+            'rarityawakenedsilver': '../assets/Awakened_Silver.png',
+            'rarityawakenedunique': '../assets/Awakened_Unique.png',
+            'raritybronze': '../assets/Bronze.png',
+            'rarityevent': '../assets/Event.png',
+            'raritygold': '../assets/Gold.png',
+            'rarityiron': '../assets/Iron.png',
+            'rarityplatinum': '../assets/Platinum.png',
+            'raritysilver': '../assets/Silver.png',
+            'rarityunique': '../assets/Unique.png',
+        };
+
+        function getRarityBorder(rarity) {
+            if (!rarity) return null;
+            const key = rarity.toLowerCase().trim().replace(/\s+/g, '');
+            return RARITY_MAP[key] || null;
+        }
+
+        function sanitize(str) {
+            const d = document.createElement('div');
+            d.textContent = str;
+            return d.innerHTML;
+        }
+
+        async function loadData() {
+            const [equipRes, tierRes] = await Promise.all([
+                fetch('../Python/dbl_equipment_full.json'),
+                fetch('../Python/equipment_tiers.json'),
+            ]);
+            const equipList = await equipRes.json();
+            const tierList = await tierRes.json();
+            return { equipList, tierList };
+        }
+
+        function buildEquipMap(equipList) {
+            const map = new Map();
+            for (const e of equipList) {
+                // Key by name (lowercased and trimmed) for lookup
+                const key = e.name.trim().toLowerCase();
+                if (!map.has(key)) map.set(key, e);
+            }
+            return map;
+        }
+
+        function renderEquipCard(tierEntry, equipData) {
+            const tier = tierEntry.tier;
+            const meta = TIER_META[tier] || TIER_META['C'];
+            const border = equipData ? getRarityBorder(equipData.rarity) : null;
+            const img = equipData ? equipData.image : null;
+            const url = equipData ? equipData.url : null;
+
+            // Slots text (first slot only as preview)
+            let slotsHtml = '';
+            if (equipData && equipData.slots && equipData.slots.length > 0) {
+                const preview = equipData.slots[0].effect.replace(/\n/g, ' ').substring(0, 100);
+                slotsHtml = `<p class="text-[10px] text-[#5a6490] mt-1 leading-tight line-clamp-2">${sanitize(preview)}${equipData.slots[0].effect.length > 100 ? '…' : ''}</p>`;
+            }
+
+            const cardInner = `
+        <!-- Image area -->
+        <div class="relative flex-shrink-0">
+          <div class="w-14 h-14 rounded-lg bg-[#0d101f] border border-[#2d3455] overflow-hidden flex items-center justify-center">
+            ${img
+                    ? `<img src="${sanitize(img)}" alt="${sanitize(tierEntry.name)}" class="w-full h-full object-cover" loading="lazy" />`
+                    : `<span class="material-symbols-outlined text-[28px] text-[#2d3455]">swords</span>`}
+          </div>
+          ${border
+                    ? `<img src="${sanitize(border)}" alt="border" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />`
+                    : ''}
+          <!-- Tier badge (top-right corner) -->
+          <span class="absolute -top-2 -right-2 px-1.5 py-0.5 rounded text-[10px] font-black leading-none ${meta.badgeClass}">${sanitize(tier)}</span>
+        </div>
+        <!-- Info -->
+        <div class="flex-1 min-w-0">
+          <p class="text-white text-xs font-semibold leading-tight truncate" title="${sanitize(tierEntry.name)}">${sanitize(tierEntry.name)}</p>
+          <p class="text-[#929bc9] text-[10px] mt-0.5">Score: <span class="text-white font-bold">${tierEntry.score}</span></p>
+          ${slotsHtml}
+        </div>
+      `;
+
+            if (url) {
+                return `<a href="${sanitize(url)}" target="_blank" rel="noopener"
+          class="equip-card flex items-start gap-3 bg-panel-dark border border-border-dark rounded-xl p-3 hover:border-[#3e477a] cursor-pointer">
+          ${cardInner}
+        </a>`;
+            } else {
+                return `<div class="equip-card flex items-start gap-3 bg-panel-dark border border-border-dark rounded-xl p-3">
+          ${cardInner}
+        </div>`;
+            }
+        }
+
+        function renderTierSection(tier, entries, equipMap) {
+            const meta = TIER_META[tier];
+            const cards = entries.map(e => {
+                const key = e.name.trim().toLowerCase();
+                const equipData = equipMap.get(key) || null;
+                return renderEquipCard(e, equipData);
+            }).join('');
+
+            return `
+        <section>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-3 py-1 rounded-lg text-sm font-black ${meta.badgeClass}">${sanitize(tier)}</span>
+            <h2 class="text-lg font-bold border-l-4 pl-3 section-header-${meta.cssClass}">${sanitize(meta.label)}</h2>
+            <span class="text-xs text-[#929bc9] ml-auto">${entries.length} equipamentos</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+            ${cards}
+          </div>
+        </section>
+      `;
+        }
+
+        function filterAndRender(tierList, equipMap, query) {
+            const q = query.trim().toLowerCase();
+            const container = document.getElementById('tierContent');
+
+            // Group by tier
+            const groups = {};
+            for (const tier of TIERS) groups[tier] = [];
+            for (const entry of tierList) {
+                if (!groups[entry.tier]) groups[entry.tier] = [];
+                if (!q || entry.name.toLowerCase().includes(q)) {
+                    groups[entry.tier].push(entry);
+                }
+            }
+
+            const html = TIERS
+                .filter(t => groups[t].length > 0)
+                .map(t => renderTierSection(t, groups[t], equipMap))
+                .join('');
+
+            container.innerHTML = html || `<p class="text-[#929bc9] text-center py-20">Nenhum resultado encontrado.</p>`;
+        }
+
+        (async () => {
+            try {
+                const { equipList, tierList } = await loadData();
+                const equipMap = buildEquipMap(equipList);
+
+                document.getElementById('loadingState').classList.add('hidden');
+                document.getElementById('tierNote').classList.remove('hidden');
+                const content = document.getElementById('tierContent');
+                content.classList.remove('hidden');
+
+                filterAndRender(tierList, equipMap, '');
+
+                // Search
+                document.getElementById('searchInput').addEventListener('input', function () {
+                    filterAndRender(tierList, equipMap, this.value);
+                });
+            } catch (err) {
+                document.getElementById('loadingState').innerHTML = `
+          <span class="material-symbols-outlined text-[48px] text-red-400">error</span>
+          <p class="text-red-400 text-sm">Erro ao carregar dados: ${err.message}</p>
+          <p class="text-[#929bc9] text-xs">Certifica-te de que estás a servir via HTTP (ex: Live Server).</p>
+        `;
+            }
+        })();
+    </script>
+</body>
+
+</html>

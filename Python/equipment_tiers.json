@@ -1,0 +1,7095 @@
+[
+  {
+    "name": "ULTRA!! - Omega Shenron",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "ULTRA!! - Super Saiyan God SS Kaioken Goku",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "ULTRA!! - Legendary Super Saiyan Broly",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "ULTRA!! - Super Gogeta",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "ULTRA!! - Super Saiyan Rosé Goku Black",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "ULTRA!! - Hit",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "SPARKING!! - Shallot",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "ULTRA!! - Super Vegito",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "ULTRA!! - Super Saiyan Goku",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "ULTRA!! - Ultra Instinct -Sign- Goku",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "ULTRA!! - Buu: Kid",
+    "type": "platinum",
+    "tier": "神",
+    "score": 9999.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "SPARKING!! - Super Gogeta",
+    "type": "unique_specific",
+    "tier": "神",
+    "score": 1259.7,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "That little extra went a long way.",
+    "type": "unique_specific",
+    "tier": "神",
+    "score": 1252.05,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Android #21: Good",
+    "type": "unique_specific",
+    "tier": "神",
+    "score": 1098.2,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I'd venture to say you could easily be the strongest warrior in the universe...",
+    "type": "unique_specific",
+    "tier": "神",
+    "score": 920.55,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Earth-Shaking Ferocity",
+    "type": "unique_specific",
+    "tier": "神",
+    "score": 903.55,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Turles",
+    "type": "unique_specific",
+    "tier": "神",
+    "score": 872.1,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Final Form Cooler",
+    "type": "unique_specific",
+    "tier": "神",
+    "score": 855.95,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Super Saiyan 2 Gohan (Youth)",
+    "type": "unique_specific",
+    "tier": "神",
+    "score": 850.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "All-or-Nothing Blow",
+    "type": "unique_specific",
+    "tier": "Z+",
+    "score": 813.88,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I say it's time we had some fun...",
+    "type": "unique_specific",
+    "tier": "Z+",
+    "score": 799.85,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Advance Toward Victory",
+    "type": "unique_specific",
+    "tier": "Z+",
+    "score": 773.5,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Piccolo Jr.",
+    "type": "unique_specific",
+    "tier": "Z+",
+    "score": 772.65,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Super Vegeta",
+    "type": "unique_specific",
+    "tier": "Z+",
+    "score": 758.2,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Super Namekian Lord Slug",
+    "type": "unique_specific",
+    "tier": "Z+",
+    "score": 749.7,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "The Final Battle",
+    "type": "unique_specific",
+    "tier": "Z+",
+    "score": 744.6,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Super Saiyan Goku",
+    "type": "unique_specific",
+    "tier": "Z+",
+    "score": 734.4,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Legendary Super Saiyan Broly",
+    "type": "unique_specific",
+    "tier": "Z+",
+    "score": 729.3,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Your arrogance has spelled the end!",
+    "type": "unique_specific",
+    "tier": "Z+",
+    "score": 729.3,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "You're going to have to contend with me, invader!",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 677.45,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Thanks again, Dragon Balls!",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 663.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Super Saiyan 4 Vegeta",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 652.8,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Final Form Frieza",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 637.5,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Goku (Youth)",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 637.07,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Goku Black",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 624.75,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Super Saiyan 4 Goku",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 576.3,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Goku",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 558.45,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I thought you said this was going to be fast!",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 538.9,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Don't give me orders!",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 515.95,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Concentrating Ki into a Single Point",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 511.7,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Super Saiyan God SS Goku",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 505.75,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I've been going at about 80% myself.",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 486.62,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Future He Would Never Live to See",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 476.0,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "We won't let you win!",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 467.5,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Two glorious and unparalleled powers",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 467.07,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Here I come!!",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 459.43,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "A Rivalry Leading To Evolution",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 457.3,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Super Saiyan 3 Goku",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 452.2,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Android #16",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 450.5,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Victorious Fist",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 431.8,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Vegito blue!",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 427.12,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I'm putting all of our hope into this one blast!",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 420.75,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Majin Buu: Good",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 416.5,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Do-or-Die Counter",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 416.07,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Super Saiyan God Vegeta",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 388.88,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I have the power to destroy you now!",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 371.88,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I'll end this now.",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 359.12,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Ultimate Gohan",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 346.8,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "It doesn't matter how high you climb; I will not lose.",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 342.12,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Last-Ditch Assault",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 340.43,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Glorio",
+    "type": "unique_specific",
+    "tier": "S",
+    "score": 325.12,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "It's done.",
+    "type": "unique_specific",
+    "tier": "A",
+    "score": 320.88,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I've heard about enough of your stupid crap!",
+    "type": "unique_specific",
+    "tier": "A",
+    "score": 308.12,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Truth of the Survival Game",
+    "type": "awakenedunique_specific",
+    "tier": "神",
+    "score": 286.88,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute (group too small: 4)"
+  },
+  {
+    "name": "Fighting Against Despair!!",
+    "type": "unique_specific",
+    "tier": "A",
+    "score": 280.5,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I'll give you a handicap",
+    "type": "gold_team",
+    "tier": "Z+",
+    "score": 271.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Piccolo's Awakening",
+    "type": "unique_specific",
+    "tier": "A",
+    "score": 265.2,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I'll give you a handicap",
+    "type": "awakenedgold_team",
+    "tier": "Z+",
+    "score": 261.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A Battle to Shatter Dimensions",
+    "type": "unique_specific",
+    "tier": "A",
+    "score": 256.7,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Truth of the Survival Game",
+    "type": "unique_specific",
+    "tier": "A",
+    "score": 253.72,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "See ya!",
+    "type": "unique_specific",
+    "tier": "A",
+    "score": 247.35,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "I'm gonna finish this right now.",
+    "type": "unique_specific",
+    "tier": "A",
+    "score": 240.12,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "RRRAAAAAAGH!",
+    "type": "unique_specific",
+    "tier": "A",
+    "score": 217.17,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Power Unleashed",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 196.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Come on and give me your best shot",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 193.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Defiant Gohan",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 192.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Monster Descends",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 192.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Dragon Fist!",
+    "type": "unique_specific",
+    "tier": "A",
+    "score": 183.34,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Haaaaa...!!",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 183.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ultimate Gohan Awakens",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 174.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Worship me! Give praise unto me!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 174.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're finished!",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 174.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "HAAAAA...!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 172.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hi-Yaaaah!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 164.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll Be the One Who Kills You!",
+    "type": "unique_specific",
+    "tier": "B",
+    "score": 164.05,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "What do you mean, \"done\"?",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 161.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I left Chiaotzu at Roshi's",
+    "type": "awakenedgold_specific",
+    "tier": "Z",
+    "score": 160.48,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute (group too small: 2)"
+  },
+  {
+    "name": "He's mumbling to himself in fear.",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 159.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm Gettin' Excited!",
+    "type": "awakenedsilver_team",
+    "tier": "Z",
+    "score": 159.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Dr. Gero's Computer",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 157.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You call that a punch?",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 156.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Legendary Super Saiyan",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 155.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Just you wait, Androids!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 154.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You can't even keep up with me, can you?!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 154.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hmph, dirty fireworks.",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 153.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Bestowed Hope",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 148.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Thought That Would Scare Me?!",
+    "type": "gold_team",
+    "tier": "Z",
+    "score": 147.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Vegeta Takes Nappa's Hand",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 147.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Unleash your true power!",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 147.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Not bad yourself...",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 147.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Of Course!",
+    "type": "gold_team",
+    "tier": "Z",
+    "score": 146.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hraaaaaa!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 145.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "W-Wait!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 144.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Chyaaaaa!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 142.9,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll show you.",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 142.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You've got a big mouth and it's time I shut it for you!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 141.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "First you'll have to deal with me!",
+    "type": "unique_team",
+    "tier": "Z",
+    "score": 140.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Humph!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 140.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Making Fun of Me?!",
+    "type": "awakenedgold_team",
+    "tier": "Z",
+    "score": 140.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll Turn You Both into Scrap!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 139.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Explosive Clash",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 139.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Righteous Saiyans",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 139.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I only need a minute! One minute, that's all!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 138.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This proves our transformative power!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 138.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "W-Wait a sec!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 138.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's go, Vegeta!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 137.9,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Well, I'll be!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 136.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "DAAAD!!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 136.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's bring him down, Kale!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 136.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You've Overstepped the Line!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 135.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Here I come!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 135.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Well done, Goku...!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 135.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This is the Kaioken",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 135.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You don't even like all that fighting, huh?",
+    "type": "awakenedunique_team",
+    "tier": "S",
+    "score": 135.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's go!!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 135.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Not if I stop you!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 135.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Raining Onslaught",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 135.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hahahahaha!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 135.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A New Instinct",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 134.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Silent Provocation",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 134.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Wooaaaagh!!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 134.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What the heck happened?!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 133.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Put this on your right ear before it's too late! Please!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 133.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This Will Be A MASSACRE!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 133.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Quit playing around!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 133.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll Destroy All of You!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 133.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You fool!",
+    "type": "awakenedunique_specific",
+    "tier": "S",
+    "score": 131.75,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute (group too small: 4)"
+  },
+  {
+    "name": "This is fusion!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 130.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Goku Gets It Done!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 130.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're free to try and stop me.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 130.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Confident Goku",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 130.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Times ten!!!!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 129.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I am they; we are one! Unfortunately for you, Omega...",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 129.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Leave my dad...ALONE!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 128.9,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Biggest Crisis",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 128.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You two outcasts are nothing but a joke",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 128.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Earth's Energy",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 128.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Raaaaah!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 128.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Then die here, fool!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 128.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ready for Battle",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 128.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Rescued Saiyans",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 128.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Consider This an Honor!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 127.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You won't even be able to lay a finger on me.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 127.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll transform into a Great Ape and grind him to a pulp!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 127.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I told you not to underestimate us Saiyans!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 127.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hello? Are you napping?",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 126.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm not used to making this transformation yet.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 126.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I want to fight!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 126.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Frenzied Power",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 126.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're the idiot.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 126.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Merciless Pursuit",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 126.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "For your sake, I hope that wasn't the cavalry!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 126.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll hit you with an attack you won't be able to destroy.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 126.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Beat it!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 126.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You must be Frieza...",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 126.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll Help Too",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 126.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I thank you.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 125.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Lightning-Fast Preemptive Strike",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 125.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Don't screw with me!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 125.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Now, Kakarot...",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 125.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Androids Appear",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 125.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Concentrated Fury",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 125.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The answer to that is not something you need to know.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 125.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Show us what you can do.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm Young Again!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "To the Tournament of Power",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fwahahaha...",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Just as I thought! It's me they're after!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Who do you take me for?",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's...you!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Unstoppable Charge!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Do you want to see everyone you care about die?!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You look tired.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I WILL kick your ass!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Charging at a Provocation",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The first time I took him out lacked a certain artistic touch!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Piccolo Protects Gohan",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Repaired Giru",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll utterly obliterate it!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 124.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Give up, Buu.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 124.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Yaaaah!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 124.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "No way! You've lived long enough!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 124.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A New Form",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 124.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're not getting away from me that easily.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 124.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Dad...?",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 124.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I call it Super Saiyan 3.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 123.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm nowhere close to done!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 123.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Okay, that was a neat trick...",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 123.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Prepared to Withstand a Tremendous Attack",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 123.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm not gonna let you terrorize them!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 123.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "No, Pan, don't worry.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 123.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This is goodbye...",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 123.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Useless against my Super Saiyan Blue form!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 123.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Trunks, stay back!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 122.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hahahaha...!!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 122.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A God Facing a God",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 122.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Unfazed Smile",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 122.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Aaaahahaha!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 122.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're not getting away from me that easily.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 122.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ka... me... ha... me...",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 121.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You've got a big mouth and it's time I shut it for you!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 121.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm Surprised at My Strength",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 121.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Because I'm not done improving yet.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 121.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Yes, let's go.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 121.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I only need a minute! One minute, that's all!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 121.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Yes, and you're like a completely different person.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 120.9,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Super Saiyan Goten",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 120.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Perk up those ears and listen. Carefully.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 120.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Once again, you have returned.",
+    "type": "awakenedunique_team",
+    "tier": "S",
+    "score": 120.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "10x Kamehameha!",
+    "type": "awakenedunique_team",
+    "tier": "S",
+    "score": 120.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Absolute Defense in a Single Finger",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 120.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Don't worry about me...",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 120.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll give it my best!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 120.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hahahahaha!!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 120.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "HRAAAAAGH!!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 119.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Nnggh...",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 119.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Well... You made quite a mess!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 119.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Kakarot...",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 119.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Try not to do anything too crazy.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 119.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Now's my chance!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 119.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You've Gone Too Far",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 119.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A Battle of the Gods",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 119.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Unexpected Assault",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 118.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're Facing Me Now",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 118.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fusion!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 118.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Behold my perfect divinity!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 118.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Uncontrollable Anger",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 117.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Goodbye Dad",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 117.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Undetectable Monsters",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 117.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Huh? Who's that weirdo?",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 117.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Okay, the Warmup Is Over!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 117.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Mysterious Youth",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 116.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I do this for you...",
+    "type": "unique_specific",
+    "tier": "B",
+    "score": 116.45,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "The Time Machine Takes Off",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 116.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's charge together at full power!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 116.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Obtain your Perfect Form.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 116.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ha!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 116.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Say your prayers!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 116.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Your divine power's not looking so \"wondrous\" now!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 115.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The True Manifestation of Golden Frieza",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 115.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "If that's your special move, then I want it done right.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 115.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ha ha ha!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 114.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's go!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 114.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's Over!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 114.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What?!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 114.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Nngrhhh!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 114.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're pissing me off!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 114.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Was that too much? I'm still getting used to this...",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 114.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ka...me...ha...me...",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 114.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Is this what you want? Well, is it?",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 114.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm an Elite",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 114.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm nowhere close to done!!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 114.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "There are those actually capable of producing a satellite!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 114.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Mighty Turles, leave him to us.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 114.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's almost unbelievable that you would choose to face me.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 114.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "He's a Saiyan!",
+    "type": "awakenedsilver_team",
+    "tier": "S",
+    "score": 114.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "At long last, I've ascended, Kakarot.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 113.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Confident Smile",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 113.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Dr. Gero's Computer",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 113.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You wanted me at my strongest...so here I am...",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 112.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Do It, Gohan!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 112.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Gohaaaaaan!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 112.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hraaaah...! Haaah!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 112.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I Think We've Got This!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 112.45,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Darn Androids...",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 112.45,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "See you!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 112.45,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Show yourself, monster!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 112.45,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Now it's your turn.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 112.45,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Quite the color, huh?",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 112.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You've earned yourself a little reward!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 112.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "But anyone who tries to hurt my friends...is gonna pay!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 112.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "And don't dream of resurrecting again.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 112.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "HAAAAA...!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 112.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Now I'll send you back to your ghost land!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 112.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What a bland attack.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 111.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Saiyan in Red",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 111.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll take Vegeta myself...",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 111.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Overwhelming Difference in Power",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 111.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Miniaturized Goku",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 111.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Eh?",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 110.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "All you are is a bunch of talk.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 110.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fruit of the Tree of Might",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 110.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Aaaaaaaaah!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 110.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "3x Kaioken Kamehameha!!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 110.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Incarnation of Evil",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 110.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let me show you!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 110.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Get turned into space dust!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 110.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This Is the Ultimate Android",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 110.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This is Super Saiyan Blue!",
+    "type": "unique_specific",
+    "tier": "B",
+    "score": 109.82,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "This Ki. It's gotta be...",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 109.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hah! Take that!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 109.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This is the kind of power I'd be running away from",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 109.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm Counting on You...",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 109.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Heehahahahaha!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 109.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "If you haven't figured it out yet, you can't win.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 108.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Vegeta's Anger",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 108.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Super! Regeneration",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 108.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Haahahaha!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 108.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Duel on a Vanishing Planet!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 108.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Glorio, Locked and Loaded",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 108.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's impossible, I tell you. Impossible.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 108.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm everlasting!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 108.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Energy Absorb!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 108.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fused with Kami",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 108.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hmph, dirty fireworks.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 108.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Universe 7",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 108.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "There's no need for that.",
+    "type": "awakenedsilver_team",
+    "tier": "S",
+    "score": 108.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're going down!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 107.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Raging Hope for the Future",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 107.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Groooah!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 107.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I can tell.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 107.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Yearning for Strength",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 107.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hmph. Did It!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 106.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "See you in hell!!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 106.75,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What are you? Immortal?",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 106.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I understand, yet it's so tragic.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 106.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This scythe will carve a reminder into your mortal flesh!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 106.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Just you wait, Androids!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 105.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let me go, little brother!!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 105.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hraaaaaa!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 105.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "HRAAAAAGH!!!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 105.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Don't you agree?",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 105.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Frenzied Power",
+    "type": "awakenedunique_team",
+    "tier": "S",
+    "score": 105.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Me, the invincible, the almighty and divine",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 105.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Irrepressible Power",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 105.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Cheeky Brat...",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 105.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Eyes Set on a Fearsome Foe",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 104.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Cell in his Perfect Form.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 104.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I can beat you with just my legs!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 104.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ahaheheheheh!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 104.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll Turn You Both into Scrap!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 104.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Wrooooahhh!!!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 104.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Vegeta on the Attack",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 104.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ready to do this for real?",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 104.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Time to Send You to Hell!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 104.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Thought I'd Let You Get Away?",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 103.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It hurts my pride...!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 103.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Angry Super Saiyan!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 103.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "So...the Super Saiyan has finally decided to show himself.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 103.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Enough! I've had all I can take of you!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 103.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Come on! Let's keep this fight going!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 102.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Biggest Crisis",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 102.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Can't help yourself, can ya?",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 102.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Why don't you pipe down and get busy!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 102.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Try all you want, you cannot defeat me.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 102.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "King Kai's Power",
+    "type": "awakenedunique_team",
+    "tier": "S",
+    "score": 102.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Finally Time to Go Wild",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 102.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's Scare Them!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 102.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "MEET THE LIGHT OF DEATH!!!!!",
+    "type": "unique_specific",
+    "tier": "B",
+    "score": 101.58,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Hmph!!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 101.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll slow 'em down so you can count them this time!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 101.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's a level of strength I can't reach on my own.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 101.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Too Bad! You Were Close",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 101.4,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Will Die Along With The Earth!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 101.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Cell, huh?",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 101.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Standoff Against Cell",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 101.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Yes, that's a very good question.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 101.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I Think We Can Do It!",
+    "type": "awakenedsilver_team",
+    "tier": "S",
+    "score": 100.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What's wrong with Dad?!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 100.7,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Failure!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 100.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Gohan's Dilemma",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 100.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What's Going On?",
+    "type": "awakenedsilver_team",
+    "tier": "S",
+    "score": 100.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Revived Hero",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 100.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "These times were dark enough without you",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 100.35,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This is the Kaioken",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 100.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Goodbye, Everyone",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 100.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You'll have to be stronger than that, Junior!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 100.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're Up Against Me!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 100.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Blast It!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 99.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's okay now!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 99.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Can't Win!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 98.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Do it!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 98.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll destroy Cell.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 98.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Broly!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 98.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I've Eliminated Those Cursed Saiyans!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 98.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm Counting on You...",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 97.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Your essence is mine!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 97.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Yes, let's go.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 97.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Pahahaha!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 97.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "How disappointing... I didn't want to kill him.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 97.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll do my best!",
+    "type": "awakenedsilver_team",
+    "tier": "S",
+    "score": 96.85,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Beyond the Horrors of Hell",
+    "type": "awakenedsilver_team",
+    "tier": "S",
+    "score": 96.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You fool!",
+    "type": "unique_specific",
+    "tier": "B",
+    "score": 96.73,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Cell Games Announcement",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 96.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I have the power of nature inside!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 96.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A gift from the Earth!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 96.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Well that's not fair!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 96.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Phwee---!!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 96.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Phwee---!!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 96.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Medical Machine",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 96.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Whew, You Startled Me!",
+    "type": "awakenedsilver_team",
+    "tier": "S",
+    "score": 96.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Confident Smile",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 95.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Leave the rest to me!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 95.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Heheh!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 95.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's Over For All of You!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 95.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Heh-heh! You're not so tough, Majin Buu!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 95.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Instant Transmission",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 95.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Well done, Goku...!!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 95.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Confident Goku",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 95.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A most brilliant display!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 95.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Now you're through!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 95.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Romantic Drive",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 94.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hiya!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 94.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ahaheheheheh!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 94.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This guy is awesome!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 94.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Supreme Kai",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 94.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What an amazing power level.",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 93.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Preemptive Opening Strike",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 93.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Historic Showdown",
+    "type": "awakenedunique_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "He's laughing...?",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Humph!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fusion!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Super Kaioken!!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's okay, guys... I'll be right there.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The only monster here is you!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Technique Too Fast for the Eye",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Haven't you learned? Your puny blasts will do nothing!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A Nostalgic Weapon",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Legion of Despair",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 93.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The fun starts now!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 92.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fusion Reborn!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 92.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Unmoved, Unflinching",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 92.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Bwaaaaa!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 91.9,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Piccolo!!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 91.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You four keep hitting him hard.",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 91.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "HAAAAaaaa!",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 91.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Just hang in a little longer Piccolo!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 91.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "No, You're Gonna Die!",
+    "type": "awakenedsilver_team",
+    "tier": "S",
+    "score": 91.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I won't die!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 91.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Monster Approaches",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 91.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "They disgust me.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 91.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Day of Reckoning",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 90.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Oh, I'm terrified... Aren't you?",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 90.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ahahaha...huhahaha!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 90.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Keep cool, I didn't come here to help you.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 90.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Look, don't get so depressed.",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 90.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "These fools are becoming too confident",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 90.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Romantic Drive",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 89.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Boundary Breaking Vegeta",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 89.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Quit playing around!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 89.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You two outcasts are nothing but a joke",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 89.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're our last hope...",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 89.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Going Full Out",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 89.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Heh-heh-heh...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 89.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This is the kind of power I'd be running away from",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 88.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm glad I wasn't too late...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 88.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Aaaaaaaagh!!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 88.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's over now. And I've won.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 88.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's over.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 88.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll stop Junior. I promise.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 88.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hee-hee-hee-hee!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 87.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Pan!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 87.7,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Take this!",
+    "type": "awakenedsilver_team",
+    "tier": "A",
+    "score": 87.7,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Useless against my Super Saiyan Blue form!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 87.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Too Bad, #16",
+    "type": "unique_team",
+    "tier": "A",
+    "score": 87.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Small, but can still fight!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 87.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Might I take a closer look?",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 87.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You dare get in my way?",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 86.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Aaaaaaaaah!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 86.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's charge together at full power!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 86.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What happened to all that machismo, boy?",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 86.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Red Magma!",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 86.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I call it Super Saiyan 3.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 86.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I refuse to take the death of my best friend sitting down!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 86.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Perfect Cell",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 86.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "HAAAAA!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 86.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Haah!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 86.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Explosive Clash",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 85.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Start of the Battle",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 85.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fine, whatever. Though it would've looked really cool...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 85.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Eh?",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 85.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This should be fun...",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 85.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm Not Gonna Do Something Like That!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 85.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This way, buddy",
+    "type": "unique_team",
+    "tier": "A",
+    "score": 85.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Wow, what a great show!",
+    "type": "unique_specific",
+    "tier": "B",
+    "score": 84.83,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Unexpected Assault",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 84.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Stay Alive, Gohan",
+    "type": "awakenedsilver_team",
+    "tier": "A",
+    "score": 84.65,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hold on to My Shoulder!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 84.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Believe in yourself, Gohan!",
+    "type": "awakenedunique_specific",
+    "tier": "A",
+    "score": 84.58,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute (group too small: 4)"
+  },
+  {
+    "name": "I see you decided to show yourself, monster.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 84.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll take your life now!",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 84.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You'll Pay!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 84.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "No way...",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 84.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It doesn't matter.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 84.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The outcome will be different this time, Goku!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 84.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Watch this!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 84.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Rage with the heat of a mighty inferno",
+    "type": "unique_specific",
+    "tier": "B",
+    "score": 83.3,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Hryaaah!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 83.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Family Kamehameha",
+    "type": "awakenedunique_specific",
+    "tier": "A",
+    "score": 83.13,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute (group too small: 4)"
+  },
+  {
+    "name": "Huh?",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 83.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Yaaaah!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 82.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Goku Enraged",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 82.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll Destroy All of You!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 82.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Your essence is mine!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 82.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Lame... I get the scraps.",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 82.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ugh!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 82.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Goodbye Dad",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 82.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're still not a god!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 82.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Replicating Goku Black",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 82.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "And what was that supposed to be, Goku?",
+    "type": "unique_team",
+    "tier": "A",
+    "score": 81.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Don't Interfere!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 81.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Say Hi...to Everyone...",
+    "type": "unique_team",
+    "tier": "A",
+    "score": 80.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This Should Be Fun!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 80.55,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Decisive Moment",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 80.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Assailant Over the Waters",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 80.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Dimension Guard",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 80.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I can feel it. Share your power with me!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 80.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "And don't dream of resurrecting again.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 80.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "He had his chance...now try this!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 80.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Terrifying Transformation",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 80.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Here I come!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 79.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's All up to My Fists!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 79.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What Futile Efforts",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 79.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm an Elite",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 79.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You look surprised...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 79.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Super Gohan",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 78.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ha ha ha!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 78.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This should be good",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 78.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's amp this up!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 78.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What does it matter?!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 78.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Kghaah!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 78.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Soul Dedicated to the Fight",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Daaad!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 77.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll transform into a Great Ape and grind him to a pulp!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This Will Be A MASSACRE!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Failure!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You stay here!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're Facing Me Now",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "At long last, I've ascended, Kakarot.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Worship me! Give praise unto me!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You can't even keep up with me, can you?!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Awakened Android",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A Menacing Transformation",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hmph. Did It!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 76.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Incarnation of Evil",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 76.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Preemptive Opening Strike",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 76.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's All You, Gohan!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 76.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Elites Can Be Beaten",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 76.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Androids",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 75.75,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "!!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 75.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "?!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 75.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Your little treatment took care of a crick in my neck!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 75.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Behold my perfect divinity!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 75.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Grrrrrrrahhh!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 75.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You've Gone Too Far",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 75.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm talkin' about yours truly—Big Thirteen.",
+    "type": "unique_team",
+    "tier": "A",
+    "score": 75.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "My might will be unrivaled...",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 75.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Later.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 75.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Cheeky Brat...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 75.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Well this is a pleasant surprise.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 75.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This should be an exciting fight.",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 75.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Vegeta's Anger",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Haah!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.55,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hold on to My Shoulder!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Try all you want, you cannot defeat me.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Get turned into space dust!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "3x Kaioken Kamehameha!!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Nnggh...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "He's mumbling to himself in fear.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll just smash it to pieces!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What is that?!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's go, Vegeta!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Wooaaaagh!!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Don't bring Kakarot into this!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 74.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Serves him right, pathetic.",
+    "type": "gold_specific",
+    "tier": "A",
+    "score": 73.95,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute (group too small: 1)"
+  },
+  {
+    "name": "Trunks, stay back!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 73.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hoh",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 73.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Master Korin",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 73.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Family Kamehameha",
+    "type": "unique_specific",
+    "tier": "C",
+    "score": 73.44,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Grit of Conviction",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 73.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let me show you!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 73.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Holy magistrate of justice eternal!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 73.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Finally Time to Go Wild",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 73.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A Battle of the Gods",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 72.9,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You've earned yourself a little reward!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 72.75,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll do it.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 72.67,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Oh, relax, will you?",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 72.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Why don't you try me on for size?",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 72.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Will Die Along With The Earth!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 72.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Battle of Saiyans",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 72.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's go!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 72.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Actually, there is one word that comes to mind!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 72.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hidden Power",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 71.9,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Come on! Let's keep this fight going!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 71.75,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hi-Yaaaah!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 71.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Your power is commendable.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 71.5,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Infiltration Success!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 71.5,
+    "penalties": [
+      "Raridade HERO — muito antiga, sem suporte"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This scythe will carve a reminder into your mortal flesh!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 71.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Beat it!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 71.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You must be Frieza...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 71.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Power Gap",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 71.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Come Out, Cowards!",
+    "type": "awakenedsilver_team",
+    "tier": "A",
+    "score": 71.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Uwroooooh!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 70.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Aaaahahaha!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 70.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll Send It Back!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 70.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Making Fun of Me?!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 70.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fused with Kami",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 70.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Can Do It, Right, Gohan?",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 70.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let me go, little brother!!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 70.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's bring him down, Kale!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 70.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "*pant* *pant*",
+    "type": "bronze",
+    "tier": "A",
+    "score": 70.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Oh, relax, will you?",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 70.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "An old-fashioned superhero!",
+    "type": "unique_team",
+    "tier": "A",
+    "score": 70.1,
+    "penalties": [
+      "Raridade HERO — muito antiga, sem suporte"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hnraaaagh!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 70.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're pissing me off!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 70.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Show us what you can do.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 70.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Don't you agree?",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 69.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Release your Ki!",
+    "type": "awakenedsilver_team",
+    "tier": "A",
+    "score": 69.71,
+    "penalties": [
+      "Raridade HERO — muito antiga, sem suporte",
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Come on and give me your best shot",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 69.7,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Historic Showdown",
+    "type": "unique_team",
+    "tier": "A",
+    "score": 69.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Android #18",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 69.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're sure to win!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 69.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm getting sick and tired of all your senseless bickering!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 69.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Release your Ki!",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 68.85,
+    "penalties": [
+      "Raridade HERO — muito antiga, sem suporte"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Aha ha ha ha...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 68.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Chyaaaaa!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 68.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The tide of this battle is turning yet again.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 68.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This is goodbye...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 68.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "W-Wait!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 68.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "A proud warrior!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 67.85,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll destroy Cell.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 67.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Power Unleashed",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 67.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "But you forgot one thing: I'm my father's son!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 67.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ginyu Force!",
+    "type": "awakenedsilver_team",
+    "tier": "A",
+    "score": 67.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hraaaah...! Haaah!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 67.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Mysterious Youth",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 67.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fruit of the Tree of Might",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 67.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Don't worry about me...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 67.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Just my way to build team solidarity.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 67.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What a surprise.",
+    "type": "awakenedsilver_team",
+    "tier": "A",
+    "score": 66.95,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Master Korin",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 66.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Munch! Munch! Hell",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 66.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Becoming Super Saiyan",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 66.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Time to Send You to Hell!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 66.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're Up Against Me!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 66.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ha!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 65.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hurry up and die!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 65.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Well that's not fair!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 65.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Don't you dare interfere!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 65.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Groooah!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 65.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Can Do It, Right, Gohan?",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 65.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Gohan protected me...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 64.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll utterly obliterate it!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 64.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Blue Hurricane!",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 64.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I even sense Goku's Ki?!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 64.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What a laugh!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 64.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Farewell Tien",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 64.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll do my best!",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 64.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You talk big, let's see if you can back it up!",
+    "type": "unique_team",
+    "tier": "A",
+    "score": 63.9,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Mind Your Own Business, Tin Men!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 63.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hryaaah!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 63.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You stay here!",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 63.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Saike Demon",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 63.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Foolish mortals",
+    "type": "awakenedgold_team",
+    "tier": "A",
+    "score": 63.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Today's the day you pay!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 63.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Universe 6 & Universe 7",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 63.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You can run away if you want.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 63.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Daaad!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 63.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Your Ki Went Up...Just a Little Bit!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 63.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hah! Take that!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 63.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "He's a Saiyan!",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 62.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll be uncontested!!",
+    "type": "unique_specific",
+    "tier": "C",
+    "score": 62.22,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Sacred Water",
+    "type": "gold_independent",
+    "tier": "A",
+    "score": 62.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You'll Pay!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Consider This an Honor!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Wait, Gohan!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ahhhhahahahaha!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.49,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm not done yet!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Rraaaaaagh!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hroooagh!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Gehehehe!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll show you.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Bardock... That's my name.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "So...the Super Saiyan has finally decided to show himself.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Well... You made quite a mess!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 61.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Feast Your Eyes on This",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 61.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Responsive Power",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ahahahahahaha!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "20... Please, Allow Me",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Okay, the Warmup Is Over!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll Send It Back!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Broly!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll give it my best!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It is the worst kind of sin",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "There is a part of me that you will never control!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This Is the Ultimate Android",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Showdown on a Universal Stage",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Bestowed Hope",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 60.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "King Cold",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 59.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Paragus",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 59.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Has My Wish...Come True?",
+    "type": "gold_independent",
+    "tier": "A",
+    "score": 59.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Cool. Thanks.",
+    "type": "gold_independent",
+    "tier": "A",
+    "score": 59.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm Gettin' Excited!",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 59.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Z Warriors Assembled",
+    "type": "unique_team",
+    "tier": "A",
+    "score": 59.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Please, Lend Me Your Energy!",
+    "type": "awakenedgold_specific",
+    "tier": "A",
+    "score": 59.33,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "absolute (group too small: 2)"
+  },
+  {
+    "name": "Crush Them!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 59.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Blast Through!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 59.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Dimension Sword",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 59.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "There's no need for that.",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 59.05,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Enough! I've had all I can take of you!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 59.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Dad...?",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 58.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I've Eliminated Those Cursed Saiyans!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 58.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Gohan Conquers",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 58.75,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Believe in yourself, Gohan!",
+    "type": "unique_specific",
+    "tier": "C",
+    "score": 58.65,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "Urgh!!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 58.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Revived Hero",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 58.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I can tell.",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 58.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You think I'll just knock you down?!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 58.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Saiyans don't do limits!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 58.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ginyu Force!",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 58.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This Should Be Fun!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 57.75,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're our last hope...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 57.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I can't sense Gohan!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 57.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I will crush you!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 56.85,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This Ki. It's gotta be...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 56.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Pathetic!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 56.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Sorry to keep you waiting this long, Caulifla!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 56.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "But anyone who tries to hurt my friends...is gonna pay!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 56.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Leave my dad...ALONE!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 56.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "No way...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 56.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's Scare Them!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 55.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Super! Regeneration",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 55.7,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You've Made a Critical Mistake",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 55.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It seems there's still some rubbish left...",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 55.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Too Bad! You Were Close",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 55.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Wh-Who is this guy?!",
+    "type": "silver_team",
+    "tier": "A",
+    "score": 55.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Planet Sadala...",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 54.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Y-You will pay...",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 54.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Energy Absorb!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 54.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Aaaaaaaagh!!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 54.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "If that's your special move, then I want it done right.",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 54.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "No, You're Gonna Die!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 54.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Die!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 54.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You Can't Win!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 54.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Haaaaaaaa!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 54.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You'll Pay for That",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 53.95,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "End this futility.",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 53.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This is Super Vegito!",
+    "type": "unique_specific",
+    "tier": "C",
+    "score": 53.04,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "NOOOO!",
+    "type": "awakenedgold_team",
+    "tier": "B",
+    "score": 53.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What an amazing power level.",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 53.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This is the last Senzu Bean...",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 53.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "King Vegeta",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 52.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're Not Getting It Your Way!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 52.7,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Okay, here I go!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 52.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Garr!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 52.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Next time, little boy...",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 52.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'll Help Too",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 52.45,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Stay Alive, Gohan",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 52.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Friezaaaaaa!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 52.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What a surprise.",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 52.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Please, Lend Me Your Energy!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 51.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It hurts my pride...!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 51.3,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Thought I'd Let You Get Away?",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 51.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Angry Super Saiyan!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 51.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Just a little bit longer...",
+    "type": "awakenedgold_team",
+    "tier": "B",
+    "score": 51.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hiya!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 51.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What Futile Efforts",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 51.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Know What That Means?",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 51.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I Think We Can Do It!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 51.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "...It seems we miscalculated.",
+    "type": "awakenedsilver_team",
+    "tier": "B",
+    "score": 50.85,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Take this!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 50.65,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Feast Your Eyes on This",
+    "type": "awakenedsilver_team",
+    "tier": "B",
+    "score": 50.6,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "We hate humans!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 50.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What's Going On?",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 50.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hurry, Vegeta!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 50.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's All You, Gohan!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 50.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Going Full Out",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 50.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "...It seems we miscalculated.",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 49.75,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Thanks for 2 years!!",
+    "type": "unique_independent",
+    "tier": "B",
+    "score": 49.7,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What's wrong with Dad?!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 49.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I didn't know it was going to be that kind of fight",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 49.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "HAAAAA!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 49.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Leave the rest to me!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 49.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "What?!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 49.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "!!!",
+    "type": "awakenedgold_team",
+    "tier": "B",
+    "score": 48.1,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm Gonna Take You Down!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 48.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Gyaaaaaaargh!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 48.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "These times were dark enough without you",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 47.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fusion Reborn!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 47.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Alright!!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 47.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "My might will be unrivaled...",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 47.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "In the Otherworld",
+    "type": "gold_independent",
+    "tier": "B",
+    "score": 47.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fighting Alongside Former Foes",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 47.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Face of Fury",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 47.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "My power level now exceeds one million",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 46.86,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Pahahaha!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 46.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Whew, You Startled Me!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 46.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "That's the spirit!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 46.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You're still not a god!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 45.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Start of the Battle",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 45.75,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Beyond the Horrors of Hell",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 45.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Come Out, Cowards!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 45.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "If you were smarter...",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 45.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Foolish mortals",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 45.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The real battle begins now.",
+    "type": "bronze",
+    "tier": "B",
+    "score": 45.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Wait a Minute!",
+    "type": "bronze",
+    "tier": "B",
+    "score": 45.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Bardock... That's my name.",
+    "type": "awakenedgold_team",
+    "tier": "B",
+    "score": 44.98,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You should feel lucky...",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 44.79,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I won't be as gentle as I was before...",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 44.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "You've really outdone yourselves, haven't you?",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 44.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I wanna see teamwork!",
+    "type": "awakenedunique_independent",
+    "tier": "B",
+    "score": 42.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Boundary Breaking Vegeta",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 42.8,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hyaah!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 42.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "There's Nothing to Say.",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 38.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "NOOOO!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 38.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Pay in Full for This, Insects!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 38.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Gokuuu!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 38.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Do it... Defeat...Frieza...",
+    "type": "bronze",
+    "tier": "B",
+    "score": 37.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Fury of the Namekians!",
+    "type": "silver_team",
+    "tier": "B",
+    "score": 36.75,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Gwaaaaagh!",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 35.75,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I left Chiaotzu at Roshi's",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 35.26,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Leave This to Me",
+    "type": "bronze",
+    "tier": "B",
+    "score": 35.25,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Let's Hold 'Em Back!",
+    "type": "bronze",
+    "tier": "B",
+    "score": 33.75,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "This should be fun...",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 33.67,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Power of Universe 7",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 33.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Just a little bit longer...",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 30.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "The Encroaching Frieza Force",
+    "type": "gold_team",
+    "tier": "B",
+    "score": 26.13,
+    "penalties": [
+      "Raridade EXTREME — antiga, uso reduzido"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "There's no way that WE...Could lose to someone like you!",
+    "type": "unique_independent",
+    "tier": "C",
+    "score": 12.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I wanna see teamwork!",
+    "type": "unique_independent",
+    "tier": "C",
+    "score": 7.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Outta the Way!",
+    "type": "awakenedbronze",
+    "tier": "C",
+    "score": 4.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Not bad. I'm almost impressed.",
+    "type": "event",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "So this is fusion!",
+    "type": "event",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Strike Me Down!",
+    "type": "event",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "It's This Kid!",
+    "type": "event",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Hiiii!",
+    "type": "event",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Extra Z Power [Broly: Full Power]",
+    "type": "event",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Extra Z Power [Kefla]",
+    "type": "event",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Extra Z Power [Trunks (Adult)]",
+    "type": "event",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Extra Z Power [Buu: Super]",
+    "type": "event",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] This is the Kaioken",
+    "type": "gold_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] Hurry, Vegeta!",
+    "type": "gold_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] Dimension Guard",
+    "type": "gold_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] I'll Help Too",
+    "type": "gold_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] Explosive Clash",
+    "type": "gold_independent",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] Die!",
+    "type": "silver_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] Know What That Means?",
+    "type": "silver_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] I Think We Can Do It!",
+    "type": "silver_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] No, You're Gonna Die!",
+    "type": "silver_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] Hyaah!",
+    "type": "silver_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] Stay Alive, Gohan",
+    "type": "silver_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] Feast Your Eyes on This",
+    "type": "silver_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] What's Going On?",
+    "type": "silver_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] ...It seems we miscalculated.",
+    "type": "silver_team",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Outta the Way!",
+    "type": "iron",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "[ToP] Outta the Way!",
+    "type": "iron",
+    "tier": "C",
+    "score": 0.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  }
+]
