@@ -6854,6 +6854,63 @@
         "condition_desc": "Must meet all tags in the group"
     },
     {
+        "id": "1689",
+        "url": "https://dblegends.net/equip/1689",
+        "image": "https://dblegends.net/assets/equips/EqIco_1689.webp",
+        "name": "Over here!",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 10.00 ~ 20.00 % Base Strike Defense 40.00 ~ 80.00 % Base Blast Defense 40.00 ~ 80.00 % Damage Guard 60.00 ~ 160.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Inflicted Damage 60.00 ~ 160.00 % Base Strike Attack 25.00 ~ 50.00 % Base Blast Attack 25.00 ~ 50.00 % Special Move damage 20.00 ~ 50.00 % On Strike/Blast Arts use, damage 10.00 ~ 30.00 % (3 counts)"
+            },
+            {
+                "slot_index": 3,
+                "effect": "On battlefield entry, the following effects occur:\r\n・Unique Gauge +30% (1 time)\r\n・Draw 1 card if hand has 3 or fewer\r\n・All enemy sub counts +2\r\n\r\nOn Cover Change, enemy Ki -50 - OR - On cover change, enemy Ki -10"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Vegeta",
+                "DBL65-01S"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "1228",
+        "url": "https://dblegends.net/equip/1228",
+        "image": "https://dblegends.net/assets/equips/EqIco_1228.webp",
+        "name": "Regeneration",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Special Move Damage 5.00 ~ 10.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Blast Attack 12.00 ~ 30.00 % - OR - Base Strike Attack 12.00 ~ 30.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "3.00 ~ 7.00 % to Base Strike & Blast Defense per party member using this same Equipment."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Regeneration"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
         "id": "50001",
         "url": "https://dblegends.net/equip/50001",
         "image": "https://dblegends.net/assets/equips/EqIco_1068.webp",
@@ -11627,6 +11684,35 @@
         "conditions_data": [
             [
                 "God Ki",
+                "Ranged Type"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "50197",
+        "url": "https://dblegends.net/equip/50197",
+        "image": "https://dblegends.net/assets/equips/EqIco_1060.webp",
+        "name": "Don't Interfere!",
+        "rarity": "rarity awakenedgold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Blast Attack 12.00 ~ 30.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Strike Attack 10.00 ~ 20.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "5.00 ~ 12.00 % to own Strike & Blast Attack when 3 battle members are \"Tag: Regeneration\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Regeneration",
                 "Ranged Type"
             ]
         ],
@@ -22485,6 +22571,34 @@
         "conditions_data": [
             [
                 "Fusion Warrior"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "1221",
+        "url": "https://dblegends.net/equip/1221",
+        "image": "https://dblegends.net/assets/equips/EqIco_1221.webp",
+        "name": "You've got the wrong person!",
+        "rarity": "rarity gold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Health Restoration 5.00 ~ 10.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Health 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Ultimate Damage 5.00 ~ 10.00 % 5.00 ~ 12.00 % to Strike & Blast Defense if this character is \"Tag: Namekian\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Regeneration"
             ]
         ],
         "condition_logic": "AND",

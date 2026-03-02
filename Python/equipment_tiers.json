@@ -128,6 +128,16 @@
     "tier_method": "relative"
   },
   {
+    "name": "Over here!",
+    "type": "unique_specific",
+    "tier": "神",
+    "score": 1123.7,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
     "name": "SPARKING!! - Android #21: Good",
     "type": "unique_specific",
     "tier": "神",
@@ -180,7 +190,7 @@
   {
     "name": "SPARKING!! - Super Saiyan 2 Gohan (Youth)",
     "type": "unique_specific",
-    "tier": "神",
+    "tier": "Z+",
     "score": 850.0,
     "penalties": [
       "Tag específica de personagem (DBL)"
@@ -282,6 +292,16 @@
     "type": "unique_specific",
     "tier": "Z+",
     "score": 729.3,
+    "penalties": [
+      "Tag específica de personagem (DBL)"
+    ],
+    "tier_method": "relative"
+  },
+  {
+    "name": "SPARKING!! - Goku",
+    "type": "unique_specific",
+    "tier": "Z",
+    "score": 706.35,
     "penalties": [
       "Tag específica de personagem (DBL)"
     ],
@@ -460,7 +480,7 @@
   {
     "name": "A Rivalry Leading To Evolution",
     "type": "unique_specific",
-    "tier": "Z",
+    "tier": "S",
     "score": 457.3,
     "penalties": [
       "Tag específica de personagem (DBL)"
@@ -600,7 +620,7 @@
   {
     "name": "SPARKING!! - Glorio",
     "type": "unique_specific",
-    "tier": "S",
+    "tier": "A",
     "score": 325.12,
     "penalties": [
       "Tag específica de personagem (DBL)"
@@ -1540,16 +1560,6 @@
     "tier_method": "absolute"
   },
   {
-    "name": "I'm Young Again!",
-    "type": "gold_team",
-    "tier": "S",
-    "score": 124.8,
-    "penalties": [
-      "Personagem de evento exclusivo"
-    ],
-    "tier_method": "absolute"
-  },
-  {
     "name": "To the Tournament of Power",
     "type": "gold_team",
     "tier": "S",
@@ -1601,6 +1611,16 @@
   },
   {
     "name": "Unstoppable Charge!",
+    "type": "gold_team",
+    "tier": "S",
+    "score": 124.8,
+    "penalties": [
+      "Personagem de evento exclusivo"
+    ],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm Young Again!",
     "type": "gold_team",
     "tier": "S",
     "score": 124.8,
@@ -1852,6 +1872,14 @@
     "type": "unique_team",
     "tier": "S",
     "score": 121.5,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Regeneration",
+    "type": "unique_team",
+    "tier": "S",
+    "score": 121.2,
     "penalties": [],
     "tier_method": "absolute"
   },
@@ -3180,6 +3208,14 @@
     "tier_method": "absolute"
   },
   {
+    "name": "Don't Interfere!",
+    "type": "awakenedgold_team",
+    "tier": "S",
+    "score": 100.4,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
     "name": "These times were dark enough without you",
     "type": "awakenedgold_team",
     "tier": "S",
@@ -4248,7 +4284,7 @@
     "tier_method": "absolute"
   },
   {
-    "name": "Ugh!",
+    "name": "Goodbye Dad",
     "type": "gold_team",
     "tier": "A",
     "score": 82.2,
@@ -4256,7 +4292,7 @@
     "tier_method": "absolute"
   },
   {
-    "name": "Goodbye Dad",
+    "name": "Ugh!",
     "type": "gold_team",
     "tier": "A",
     "score": 82.2,
@@ -4452,6 +4488,14 @@
     "type": "gold_team",
     "tier": "A",
     "score": 78.0,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "Ugh!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 77.5,
     "penalties": [],
     "tier_method": "absolute"
   },
@@ -5387,6 +5431,14 @@
     "tier_method": "absolute"
   },
   {
+    "name": "You've got the wrong person!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 66.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
     "name": "Ha!!",
     "type": "gold_team",
     "tier": "A",
@@ -5959,6 +6011,14 @@
     "type": "gold_team",
     "tier": "A",
     "score": 58.2,
+    "penalties": [],
+    "tier_method": "absolute"
+  },
+  {
+    "name": "I'm Young Again!",
+    "type": "gold_team",
+    "tier": "A",
+    "score": 58.0,
     "penalties": [],
     "tier_method": "absolute"
   },
