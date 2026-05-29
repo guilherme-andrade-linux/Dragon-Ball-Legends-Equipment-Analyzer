@@ -172,35 +172,147 @@ _PERCENT_RE = re.compile(
     r"(?:\s*~\s*(\d+(?:\.\d+)?))?",  # opcional: ~ valor_max
 )
 
-def extract_percents_from_text(text: str) -> float:
+def extract_score_from_clause(clause: str) -> float:
     """
-    Extrai todos os valores % de uma string de efeito e retorna a soma.
-    Usa o valor superior do range (ex: '15 ~ 40 %' → 40).
-    Aplica bónus se keywords relevantes aparecem no texto.
+    Analisa uma única cláusula/frase de efeito e calcula o seu score.
+    Combina extração inteligente de percentagens com bónus de utilidade competitiva (flat score).
     """
-    text_lower = text.lower()
-
-    # Detectar keyword multiplier para este bloco de texto
-    multiplier = 1.0
-    for kw, mult in KEYWORD_MULTIPLIERS.items():
-        if kw in text_lower:
-            multiplier = max(multiplier, mult)
-
-    # Encontrar segmentos "NUMBER [~ NUMBER] %"
-    # Dividimos o texto por '%' e processamos cada segmento antes do '%'
+    clause_lower = clause.lower()
     score = 0.0
-    # Encontra todos os "X %" ou "X ~ Y %" no texto
+
+    # 1. Encontrar todas as percentagens na cláusula
+    # Ex: "15.00 ~ 40.00 %" ou "30%" ou "+60%"
     pattern = re.compile(
         r"(\d+(?:\.\d+)?)"
         r"(?:\s*~\s*(\d+(?:\.\d+)?))?"
         r"\s*%"
     )
-    for m in pattern.finditer(text):
-        val_min = float(m.group(1))
-        val_max = float(m.group(2)) if m.group(2) else val_min
-        score += val_max
+    
+    matches = list(pattern.finditer(clause))
+    
+    if matches:
+        for i, m in enumerate(matches):
+            val_min = float(m.group(1))
+            val_max = float(m.group(2)) if m.group(2) else val_min
+            
+            # Determinar contexto local para esta percentagem específica
+            # Evita que uma keyword numa ponta da frase influencie percentagens na outra ponta
+            start_left = matches[i-1].end() if i > 0 else 0
+            left_ctx = clause_lower[start_left:m.start()]
+            
+            end_right = matches[i+1].start() if i < len(matches) - 1 else len(clause_lower)
+            right_ctx = clause_lower[m.end():end_right]
+            
+            ctx = left_ctx + " " + right_ctx
+            
+            # Encontrar o multiplier adequado dentro deste contexto local
+            # Ordenados por tamanho descrescente para casar o termo mais específico primeiro
+            multiplier = 1.0
+            for kw, mult in sorted(KEYWORD_MULTIPLIERS.items(), key=lambda x: len(x[0]), reverse=True):
+                if kw in ctx:
+                    multiplier = mult
+                    break
+            
+            score += val_max * multiplier
+            
+    # 2. Atribuir bónus flat para efeitos utilitários de alta relevância competitiva sem percentagem
+    # Estes efeitos definem o meta de Dragon Ball Legends
+    flat_bonuses = [
+        # Arts Card Draw Speed (crucial para combos)
+        ("arts card draw speed by 2 level", 80.0),
+        ("arts card draw speed by 2 levels", 80.0),
+        ("arts card draw speed level by 2", 80.0),
+        ("arts card draw speed by 1 level", 40.0),
+        ("arts card draw speed by 1 levels", 40.0),
+        ("arts card draw speed level by 1", 40.0),
+        ("increases arts card draw speed", 40.0),
+        ("increases own arts card draw speed", 40.0),
+        
+        # Mecânicas de Sobrevivência Avançada (Endurance/Revive/Indestructible)
+        ("restores health when it reaches 0", 100.0),
+        ("restores own health by 50% only once when it reaches 0", 100.0),
+        ("revive", 100.0),
+        ("indestructible", 100.0),
+        
+        # Nulificações e Vantagens (Element/Cover Null)
+        ("nullifies enemy's special actions that activate when changing cover", 40.0),
+        ("nullify special cover changes", 40.0),
+        ("nullify special cover change", 40.0),
+        ("nullifies unfavorable element factors", 50.0),
+        ("nullify unfavorable element factors", 50.0),
+        
+        # Efeitos de Cover Change e Controlo de Mão (Card Destruction)
+        ("randomly destroys 2 enemy cards", 25.0),
+        ("destroy 2 enemy cards", 25.0),
+        ("randomly destroys 1 enemy card", 12.0),
+        ("destroy 1 enemy card", 12.0),
+        
+        # Controlo de Ki Adversário (Ki Reduction)
+        ("reduces enemy ki by 50", 25.0),
+        ("enemy ki -50", 25.0),
+        ("reduces enemy ki by 40", 20.0),
+        ("enemy ki -40", 20.0),
+        ("reduces enemy ki by 30", 15.0),
+        ("enemy ki -30", 15.0),
+        ("reduces enemy ki by 15", 8.0),
+        ("enemy ki -15", 8.0),
+        
+        # Gestão de Ki Próprio (Ki Restoration flat)
+        ("restores ki by 80", 22.0),
+        ("restores own ki by 80", 22.0),
+        ("restores ki by 70", 20.0),
+        ("restores own ki by 70", 20.0),
+        ("restores ki by 60", 18.0),
+        ("restores own ki by 60", 18.0),
+        ("restores ki by 50", 15.0),
+        ("restores own ki by 50", 15.0),
+        ("restores ki by 40", 12.0),
+        ("restores own ki by 40", 12.0),
+        ("restores ki by 30", 10.0),
+        ("restores own ki by 30", 10.0),
+        
+        # Reduções e Manipulações de Substitution Counts
+        ("substitution counts by 10", 35.0),
+        ("substitution count by 10", 35.0),
+        ("substitution counts by 8", 28.0),
+        ("substitution count by 8", 28.0),
+        ("sub counts -8", 28.0),
+        ("substitution counts by 5", 20.0),
+        ("substitution count by 5", 20.0),
+        ("sub counts -5", 20.0),
+        ("substitution counts by 3", 12.0),
+        ("substitution count by 3", 12.0),
+        ("sub counts -3", 12.0),
+        
+        # Dragon Balls (acesso rápido a Rising Rush)
+        ("increases dragon balls by 2", 40.0),
+        ("dragon balls +2", 40.0),
+        ("increases dragon balls by 1", 20.0),
+        ("dragon balls +1", 20.0),
+        
+        # Bloqueio de Troca (No Switching)
+        ("no switching", 45.0),
+        ("inflicts all enemies with \"no switching\"", 45.0),
+    ]
+    
+    for kw, bonus in flat_bonuses:
+        if kw in clause_lower:
+            score += bonus
+            
+    return score
 
-    return score * multiplier
+
+def extract_percents_from_text(text: str) -> float:
+    """
+    Mantido para retrocompatibilidade. Agora delega para o parseador de cláusulas
+    que realiza uma análise contextual muito mais robusta.
+    """
+    clauses = re.split(r'\n| - OR - |\.\s+', text)
+    total = 0.0
+    for clause in clauses:
+        if clause.strip():
+            total += extract_score_from_clause(clause)
+    return total
 
 
 def is_event_only(equipment: dict) -> bool:
@@ -256,10 +368,19 @@ def calculate_score(equipment: dict) -> float:
     total = 0.0
     for slot in equipment.get("slots", []):
         effect = slot.get("effect", "")
-        # Ignorar slots de drop/raid
-        if any(kw in effect.lower() for kw in EVENT_KEYWORDS):
-            continue
-        total += extract_percents_from_text(effect)
+        
+        # Particionar o efeito em cláusulas individuais para processamento estrito
+        clauses = re.split(r'\n| - OR - |\.\s+', effect)
+        for clause in clauses:
+            clause_clean = clause.strip()
+            if not clause_clean:
+                continue
+                
+            # Ignorar cláusulas dedicadas a drops de raid/evento
+            if any(kw in clause_clean.lower() for kw in EVENT_KEYWORDS):
+                continue
+                
+            total += extract_score_from_clause(clause_clean)
 
     # Aplicar penalizações por tags limitantes
     penalty_factor, penalty_reasons = get_condition_penalty(

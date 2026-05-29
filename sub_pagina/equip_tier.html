@@ -190,18 +190,99 @@
             <p class="text-[#929bc9] text-sm">Loading equipment data…</p>
         </div>
 
+        <!-- Filter Bar (hidden until loaded) -->
+        <div id="filterContainer" class="hidden p-6 pb-0 max-w-screen-2xl mx-auto relative z-10">
+            <div class="bg-panel-dark/60 backdrop-blur-md border border-border-dark rounded-2xl p-4 sm:p-5 flex flex-col gap-4">
+                
+                <!-- Row 1: Rarity Tabs -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-[#929bc9] text-[10px] font-black uppercase tracking-wider">Filtrar por Raridade</label>
+                    <div class="flex gap-2 flex-wrap" id="rarityFilters">
+                        <button data-rarity="all" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-primary text-white border border-primary/20 hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">Todos</button>
+                        <button data-rarity="platinum" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#1e233b] text-[#929bc9] border border-[#2d3455] hover:text-white hover:border-[#3e477a] transition-all">Platinum 💎</button>
+                        <button data-rarity="unique" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#1e233b] text-[#929bc9] border border-[#2d3455] hover:text-white hover:border-[#3e477a] transition-all">Unique ✨</button>
+                        <button data-rarity="gold" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#1e233b] text-[#929bc9] border border-[#2d3455] hover:text-white hover:border-[#3e477a] transition-all">Gold 🏆</button>
+                        <button data-rarity="silver" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#1e233b] text-[#929bc9] border border-[#2d3455] hover:text-white hover:border-[#3e477a] transition-all">Silver 🥈</button>
+                        <button data-rarity="bronze" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#1e233b] text-[#929bc9] border border-[#2d3455] hover:text-white hover:border-[#3e477a] transition-all">Bronze 🥉</button>
+                    </div>
+                </div>
+
+                <!-- Row 2: Tag & Sort Filters -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Tag Filter Dropdown -->
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[#929bc9] text-[10px] font-black uppercase tracking-wider">Filtrar por Tag / Atributo</label>
+                        <div class="relative">
+                            <select id="tagSelect" class="w-full h-10 rounded-lg bg-[#1e233b] border border-[#2d3455] text-white focus:border-primary focus:ring-0 text-sm px-3 appearance-none cursor-pointer">
+                                <option value="all">Todas as Tags (Qualquer)</option>
+                                <option value="saiyan">Tag: Saiyan</option>
+                                <option value="gt">Tag: GT</option>
+                                <option value="sagas from the movies">Episode: Sagas From the Movies</option>
+                                <option value="girls">Tag: Girls</option>
+                                <option value="regeneration">Tag: Regeneration</option>
+                                <option value="future">Tag: Future</option>
+                                <option value="fusion warrior">Tag: Fusion Warrior</option>
+                                <option value="god ki">Tag: God Ki</option>
+                                <option value="universe rep">Tag: Universe Representative</option>
+                                <option value="red">Cor: RED</option>
+                                <option value="yel">Cor: YEL</option>
+                                <option value="pur">Cor: PUR</option>
+                                <option value="grn">Cor: GRN</option>
+                                <option value="blu">Cor: BLU</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-3 top-2.5 text-[#929bc9] pointer-events-none text-[20px]">keyboard_arrow_down</span>
+                        </div>
+                    </div>
+
+                    <!-- Custom Tag Search input -->
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[#929bc9] text-[10px] font-black uppercase tracking-wider">Procurar Tag Específica</label>
+                        <div class="flex items-stretch rounded-lg h-10 bg-[#1e233b] border border-[#2d3455] focus-within:border-primary transition-colors">
+                            <div class="text-[#929bc9] flex items-center justify-center pl-3">
+                                <span class="material-symbols-outlined text-[18px]">sell</span>
+                            </div>
+                            <input id="tagInput"
+                                class="flex w-full min-w-0 flex-1 resize-none bg-transparent text-white focus:outline-0 placeholder:text-[#6b7280] px-3 text-sm font-normal"
+                                placeholder="Ex: Goku, Vegeta, DBL..." />
+                        </div>
+                    </div>
+
+                    <!-- Sort Select -->
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[#929bc9] text-[10px] font-black uppercase tracking-wider">Ordenar por</label>
+                        <div class="relative">
+                            <select id="sortSelect" class="w-full h-10 rounded-lg bg-[#1e233b] border border-[#2d3455] text-white focus:border-primary focus:ring-0 text-sm px-3 appearance-none cursor-pointer">
+                                <option value="score_desc">Score (Maior para Menor)</option>
+                                <option value="score_asc">Score (Menor para Maior)</option>
+                                <option value="name_asc">Nome (A - Z)</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-3 top-2.5 text-[#929bc9] pointer-events-none text-[20px]">sort</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Filters & Count Banner -->
+                <div class="flex items-center justify-between border-t border-[#232948] pt-3 text-xs text-[#929bc9]">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[16px] text-primary">filter_alt</span>
+                        <span>Filtros ativos: <strong id="activeFilterCount" class="text-white font-normal">Nenhum</strong></span>
+                        <button id="clearFiltersBtn" class="text-primary hover:text-blue-400 font-bold ml-2 hidden transition-colors">Limpar tudo</button>
+                    </div>
+                    <div>
+                        <span id="filteredResultsCount" class="text-white font-bold">0</span> de <span id="totalResultsCount" class="text-[#929bc9]">0</span> equipamentos
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
         <!-- Note container (hidden until loaded) -->
         <div id="tierNote" class="hidden p-6 pb-0 max-w-screen-2xl mx-auto relative z-10">
             <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 flex gap-3 text-sm text-[#929bc9]">
                 <span class="material-symbols-outlined text-amber-500 shrink-0 mt-0.5">info</span>
                 <div class="flex flex-col gap-1">
-                    <p><strong class="text-amber-500">Sobre a Tier List (Em Desenvolvimento):</strong> Esta lista serve
-                        apenas como um guia para te ajudar nas escolhas e <strong>não representa uma verdade
-                            universal</strong>.</p>
-                    <p><strong>Como funciona & Limitações:</strong> A classificação baseia-se exclusivamente nos valores
-                        de buff dos atributos (stats). No entanto, <strong>não consegue analisar efeitos
-                            especiais</strong> (ex: anulação de desvantagem, regeneração de vida ou destruição de
-                        cartas).</p>
+                    <p><strong class="text-amber-500">Sobre a Tier List:</strong> Esta classificação baseia-se num sistema de pontuação avançado que avalia tanto a potência bruta das percentagens de atributos (stats) como o valor tático de habilidades sem percentagem (ex: aumento de velocidade de compra de cartas, anulação de cover change, corte de Ki, etc.).</p>
+                    <p><strong>Dica de Uso:</strong> Usa os filtros de raridade e tags para encontrar rapidamente os melhores equipamentos específicos para cada personagem ou equipa (ex: Saiyan, GT, Movies).</p>
                 </div>
             </div>
         </div>
@@ -339,26 +420,126 @@
       `;
         }
 
-        function filterAndRender(tierList, equipMap, query) {
-            const q = query.trim().toLowerCase();
-            const container = document.getElementById('tierContent');
+        let currentRarity = 'all';
+        let currentPopularTag = 'all';
+        let currentCustomTag = '';
+        let currentSort = 'score_desc';
+        let currentSearchQuery = '';
 
-            // Group by tier
+        function filterAndRender(tierList, equipMap) {
+            const searchQuery = currentSearchQuery.trim().toLowerCase();
+            const rarityFilter = currentRarity;
+            const popularTagFilter = currentPopularTag;
+            const customTagFilter = currentCustomTag.trim().toLowerCase();
+            const sortBy = currentSort;
+            
+            const container = document.getElementById('tierContent');
+            
+            // 1. Filtrar a lista
+            let filteredList = tierList.filter(entry => {
+                const key = entry.name.trim().toLowerCase();
+                const equipData = equipMap.get(key) || null;
+                
+                // A. Procura por nome (search query)
+                if (searchQuery && !entry.name.toLowerCase().includes(searchQuery)) {
+                    return false;
+                }
+                
+                // B. Filtro de raridade
+                if (rarityFilter !== 'all') {
+                    const type = entry.type.toLowerCase();
+                    if (rarityFilter === 'platinum' && type !== 'platinum') return false;
+                    if (rarityFilter === 'unique' && !type.includes('unique')) return false;
+                    if (rarityFilter === 'gold' && !type.includes('gold')) return false;
+                    if (rarityFilter === 'silver' && !type.includes('silver')) return false;
+                    if (rarityFilter === 'bronze' && !type.includes('bronze')) return false;
+                }
+                
+                // C. Filtro de Tag Popular (dropdown)
+                if (popularTagFilter !== 'all') {
+                    if (!equipData || !equipData.conditions_data) return false;
+                    let tagMatched = false;
+                    for (const group of equipData.conditions_data) {
+                        for (const tag of group) {
+                            if (typeof tag === 'string' && tag.toLowerCase() === popularTagFilter) {
+                                tagMatched = true;
+                                break;
+                            }
+                        }
+                        if (tagMatched) break;
+                    }
+                    if (!tagMatched) return false;
+                }
+                
+                // D. Filtro de Tag Customizada (input)
+                if (customTagFilter) {
+                    if (!equipData || !equipData.conditions_data) return false;
+                    let tagMatched = false;
+                    for (const group of equipData.conditions_data) {
+                        for (const tag of group) {
+                            if (typeof tag === 'string' && tag.toLowerCase().includes(customTagFilter)) {
+                                tagMatched = true;
+                                break;
+                            }
+                        }
+                        if (tagMatched) break;
+                    }
+                    if (!tagMatched) return false;
+                }
+                
+                return true;
+            });
+            
+            // 2. Ordenar a lista
+            if (sortBy === 'score_desc') {
+                filteredList.sort((a, b) => b.score - a.score);
+            } else if (sortBy === 'score_asc') {
+                filteredList.sort((a, b) => a.score - b.score);
+            } else if (sortBy === 'name_asc') {
+                filteredList.sort((a, b) => a.name.localeCompare(b.name));
+            }
+            
+            // 3. Atualizar contagens no UI
+            document.getElementById('filteredResultsCount').textContent = filteredList.length;
+            
+            // Texto dos filtros ativos
+            let activeFiltersText = [];
+            if (rarityFilter !== 'all') activeFiltersText.push(`Raridade: ${rarityFilter.toUpperCase()}`);
+            if (popularTagFilter !== 'all') activeFiltersText.push(`Tag: ${popularTagFilter.toUpperCase()}`);
+            if (customTagFilter) activeFiltersText.push(`Procura Tag: "${customTagFilter}"`);
+            if (searchQuery) activeFiltersText.push(`Nome: "${searchQuery}"`);
+            
+            const activeFilterCountEl = document.getElementById('activeFilterCount');
+            const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+            
+            if (activeFiltersText.length > 0) {
+                activeFilterCountEl.textContent = activeFiltersText.join(', ');
+                clearFiltersBtn.classList.remove('hidden');
+            } else {
+                activeFilterCountEl.textContent = 'Nenhum';
+                clearFiltersBtn.classList.add('hidden');
+            }
+            
+            // 4. Agrupar por tier
             const groups = {};
             for (const tier of TIERS) groups[tier] = [];
-            for (const entry of tierList) {
+            for (const entry of filteredList) {
                 if (!groups[entry.tier]) groups[entry.tier] = [];
-                if (!q || entry.name.toLowerCase().includes(q)) {
-                    groups[entry.tier].push(entry);
-                }
+                groups[entry.tier].push(entry);
             }
-
+            
+            // 5. Renderizar secções
             const html = TIERS
                 .filter(t => groups[t].length > 0)
                 .map(t => renderTierSection(t, groups[t], equipMap))
                 .join('');
-
-            container.innerHTML = html || `<p class="text-[#929bc9] text-center py-20">Nenhum resultado encontrado.</p>`;
+                
+            container.innerHTML = html || `
+                <div class="flex flex-col items-center justify-center py-20 text-[#5a6490] gap-4 w-full">
+                    <span class="material-symbols-outlined text-[48px] text-[#2d3455]">filter_alt_off</span>
+                    <p class="text-sm">Nenhum equipamento corresponde aos filtros selecionados.</p>
+                </div>
+            `;
         }
 
         (async () => {
@@ -366,17 +547,89 @@
                 const { equipList, tierList } = await loadData();
                 const equipMap = buildEquipMap(equipList);
 
+                // Ocultar loading e mostrar controlos
                 document.getElementById('loadingState').classList.add('hidden');
+                document.getElementById('filterContainer').classList.remove('hidden');
                 document.getElementById('tierNote').classList.remove('hidden');
+                
                 const content = document.getElementById('tierContent');
                 content.classList.remove('hidden');
 
-                filterAndRender(tierList, equipMap, '');
+                // Inicializar contagens totais
+                document.getElementById('totalResultsCount').textContent = tierList.length;
 
-                // Search
-                document.getElementById('searchInput').addEventListener('input', function () {
-                    filterAndRender(tierList, equipMap, this.value);
+                // Render inicial
+                filterAndRender(tierList, equipMap);
+
+                // --- CONFIGURAÇÃO DOS EVENT LISTENERS ---
+
+                // 1. Procurar por nome (Header search)
+                const searchInput = document.getElementById('searchInput');
+                searchInput.addEventListener('input', function () {
+                    currentSearchQuery = this.value;
+                    filterAndRender(tierList, equipMap);
                 });
+
+                // 2. Raridade (Tab buttons)
+                const rarityButtons = document.querySelectorAll('#rarityFilters button');
+                rarityButtons.forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        rarityButtons.forEach(b => {
+                            b.className = "px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#1e233b] text-[#929bc9] border border-[#2d3455] hover:text-white hover:border-[#3e477a] transition-all";
+                        });
+                        this.className = "px-3.5 py-1.5 rounded-lg text-xs font-bold bg-primary text-white border border-primary/20 hover:bg-primary/80 transition-all shadow-lg shadow-primary/20";
+                        
+                        currentRarity = this.getAttribute('data-rarity');
+                        filterAndRender(tierList, equipMap);
+                    });
+                });
+
+                // 3. Dropdown de Tags populares
+                const tagSelect = document.getElementById('tagSelect');
+                tagSelect.addEventListener('change', function () {
+                    currentPopularTag = this.value;
+                    filterAndRender(tierList, equipMap);
+                });
+
+                // 4. Procura de Tag customizada
+                const tagInput = document.getElementById('tagInput');
+                tagInput.addEventListener('input', function () {
+                    currentCustomTag = this.value;
+                    filterAndRender(tierList, equipMap);
+                });
+
+                // 5. Ordenação
+                const sortSelect = document.getElementById('sortSelect');
+                sortSelect.addEventListener('change', function () {
+                    currentSort = this.value;
+                    filterAndRender(tierList, equipMap);
+                });
+
+                // 6. Reset (Limpar tudo)
+                const clearBtn = document.getElementById('clearFiltersBtn');
+                clearBtn.addEventListener('click', function () {
+                    currentRarity = 'all';
+                    currentPopularTag = 'all';
+                    currentCustomTag = '';
+                    currentSort = 'score_desc';
+                    currentSearchQuery = '';
+                    
+                    searchInput.value = '';
+                    tagSelect.value = 'all';
+                    tagInput.value = '';
+                    sortSelect.value = 'score_desc';
+                    
+                    rarityButtons.forEach(b => {
+                        if (b.getAttribute('data-rarity') === 'all') {
+                            b.className = "px-3.5 py-1.5 rounded-lg text-xs font-bold bg-primary text-white border border-primary/20 hover:bg-primary/80 transition-all shadow-lg shadow-primary/20";
+                        } else {
+                            b.className = "px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#1e233b] text-[#929bc9] border border-[#2d3455] hover:text-white hover:border-[#3e477a] transition-all";
+                        }
+                    });
+                    
+                    filterAndRender(tierList, equipMap);
+                });
+
             } catch (err) {
                 document.getElementById('loadingState').innerHTML = `
           <span class="material-symbols-outlined text-[48px] text-red-400">error</span>
