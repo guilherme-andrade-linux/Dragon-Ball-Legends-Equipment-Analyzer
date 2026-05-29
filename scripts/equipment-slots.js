@@ -48,7 +48,7 @@ export function renderSlots() {
         if (equip) {
             // Filled Slot
             const card = document.createElement('div');
-            card.className = "relative size-24 rounded-xl bg-[#1e233b] border-2 border-primary/50 shadow-[0_0_15px_rgba(19,55,236,0.2)] flex items-center justify-center cursor-pointer hover:bg-[#252b46] transition-all group select-none";
+            card.className = "relative size-24 rounded-xl bg-[#1e233b] border-2 border-primary/50 shadow-[0_0_15px_rgba(19,55,236,0.2)] flex items-center justify-center cursor-pointer hover:bg-[#252b46] transition-all hover:scale-105 group select-none animate-scale-in pulse-active-border";
 
             // Rarity Dot (Mock)
             const dot = document.createElement('div');
@@ -187,18 +187,27 @@ export function addEquipment(equip) {
         selectedEquipments[emptyIndex] = equip;
         renderSlots();
         calculateStats();
+        // Show dynamic toast indicating the specific slot number!
+        if (window.showToast) {
+            window.showToast(`Equipado "${equip.name}" no Slot ${emptyIndex + 1}!`, 'swords', '#ff9100');
+        }
     } else {
         alert("Todos os slots estão preenchidos! Remova um item primeiro.");
     }
 }
 
 export function removeEquipment(index) {
+    const removed = selectedEquipments[index];
     // Remove element at index
     selectedEquipments.splice(index, 1);
     // Push null to end to maintain size 3
     selectedEquipments.push(null);
     renderSlots();
     calculateStats();
+    // Show removal toast
+    if (window.showToast && removed) {
+        window.showToast(`Removido "${removed.name}" do Slot ${index + 1}!`, 'delete', '#e74c3c');
+    }
 }
 
 export function toggleMultiplier(index) {

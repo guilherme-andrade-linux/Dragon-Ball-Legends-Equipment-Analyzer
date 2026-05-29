@@ -1,6 +1,6 @@
 import { db } from './firebase-config.js';
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
-import { allCharacters, setAllCharacters, setCurrentSelectedCharacter } from './state.js';
+import { allCharacters, setAllCharacters, setCurrentSelectedCharacter, currentSelectedCharacter } from './state.js';
 import { initializeTags } from './character-tags.js';
 import { renderEquipConditionFilters } from './equipment-filters.js';
 import { calculateStats } from './stats-calculator.js';
@@ -77,11 +77,33 @@ export function renderGrid(chars) {
 
     grid.innerHTML = '';
 
-    chars.forEach(char => {
+    chars.forEach((char, index) => {
         // Create card element
         const div = document.createElement('div');
-        div.className = "relative aspect-square rounded-lg overflow-hidden bg-[#1e233b] border border-transparent hover:border-primary cursor-pointer transition-all group";
+        div.dataset.charName = char.name;
+        div.dataset.charInternalId = char.internal_id;
+
+        const isSelected = currentSelectedCharacter && 
+                           currentSelectedCharacter.name === char.name && 
+                           currentSelectedCharacter.internal_id === char.internal_id;
+        const charColor = getElementColor(char.element);
+
+        if (isSelected) {
+            div.className = "relative aspect-square rounded-lg overflow-hidden bg-[#1e233b] border-2 cursor-pointer transition-all group hover-glow-card animate-fade-in-up";
+            div.style.borderColor = charColor;
+            div.style.boxShadow = `0 0 15px ${charColor}60`;
+        } else {
+            div.className = "relative aspect-square rounded-lg overflow-hidden bg-[#1e233b] border-2 border-transparent hover:border-primary cursor-pointer transition-all group hover-glow-card animate-fade-in-up";
+        }
         div.title = char.name;
+        
+        // Staggered entry animation delay (cap at 30 items for performance)
+        if (index < 30) {
+            div.style.animationDelay = `${index * 20}ms`;
+        } else {
+            div.style.animationDelay = '0ms';
+            div.style.opacity = '1';
+        }
 
         // Image or Placeholder
         let imageContent;
@@ -121,7 +143,7 @@ export function selectCharacter(char) {
         name: char.name,
         element: char.element,
         rarity: char.rarity,
-        id: char.id,
+        internal_id: char.internal_id,
         code: char.code
     });
 
@@ -162,9 +184,39 @@ export function selectCharacter(char) {
         tagText.textContent = char.rarity || 'Unknown';
     }
 
-    // Add glowing border effect
-    container.classList.remove('border-border-dark');
-    container.classList.add('border-primary', 'shadow-[0_0_40px_rgba(19,55,236,0.3)]');
+    // Add glowing border effect & bounce animation
+    container.classList.remove('border-border-dark', 'unit-selected-glow');
+    container.classList.add('border-primary', 'unit-selected-glow');
+
+    // Set dynamic custom properties using the element color of the character
+    const charColor = getElementColor(char.element);
+    container.style.setProperty('--dynamic-unit-color', charColor);
+    container.style.setProperty('--dynamic-unit-color-glow', `${charColor}80`);
+    container.style.setProperty('--dynamic-unit-color-glow-sub', `${charColor}30`);
+
+    // Reset and apply grid selected border colors
+    const grid = document.getElementById('charGrid');
+    if (grid) {
+        Array.from(grid.children).forEach(card => {
+            card.style.borderColor = 'transparent';
+            card.style.boxShadow = 'none';
+        });
+        const activeCard = grid.querySelector(`[data-char-name="${char.name}"][data-char-internal-id="${char.internal_id}"]`);
+        if (activeCard) {
+            activeCard.style.borderColor = charColor;
+            activeCard.style.boxShadow = `0 0 15px ${charColor}60`;
+        }
+    }
+    
+    // Scale-in animation trigger for selected unit images
+    imageContainer.classList.remove('animate-scale-in');
+    void imageContainer.offsetWidth; // Force reflow
+    imageContainer.classList.add('animate-scale-in');
+
+    // Show dynamic colored notification toast
+    if (window.showToast) {
+        window.showToast(`${char.name} selecionado como Unidade Principal!`, 'person', charColor);
+    }
 
     // Recalculate stats as they may depend on the character (e.g. conditional effects)
     calculateStats();

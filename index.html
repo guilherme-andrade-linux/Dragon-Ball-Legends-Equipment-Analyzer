@@ -71,7 +71,7 @@
   <!-- Main Layout -->
   <main class="flex flex-1 overflow-hidden">
     <!-- Left Panel: Character Roster -->
-    <aside class="w-80 flex flex-col border-r border-border-dark bg-panel-dark shrink-0">
+    <aside id="leftPanel" class="w-full lg:w-80 flex flex-col border-r border-border-dark bg-panel-dark shrink-0 mobile-tab-content active">
       <!-- Search Header -->
       <div class="p-4 border-b border-border-dark flex flex-col gap-3">
         <label class="flex flex-col w-full">
@@ -145,7 +145,7 @@
       </div>
     </aside>
     <!-- Middle Panel: Equipment gallery -->
-    <section class="w-96 flex flex-col border-r border-border-dark bg-[#111422] shrink-0">
+    <section id="middlePanel" class="w-full lg:w-96 flex flex-col border-r border-border-dark bg-[#111422] shrink-0 mobile-tab-content">
       <!-- Tabs -->
       <div class="flex border-b border-border-dark px-2 bg-panel-dark">
         <button
@@ -234,7 +234,7 @@
       <input type="file" id="equipFileInput" accept=".json" style="display: none;" />
     </section>
     <!-- Right Panel: Workbench / Workspace -->
-    <section class="flex-1 flex flex-col bg-background-dark overflow-y-auto relative">
+    <section id="rightPanel" class="w-full lg:flex-1 flex flex-col bg-background-dark overflow-y-auto relative mobile-tab-content">
       <div
         class="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-[#1337ec]/10 to-transparent pointer-events-none">
       </div>
@@ -311,15 +311,15 @@
               <div class="border border-border-dark rounded-xl overflow-hidden bg-panel-dark transition-all duration-300 hover:border-primary/30">
                 <!-- Folder Header -->
                 <button type="button" class="w-full flex items-center justify-between p-3.5 bg-[#1c213a] hover:bg-[#242b4b] transition-colors focus:outline-none select-none" 
-                  onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow-icon').classList.toggle('rotate-180');">
+                  onclick="toggleAccordion(this)">
                   <div class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-orange-400">electric_bolt</span>
                     <span class="font-bold text-sm tracking-wide text-white">Offensive Boosts</span>
                   </div>
-                  <span class="material-symbols-outlined arrow-icon text-[#929bc9] transition-transform duration-300">expand_more</span>
+                  <span class="material-symbols-outlined arrow-icon text-[#929bc9] transition-transform duration-300 rotate-180">expand_more</span>
                 </button>
                 <!-- Folder Content -->
-                <div class="p-4 space-y-4 bg-[#111422]/60 border-t border-border-dark transition-all duration-300">
+                <div class="accordion-content open p-4 space-y-4 bg-[#111422]/60 border-t border-border-dark">
                   <!-- Stat Row -->
                   <div>
                     <div class="flex justify-between text-sm mb-1">
@@ -328,7 +328,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-base-strike-attack-bar"
-                        class="h-full bg-primary w-[0%] rounded-full relative transition-all duration-500">
+                        class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip">
                         <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
                       </div>
                     </div>
@@ -341,7 +341,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-base-blast-attack-bar"
-                        class="h-full bg-gray-600 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -352,7 +352,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-strike-attack-bar"
-                        class="h-full bg-primary w-[0%] rounded-full relative transition-all duration-500">
+                        class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip">
                         <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
                       </div>
                     </div>
@@ -365,7 +365,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-blast-attack-bar"
-                        class="h-full bg-gray-600 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -376,7 +376,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-inflicted-damage-bar"
-                        class="h-full bg-blue-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -387,7 +387,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-special-move-damage-bar"
-                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -398,7 +398,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-ultimate-damage-bar"
-                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                 </div>
@@ -408,15 +408,15 @@
               <div class="border border-border-dark rounded-xl overflow-hidden bg-panel-dark transition-all duration-300 hover:border-primary/30">
                 <!-- Folder Header -->
                 <button type="button" class="w-full flex items-center justify-between p-3.5 bg-[#1c213a] hover:bg-[#242b4b] transition-colors focus:outline-none select-none" 
-                  onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow-icon').classList.toggle('rotate-180');">
+                  onclick="toggleAccordion(this)">
                   <div class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-blue-400">shield</span>
                     <span class="font-bold text-sm tracking-wide text-white">Defensive Boosts</span>
                   </div>
-                  <span class="material-symbols-outlined arrow-icon text-[#929bc9] transition-transform duration-300">expand_more</span>
+                  <span class="material-symbols-outlined arrow-icon text-[#929bc9] transition-transform duration-300 rotate-180">expand_more</span>
                 </button>
                 <!-- Folder Content -->
-                <div class="p-4 space-y-4 bg-[#111422]/60 border-t border-border-dark transition-all duration-300">
+                <div class="accordion-content open p-4 space-y-4 bg-[#111422]/60 border-t border-border-dark">
                   <!-- Stat Row -->
                   <div>
                     <div class="flex justify-between text-sm mb-1">
@@ -425,7 +425,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-base-strike-defense-bar"
-                        class="h-full bg-blue-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-defensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -436,7 +436,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-base-blast-defense-bar"
-                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-defensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -447,7 +447,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-strike-defense-bar"
-                        class="h-full bg-blue-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-defensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -458,7 +458,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-blast-defense-bar"
-                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-defensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -469,7 +469,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-base-health-bar"
-                        class="h-full bg-primary w-[0%] rounded-full relative transition-all duration-500">
+                        class="h-full progress-defensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip">
                         <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
                       </div>
                     </div>
@@ -482,7 +482,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-damage-guard-bar"
-                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-defensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                 </div>
@@ -492,15 +492,15 @@
               <div class="border border-border-dark rounded-xl overflow-hidden bg-panel-dark transition-all duration-300 hover:border-primary/30">
                 <!-- Folder Header -->
                 <button type="button" class="w-full flex items-center justify-between p-3.5 bg-[#1c213a] hover:bg-[#242b4b] transition-colors focus:outline-none select-none" 
-                  onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow-icon').classList.toggle('rotate-180');">
+                  onclick="toggleAccordion(this)">
                   <div class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-purple-400">bolt</span>
                     <span class="font-bold text-sm tracking-wide text-white">Utility Boosts</span>
                   </div>
-                  <span class="material-symbols-outlined arrow-icon text-[#929bc9] transition-transform duration-300">expand_more</span>
+                  <span class="material-symbols-outlined arrow-icon text-[#929bc9] transition-transform duration-300 rotate-180">expand_more</span>
                 </button>
                 <!-- Folder Content -->
-                <div class="p-4 space-y-4 bg-[#111422]/60 border-t border-border-dark transition-all duration-300">
+                <div class="accordion-content open p-4 space-y-4 bg-[#111422]/60 border-t border-border-dark">
                   <!-- Stat Row -->
                   <div>
                     <div class="flex justify-between text-sm mb-1">
@@ -509,7 +509,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-health-restoration-bar"
-                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-utility w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -520,7 +520,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-base-ki-recovery-bar"
-                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-utility w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -531,7 +531,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-base-critical-bar"
-                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-utility w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                   <!-- Stat Row -->
@@ -542,7 +542,7 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-critical-bar"
-                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                        class="h-full progress-utility w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
                 </div>
@@ -563,7 +563,93 @@
       </div>
     </section>
   </main>
+
+  <!-- Floating Bottom Navigation Dock for Mobile/Tablet -->
+  <nav class="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-md bg-[#151a2d]/85 backdrop-blur-lg border border-[#2d3455]/80 rounded-full px-4 py-2.5 flex items-center justify-around z-40 shadow-[0_12px_30px_rgba(0,0,0,0.5)]">
+    <button onclick="switchMobileTab('characters', this)" class="mobile-nav-btn active flex-1">
+      <span class="material-symbols-outlined text-[22px]">person</span>
+      <span class="text-[10px] font-bold tracking-wider">Unidades</span>
+    </button>
+    <button onclick="switchMobileTab('equips', this)" class="mobile-nav-btn flex-1">
+      <span class="material-symbols-outlined text-[22px]">swords</span>
+      <span class="text-[10px] font-bold tracking-wider">Equipes</span>
+    </button>
+    <button onclick="switchMobileTab('workspace', this)" class="mobile-nav-btn flex-1">
+      <span class="material-symbols-outlined text-[22px]">analytics</span>
+      <span class="text-[10px] font-bold tracking-wider">Bancada</span>
+    </button>
+  </nav>
+
   <script type="module" src="script.js"></script>
+
+  <script>
+    // Responsive Tab Switcher
+    window.switchMobileTab = function(tabId, btn) {
+      // 1. Update navigation buttons active class
+      document.querySelectorAll('.mobile-nav-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // 2. Hide all panels
+      document.querySelectorAll('.mobile-tab-content').forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      // 3. Show active panel
+      if (tabId === 'characters') {
+        document.getElementById('leftPanel').classList.add('active');
+      } else if (tabId === 'equips') {
+        document.getElementById('middlePanel').classList.add('active');
+      } else if (tabId === 'workspace') {
+        document.getElementById('rightPanel').classList.add('active');
+      }
+    };
+
+    // Accordion handler
+    window.toggleAccordion = function(btn) {
+      const content = btn.nextElementSibling;
+      const arrow = btn.querySelector('.arrow-icon');
+      if (content) {
+        content.classList.toggle('open');
+      }
+      if (arrow) {
+        arrow.classList.toggle('rotate-180');
+      }
+    };
+
+    // Premium Dynamic Toast Notifications
+    window.showToast = function(message, iconName = 'info', color = '#1337ec') {
+      const existingToast = document.querySelector('.toast-notification');
+      if (existingToast) {
+        existingToast.remove();
+      }
+
+      const toast = document.createElement('div');
+      toast.className = 'toast-notification';
+      toast.style.borderColor = color + '80';
+      toast.style.boxShadow = `0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px ${color}30`;
+      
+      toast.innerHTML = `
+        <span class="material-symbols-outlined text-[18px]" style="color: ${color}">${iconName}</span>
+        <span class="truncate">${message}</span>
+      `;
+      
+      document.body.appendChild(toast);
+      
+      // Force reflow
+      void toast.offsetWidth;
+      
+      // Show toast
+      toast.classList.add('show');
+      
+      // Hide and remove
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+          toast.remove();
+        }, 350);
+      }, 2500);
+    };
+  </script>
 </body>
 
 </html>

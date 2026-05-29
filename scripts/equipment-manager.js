@@ -161,10 +161,18 @@ export function renderEquipList(equips) {
 
     list.innerHTML = '';
 
-    equips.forEach(equip => {
+    equips.forEach((equip, index) => {
         // Create equipment card
         const div = document.createElement('div');
-        div.className = "group flex gap-3 p-3 rounded-lg bg-[#1e233b] border border-transparent hover:border-primary/50 hover:bg-[#252b46] cursor-grab active:cursor-grabbing transition-all shadow-sm";
+        div.className = "group flex gap-3 p-3 rounded-lg bg-[#1e233b] border border-transparent hover-glow-card animate-fade-in-up cursor-grab active:cursor-grabbing transition-all shadow-sm";
+        
+        // Staggered entry animation delay (cap at 30 items for performance)
+        if (index < 30) {
+            div.style.animationDelay = `${index * 20}ms`;
+        } else {
+            div.style.animationDelay = '0ms';
+            div.style.opacity = '1';
+        }
 
         // Image
         const imageUrl = equip.image || 'https://dblegends.net/assets/equips/EqIco_1578.webp'; // Fallback
