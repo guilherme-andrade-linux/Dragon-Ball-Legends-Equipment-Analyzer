@@ -56,6 +56,21 @@ export async function fetchFromFirebase() {
     }
 }
 
+export async function loadLocalCharacters() {
+    try {
+        const response = await fetch('./Python/dbl_characters_full.json');
+        if (!response.ok) throw new Error("Falha ao carregar dbl_characters_full.json");
+        const characters = await response.json();
+        setAllCharacters(characters);
+        initializeTags();
+        filterAndRenderCharacters();
+        console.log(`Sucesso! ${characters.length} personagens locais carregados.`);
+    } catch (error) {
+        console.error("Erro ao carregar personagens locais:", error);
+    }
+}
+
+
 export function renderGrid(chars) {
     const grid = document.getElementById('charGrid');
     if (!grid) return;

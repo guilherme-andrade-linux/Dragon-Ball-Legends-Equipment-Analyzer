@@ -78,6 +78,21 @@ export async function fetchEquipmentsFromFirebase() {
     }
 }
 
+export async function loadLocalEquipments() {
+    try {
+        const response = await fetch('./Python/dbl_equipment_full.json');
+        if (!response.ok) throw new Error("Falha ao carregar dbl_equipment_full.json");
+        const equipments = await response.json();
+        setAllEquipments(equipments);
+        renderEquipRarityFilters();
+        updateEquipmentList();
+        console.log(`Sucesso! ${equipments.length} equipamentos locais carregados.`);
+    } catch (error) {
+        console.error("Erro ao carregar equipamentos locais:", error);
+    }
+}
+
+
 export async function uploadEquipmentsToFirebase() {
     if (allEquipments.length === 0) {
         alert("Carrega primeiro os equipamentos do JSON para poderes enviar para o Firebase.");

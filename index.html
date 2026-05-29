@@ -106,16 +106,35 @@
             class="flex-1 h-8 bg-[#1e233b] hover:bg-[#2d3455] rounded flex items-center justify-center text-xs text-[#929bc9] transition-colors border border-transparent hover:border-[#3e477a]">
             Clear
           </button>
-          <button id="btnImportFirebase"
-            class="size-8 bg-red-900/30 hover:bg-red-900/50 rounded flex items-center justify-center text-red-400 border border-red-900/50 transition-colors"
-            title="Import Firebase">
-            <span class="material-symbols-outlined text-[16px]">local_fire_department</span>
-          </button>
-          <button id="btnImportJson"
-            class="size-8 bg-purple-900/30 hover:bg-purple-900/50 rounded flex items-center justify-center text-purple-400 border border-purple-900/50 transition-colors"
-            title="Import JSON">
-            <span class="material-symbols-outlined text-[16px]">dark_mode</span>
-          </button>
+          
+          <!-- Firebase Import Button with custom tooltip -->
+          <div class="relative group">
+            <button id="btnImportFirebase"
+              class="size-8 bg-red-900/30 hover:bg-red-900/50 rounded flex items-center justify-center text-red-400 border border-red-900/50 transition-colors">
+              <span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+            </button>
+            <div class="pointer-events-none absolute bottom-full mb-2 left-1/2 -translate-x-1/2 hidden group-hover:block bg-[#151a2d] border border-border-dark text-[11px] text-[#929bc9] p-2.5 rounded-lg w-56 shadow-2xl z-30 transition-all duration-300">
+              <div class="font-bold text-red-400 flex items-center gap-1 mb-1">
+                <span class="material-symbols-outlined text-xs">local_fire_department</span> Firebase
+              </div>
+              Atualiza a lista de personagens em tempo real com os dados mais recentes na nuvem (Firebase).
+            </div>
+          </div>
+
+          <!-- JSON Import Button with custom tooltip -->
+          <div class="relative group">
+            <button id="btnImportJson"
+              class="size-8 bg-purple-900/30 hover:bg-purple-900/50 rounded flex items-center justify-center text-purple-400 border border-purple-900/50 transition-colors">
+              <span class="material-symbols-outlined text-[16px]">dark_mode</span>
+            </button>
+            <div class="pointer-events-none absolute bottom-full mb-2 left-1/2 -translate-x-1/2 hidden group-hover:block bg-[#151a2d] border border-border-dark text-[11px] text-[#929bc9] p-2.5 rounded-lg w-56 shadow-2xl z-30 transition-all duration-300">
+              <div class="font-bold text-purple-400 flex items-center gap-1 mb-1">
+                <span class="material-symbols-outlined text-xs">description</span> JSON Local
+              </div>
+              Carrega manualmente um ficheiro .json de personagens do teu computador.
+            </div>
+          </div>
+
           <input type="file" id="fileInput" accept=".json" style="display: none;" />
         </div>
       </div>
@@ -133,16 +152,33 @@
           class="flex-1 flex flex-col items-center justify-center border-b-[2px] border-b-primary text-white py-3 hover:bg-[#1e233b] transition-colors">
           <span class="text-sm font-bold tracking-wide">Equips</span>
         </button>
-        <button id="btnImportEquipFirebase"
-          class="size-8 bg-red-900/30 hover:bg-red-900/50 rounded flex items-center justify-center text-red-400 border border-red-900/50 transition-colors"
-          title="Import Firebase">
-          <span class="material-symbols-outlined text-[16px]">local_fire_department</span>
-        </button>
-        <button id="btnImportEquipJson"
-          class="size-8 bg-purple-900/30 hover:bg-purple-900/50 rounded flex items-center justify-center text-purple-400 border border-purple-900/50 transition-colors"
-          title="Import JSON">
-          <span class="material-symbols-outlined text-[16px]">dark_mode</span>
-        </button>
+        <!-- Firebase Equip Import with custom tooltip -->
+        <div class="relative group flex items-center ml-2">
+          <button id="btnImportEquipFirebase"
+            class="size-8 bg-red-900/30 hover:bg-red-900/50 rounded flex items-center justify-center text-red-400 border border-red-900/50 transition-colors">
+            <span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+          </button>
+          <div class="pointer-events-none absolute bottom-full mb-2 right-0 hidden group-hover:block bg-[#151a2d] border border-border-dark text-[11px] text-[#929bc9] p-2.5 rounded-lg w-56 shadow-2xl z-30 transition-all duration-300">
+            <div class="font-bold text-red-400 flex items-center gap-1 mb-1">
+              <span class="material-symbols-outlined text-xs">local_fire_department</span> Firebase Equips
+            </div>
+            Atualiza a lista de equipamentos em tempo real com os dados mais recentes na nuvem (Firebase).
+          </div>
+        </div>
+
+        <!-- JSON Equip Import with custom tooltip -->
+        <div class="relative group flex items-center ml-2">
+          <button id="btnImportEquipJson"
+            class="size-8 bg-purple-900/30 hover:bg-purple-900/50 rounded flex items-center justify-center text-purple-400 border border-purple-900/50 transition-colors">
+            <span class="material-symbols-outlined text-[16px]">dark_mode</span>
+          </button>
+          <div class="pointer-events-none absolute bottom-full mb-2 right-0 hidden group-hover:block bg-[#151a2d] border border-border-dark text-[11px] text-[#929bc9] p-2.5 rounded-lg w-56 shadow-2xl z-30 transition-all duration-300">
+            <div class="font-bold text-purple-400 flex items-center gap-1 mb-1">
+              <span class="material-symbols-outlined text-xs">description</span> JSON Local Equips
+            </div>
+            Carrega manualmente um ficheiro .json de equipamentos do teu computador.
+          </div>
+        </div>
       </div>
 
       <!-- Filters -->
@@ -271,197 +307,244 @@
               </h3>
             </div>
             <div class="space-y-4">
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Base Strike Attack</span>
-                  <span id="stat-base-strike-attack-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-base-strike-attack-bar"
-                    class="h-full bg-primary w-[0%] rounded-full relative transition-all duration-500">
-                    <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
+              <!-- Folder 1: Offensive Boosts -->
+              <div class="border border-border-dark rounded-xl overflow-hidden bg-panel-dark transition-all duration-300 hover:border-primary/30">
+                <!-- Folder Header -->
+                <button type="button" class="w-full flex items-center justify-between p-3.5 bg-[#1c213a] hover:bg-[#242b4b] transition-colors focus:outline-none select-none" 
+                  onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow-icon').classList.toggle('rotate-180');">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-orange-400">electric_bolt</span>
+                    <span class="font-bold text-sm tracking-wide text-white">Offensive Boosts</span>
+                  </div>
+                  <span class="material-symbols-outlined arrow-icon text-[#929bc9] transition-transform duration-300">expand_more</span>
+                </button>
+                <!-- Folder Content -->
+                <div class="p-4 space-y-4 bg-[#111422]/60 border-t border-border-dark transition-all duration-300">
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Base Strike Attack</span>
+                      <span id="stat-base-strike-attack-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-base-strike-attack-bar"
+                        class="h-full bg-primary w-[0%] rounded-full relative transition-all duration-500">
+                        <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Base Blast Attack</span>
+                      <span id="stat-base-blast-attack-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-base-blast-attack-bar"
+                        class="h-full bg-gray-600 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Strike Attack</span>
+                      <span id="stat-strike-attack-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-strike-attack-bar"
+                        class="h-full bg-primary w-[0%] rounded-full relative transition-all duration-500">
+                        <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Blast Attack</span>
+                      <span id="stat-blast-attack-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-blast-attack-bar"
+                        class="h-full bg-gray-600 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Inflicted Damage</span>
+                      <span id="stat-inflicted-damage-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-inflicted-damage-bar"
+                        class="h-full bg-blue-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Special Move Damage</span>
+                      <span id="stat-special-move-damage-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-special-move-damage-bar"
+                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Ultimate Damage</span>
+                      <span id="stat-ultimate-damage-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-ultimate-damage-bar"
+                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Base Blast Attack</span>
-                  <span id="stat-base-blast-attack-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-base-blast-attack-bar"
-                    class="h-full bg-gray-600 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Strike Attack</span>
-                  <span id="stat-strike-attack-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-strike-attack-bar"
-                    class="h-full bg-primary w-[0%] rounded-full relative transition-all duration-500">
-                    <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
+
+              <!-- Folder 2: Defensive Boosts -->
+              <div class="border border-border-dark rounded-xl overflow-hidden bg-panel-dark transition-all duration-300 hover:border-primary/30">
+                <!-- Folder Header -->
+                <button type="button" class="w-full flex items-center justify-between p-3.5 bg-[#1c213a] hover:bg-[#242b4b] transition-colors focus:outline-none select-none" 
+                  onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow-icon').classList.toggle('rotate-180');">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-blue-400">shield</span>
+                    <span class="font-bold text-sm tracking-wide text-white">Defensive Boosts</span>
+                  </div>
+                  <span class="material-symbols-outlined arrow-icon text-[#929bc9] transition-transform duration-300">expand_more</span>
+                </button>
+                <!-- Folder Content -->
+                <div class="p-4 space-y-4 bg-[#111422]/60 border-t border-border-dark transition-all duration-300">
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Base Strike Defense</span>
+                      <span id="stat-base-strike-defense-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-base-strike-defense-bar"
+                        class="h-full bg-blue-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Base Blast Defense</span>
+                      <span id="stat-base-blast-defense-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-base-blast-defense-bar"
+                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Strike Defense</span>
+                      <span id="stat-strike-defense-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-strike-defense-bar"
+                        class="h-full bg-blue-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Blast Defense</span>
+                      <span id="stat-blast-defense-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-blast-defense-bar"
+                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Base Health</span>
+                      <span id="stat-base-health-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-base-health-bar"
+                        class="h-full bg-primary w-[0%] rounded-full relative transition-all duration-500">
+                        <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Damage Guard</span>
+                      <span id="stat-damage-guard-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-damage-guard-bar"
+                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Blast Attack</span>
-                  <span id="stat-blast-attack-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-blast-attack-bar"
-                    class="h-full bg-gray-600 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Inflicted Damage</span>
-                  <span id="stat-inflicted-damage-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-inflicted-damage-bar"
-                    class="h-full bg-blue-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Special Move Damage</span>
-                  <span id="stat-special-move-damage-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-special-move-damage-bar"
-                    class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Ultimate Damage</span>
-                  <span id="stat-ultimate-damage-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-ultimate-damage-bar"
-                    class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Base Strike Defense</span>
-                  <span id="stat-base-strike-defense-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-base-strike-defense-bar"
-                    class="h-full bg-blue-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Base Blast Defense</span>
-                  <span id="stat-base-blast-defense-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-base-blast-defense-bar"
-                    class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Strike Defense</span>
-                  <span id="stat-strike-defense-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-strike-defense-bar"
-                    class="h-full bg-blue-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Blast Defense</span>
-                  <span id="stat-blast-defense-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-blast-defense-bar"
-                    class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Health Restoration</span>
-                  <span id="stat-health-restoration-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-health-restoration-bar"
-                    class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Base Health</span>
-                  <span id="stat-base-health-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-base-health-bar"
-                    class="h-full bg-primary w-[0%] rounded-full relative transition-all duration-500">
-                    <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
+
+              <!-- Folder 3: Utility Boosts -->
+              <div class="border border-border-dark rounded-xl overflow-hidden bg-panel-dark transition-all duration-300 hover:border-primary/30">
+                <!-- Folder Header -->
+                <button type="button" class="w-full flex items-center justify-between p-3.5 bg-[#1c213a] hover:bg-[#242b4b] transition-colors focus:outline-none select-none" 
+                  onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow-icon').classList.toggle('rotate-180');">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-purple-400">bolt</span>
+                    <span class="font-bold text-sm tracking-wide text-white">Utility Boosts</span>
                   </div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Damage Guard</span>
-                  <span id="stat-damage-guard-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-damage-guard-bar"
-                    class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Base Ki Recovery</span>
-                  <span id="stat-base-ki-recovery-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-base-ki-recovery-bar"
-                    class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Base Critical</span>
-                  <span id="stat-base-critical-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-base-critical-bar"
-                    class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
-                </div>
-              </div>
-              <!-- Stat Row -->
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-[#929bc9]">Critical</span>
-                  <span id="stat-critical-value" class="text-primary font-bold">0%</span>
-                </div>
-                <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                  <div id="stat-critical-bar"
-                    class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                  <span class="material-symbols-outlined arrow-icon text-[#929bc9] transition-transform duration-300">expand_more</span>
+                </button>
+                <!-- Folder Content -->
+                <div class="p-4 space-y-4 bg-[#111422]/60 border-t border-border-dark transition-all duration-300">
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Health Restoration</span>
+                      <span id="stat-health-restoration-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-health-restoration-bar"
+                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Base Ki Recovery</span>
+                      <span id="stat-base-ki-recovery-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-base-ki-recovery-bar"
+                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Base Critical</span>
+                      <span id="stat-base-critical-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-base-critical-bar"
+                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Critical</span>
+                      <span id="stat-critical-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-critical-bar"
+                        class="h-full bg-green-400 w-[0%] rounded-full transition-all duration-500"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

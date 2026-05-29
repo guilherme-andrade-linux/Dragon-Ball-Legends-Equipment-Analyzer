@@ -6911,6 +6911,503 @@
         "condition_desc": "Must meet all tags in the group"
     },
     {
+        "id": "1735",
+        "url": "https://dblegends.net/equip/1735",
+        "image": "https://dblegends.net/assets/equips/EqIco_1735.webp",
+        "name": "The pain will only make me stronger.",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Blast Attack 15.00 ~ 35.00 % - OR - Base Strike Attack 15.00 ~ 35.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "8.00 ~ 20.00 % to own Strike Defense when 3 battle members are \"Tag: Future\"."
+            },
+            {
+                "slot_index": 3,
+                "effect": "8.00 ~ 20.00 % to own Blast Defense when 3 battle members are \"Tag: Future\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Future"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "30025",
+        "url": "https://dblegends.net/equip/30025",
+        "image": "https://dblegends.net/assets/equips/EqIco_30025.webp",
+        "name": "SPARKING!! - Trunks: Mai (Assist)",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 15.00 ~ 30.00 % Base Strike Attack 50.00 ~ 100.00 % Base Blast Attack 50.00 ~ 100.00 % Base Strike Defense 50.00 ~ 100.00 % Base Blast Defense 50.00 ~ 100.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Inflicted Damage 90.00 ~ 250.00 % Damage Guard 60.00 ~ 160.00 % On return to standby, applies the following effects to ally \"Tag: Future\":\r\n・Damage 10.00 ~ 30.00 % (15 counts) ・Health 3.00 ~ 10.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "On cover change, destroy 2 enemy cards\r\n\r\nOn battlefield entry, the following effects occur:\r\n・Draw 1 card if hand has 3 or fewer\r\n・Nullify Special Cover Changes (5 counts)\r\n・Ally \"Tag: Future\" sub counts -1 - OR - On cover change, destroy 1 enemy card"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Trunks",
+                "DBL33-01S"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2030",
+        "url": "https://dblegends.net/equip/2030",
+        "image": "https://dblegends.net/assets/equips/EqIco_2030.webp",
+        "name": "It's flowing in from every living thing in this world!",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Blast Defense 10.00 ~ 35.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Strike Defense 10.00 ~ 35.00 %"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Weapon Wielder",
+                "GRN"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2049",
+        "url": "https://dblegends.net/equip/2049",
+        "image": "https://dblegends.net/assets/equips/EqIco_2049.webp",
+        "name": "Right, then!",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 5.00 ~ 10.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "6.00 ~ 13.00 % to own Strike/Blast Defense if 2 or more battle members are both \"Tag: DAIMA\" and \"Tag: Weapon Wielder\""
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Strike Attack 5.00 ~ 15.00 % 3.00 ~ 6.00 % to own Strike Attack per \"Tag: Weapon Wielder\" battle member."
+            }
+        ],
+        "conditions_data": [
+            [
+                "DAIMA"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2076",
+        "url": "https://dblegends.net/equip/2076",
+        "image": "https://dblegends.net/assets/equips/EqIco_2076.webp",
+        "name": "Give me 10 seconds, Nuova.",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 8.00 ~ 15.00 % Base Strike Defense 50.00 ~ 100.00 % Base Blast Defense 50.00 ~ 100.00 % Damage Guard 70.00 ~ 200.00 % On return to standby, ally \"Tag: GT\" Damage Guard 7.00 ~ 20.00 % (10 counts)"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Inflicted Damage 90.00 ~ 250.00 % Base Strike Attack 50.00 ~ 100.00 % Base Blast Attack 50.00 ~ 100.00 % On battlefield entry, ally health 3.00 ~ 10.00 % On return to standby, ally \"Tag: GT\" damage 7.00 ~ 20.00 % (10 counts)"
+            },
+            {
+                "slot_index": 3,
+                "effect": "On battlefield entry with at least 1 other \"Tag: GT\" ally battle member, the following effects occur: ・Draw up to 2 cards if hand has 3 or fewer ・All enemy sub counts +3 When hit by enemy Arts, enemy Ki -15 While not defeated and enemy activates Special Move/Ultimate/Awakened Arts, ally sub counts -3"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Goku",
+                "DBL34-01S"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2058",
+        "url": "https://dblegends.net/equip/2058",
+        "image": "https://dblegends.net/assets/equips/EqIco_2058.webp",
+        "name": "Quit goofing around and find some real work.",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Special Move Damage 8.00 ~ 20.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Strike Attack 15.00 ~ 30.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Critical 15.00 ~ 30.00 % 5.00 ~ 10.00 % to Strike & Blast Attack if this character is \"Character: Goku\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Event Exclusive"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "30026",
+        "url": "https://dblegends.net/equip/30026",
+        "image": "https://dblegends.net/assets/equips/EqIco_30026.webp",
+        "name": "SPARKING!! - Kaioken Goku",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 15.00 ~ 30.00 % Base Strike Defense 50.00 ~ 100.00 % Base Blast Defense 50.00 ~ 100.00 % Health Restoration 8.00 ~ 15.00 % Damage Guard 60.00 ~ 180.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Inflicted Damage 90.00 ~ 250.00 % Base Strike Attack 50.00 ~ 100.00 % Base Blast Attack 50.00 ~ 100.00 % Base Ki Recovery 50.00 ~ 100.00 % Special Move damage 15.00 ~ 40.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "On battlefield entry, draw Special Arts next (3 times) On Cover Change, enemy Ki -50 On Special Arts activation, the following effects occur: ・Ki +50 ・Draw up to 2 cards if hand has 3 or fewer"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Goku",
+                "DBL43-04S"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2038",
+        "url": "https://dblegends.net/equip/2038",
+        "image": "https://dblegends.net/assets/equips/EqIco_2038.webp",
+        "name": "Even if I have to do it with my own two hands...!",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Ki Recovery 10.00 ~ 20.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "5.00 ~ 12.00 % to own Strike & Blast Defense when \"Tag: Team Bardock\" is a battle member."
+            },
+            {
+                "slot_index": 3,
+                "effect": "5.00 ~ 12.00 % to own Strike & Blast Attack when \"Tag: Team Bardock\" is a battle member."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Saiyan"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2081",
+        "url": "https://dblegends.net/equip/2081",
+        "image": "https://dblegends.net/assets/equips/EqIco_2081.webp",
+        "name": "The Saiyans Land on Earth",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 15.00 ~ 25.00 % Base Strike Defense 40.00 ~ 80.00 % Base Blast Defense 40.00 ~ 80.00 % Damage Guard 60.00 ~ 180.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Inflicted Damage 90.00 ~ 250.00 % Base Strike Attack 25.00 ~ 50.00 % Base Blast Attack 25.00 ~ 50.00 % Special Move damage 20.00 ~ 50.00 % Restores own health by 3.00 ~ 10.00 % when this character enters the battlefield."
+            },
+            {
+                "slot_index": 3,
+                "effect": "On battlefield entry, the following effects occur: ・Draw 1 card if hand has 3 or fewer ・Nullify Special Cover Changes (5 counts) ・Nullify damage received Element disadvantage (5 counts) ・Unique Gauge charge rate +100% (10 counts)"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Nappa",
+                "DBL70-03S"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2078",
+        "url": "https://dblegends.net/equip/2078",
+        "image": "https://dblegends.net/assets/equips/EqIco_2078.webp",
+        "name": "DRAGON BALL XENOVERSE 2",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 8.00 ~ 15.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Strike Defense 10.00 ~ 25.00 % Base Blast Defense 10.00 ~ 25.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Strike Attack 15.00 ~ 30.00 % Base Blast Attack 15.00 ~ 30.00 %"
+            }
+        ],
+        "conditions_data": [
+            [
+                "DRAGON BALL XENOVERSE 2"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2079",
+        "url": "https://dblegends.net/equip/2079",
+        "image": "https://dblegends.net/assets/equips/EqIco_2079.webp",
+        "name": "I'll surpass you as I am, with my OWN power!",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Blast Defense 15.00 ~ 35.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Blast Attack 15.00 ~ 35.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "5.00 ~ 12.00 % to own Blast Attack & Defense when \"Episode: DRAGON BALL XENOVERSE 2\" is a battle member."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Vegeta Clan"
+            ],
+            [
+                "God Ki"
+            ],
+            [
+                "DRAGON BALL XENOVERSE 2"
+            ]
+        ],
+        "condition_logic": "OR",
+        "condition_desc": "Must meet requirements of Group 1 OR Group 2..."
+    },
+    {
+        "id": "2080",
+        "url": "https://dblegends.net/equip/2080",
+        "image": "https://dblegends.net/assets/equips/EqIco_2080.webp",
+        "name": "You will know the power of the gods!",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Strike Defense 15.00 ~ 35.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Strike Attack 15.00 ~ 35.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "5.00 ~ 12.00 % to own Strike Attack & Defense when \"Episode: DRAGON BALL XENOVERSE 2\" is a battle member."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Future"
+            ],
+            [
+                "Powerful Opponent"
+            ],
+            [
+                "DRAGON BALL XENOVERSE 2"
+            ]
+        ],
+        "condition_logic": "OR",
+        "condition_desc": "Must meet requirements of Group 1 OR Group 2..."
+    },
+    {
+        "id": "1755",
+        "url": "https://dblegends.net/equip/1755",
+        "image": "https://dblegends.net/assets/equips/EqIco_1755.webp",
+        "name": "Don't underestimate mortals.",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 10.00 ~ 25.00 % Base Strike Defense 40.00 ~ 80.00 % Base Blast Defense 40.00 ~ 80.00 % Damage Guard 60.00 ~ 180.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Inflicted Damage 90.00 ~ 270.00 % Base Strike Attack 40.00 ~ 80.00 % Base Blast Attack 40.00 ~ 80.00 % Restores own health by 3.00 ~ 10.00 % when this character enters the battlefield."
+            },
+            {
+                "slot_index": 3,
+                "effect": "On battlefield entry, if at least 1 other ally battle member is \"Tag: God Ki\" or \"Tag: Vegeta Clan\", the following effects occur: ・Draw up to 4 cards if hand has 3 or fewer ・Nullify Special Cover Changes (5 counts) ・Ki +80 ・Enemy Ki -35"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Vegeta",
+                "DBL18-05S"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2027",
+        "url": "https://dblegends.net/equip/2027",
+        "image": "https://dblegends.net/assets/equips/EqIco_2027.webp",
+        "name": "Stop building it up and show me your power.",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Strike Defense 10.00 ~ 25.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Strike Attack 15.00 ~ 32.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "6.00 ~ 15.00 % to own Strike Attack when 3 battle members are \"Battle Style: Melee Type\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Melee Type"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2061",
+        "url": "https://dblegends.net/equip/2061",
+        "image": "https://dblegends.net/assets/equips/EqIco_2061.webp",
+        "name": "Blast from Behind",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Strike Defense 18.00 ~ 30.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Blast Defense 18.00 ~ 30.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Health 6.00 ~ 12.00 % Health Restoration 6.00 ~ 12.00 %"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Sagas From the Movies",
+                "Saiyan"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2065",
+        "url": "https://dblegends.net/equip/2065",
+        "image": "https://dblegends.net/assets/equips/EqIco_2065.webp",
+        "name": "Breaking Through Yet Another Wall",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "5.00 ~ 15.00 % to own Strike Attack when \"Tag: Saiyan\" and \"Tag: Powerful Opponent\" is a battle member. - OR - 5.00 ~ 15.00 % to own Blast Attack when \"Tag: Fusion Warrior\" and \"Tag: God Ki\" is a battle member."
+            },
+            {
+                "slot_index": 3,
+                "effect": "5.00 ~ 15.00 % to own Strike & Blast Defense when 3 battle members are \"Episode: Sagas From the Movies\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Sagas From the Movies",
+                "Saiyan"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "1941",
+        "url": "https://dblegends.net/equip/1941",
+        "image": "https://dblegends.net/assets/equips/EqIco_1941.webp",
+        "name": "Of course you don't, your mind is too small.",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 10.00 ~ 20.00 % Base Strike Defense 35.00 ~ 70.00 % Base Blast Defense 35.00 ~ 70.00 % Health Restoration 8.00 ~ 15.00 % Damage Guard 60.00 ~ 170.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Inflicted Damage 70.00 ~ 190.00 % Special Move damage 10.00 ~ 30.00 % Base Strike Attack 35.00 ~ 70.00 % Base Blast Attack 35.00 ~ 70.00 % Restores own health by 1.00 ~ 3.00 ％ after being hit by an enemy's Arts attack while this character is on the battlefield."
+            },
+            {
+                "slot_index": 3,
+                "effect": "On transformation, draw up to 4 cards if hand has 3 or fewer On battlefield entry, if own Unique Gauge is full, the following effects occur: ・Draw Special Move Arts next ・Ki +50 While not defeated, on enemy Special Move Arts activation, cancel enemy Buff Effects (3 times)"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Goku Black",
+                "DBL77-05S"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
         "id": "50001",
         "url": "https://dblegends.net/equip/50001",
         "image": "https://dblegends.net/assets/equips/EqIco_1068.webp",
@@ -11713,6 +12210,182 @@
         "conditions_data": [
             [
                 "Regeneration",
+                "Ranged Type"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "50198",
+        "url": "https://dblegends.net/equip/50198",
+        "image": "https://dblegends.net/assets/equips/EqIco_1670.webp",
+        "name": "I can feel it. Share your power with me!",
+        "rarity": "rarity awakenedgold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Strike Attack 6.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Ki Recovery 6.00 ~ 12.00 % Base Strike Attack 8.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Critical 8.00 ~ 15.00 % Base Strike Attack 8.00 ~ 15.00 % 6.00 ~ 12.00 % to own Strike Attack if a \"Episode: \"Future\" Trunks Saga (S)\" other than this character is a battle member."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Vegeta Clan",
+                "\"Future\" Trunks Saga (S)"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "50199",
+        "url": "https://dblegends.net/equip/50199",
+        "image": "https://dblegends.net/assets/equips/EqIco_1959.webp",
+        "name": "Hee-hee-hee-hee!",
+        "rarity": "rarity awakenedgold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Special Move Damage 8.00 ~ 15.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Health 6.00 ~ 10.00 % Base Strike Defense 10.00 ~ 20.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "6.00 ~ 15.00 % to own Strike & Blast Attack when 3 battle members are \"Tag: DAIMA\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "DAIMA",
+                "Goku"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "50200",
+        "url": "https://dblegends.net/equip/50200",
+        "image": "https://dblegends.net/assets/equips/EqIco_1870.webp",
+        "name": "Heh-heh-heh...",
+        "rarity": "rarity awakenedgold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Critical 10.00 ~ 25.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Health 6.00 ~ 12.00 % Special Move Damage 6.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Strike Attack 10.00 ~ 20.00 % 10.00 ~ 20.00 % to own Strike Attack if a \"Tag: Team Bardock\" other than this character is a battle member."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Team Bardock"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "50201",
+        "url": "https://dblegends.net/equip/50201",
+        "image": "https://dblegends.net/assets/equips/EqIco_1332.webp",
+        "name": "Your Ki Went Up...Just a Little Bit!",
+        "rarity": "rarity awakenedgold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Blast Attack 10.00 ~ 20.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Strike Attack 5.00 ~ 10.00 % Base Blast Attack 8.00 ~ 15.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Health 6.00 ~ 10.00 % 5.00 ~ 10.00 % to own Blast Attack if a \"Tag: Powerful Opponent\" other than this character is a battle member."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Regeneration",
+                "Absorption"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "50202",
+        "url": "https://dblegends.net/equip/50202",
+        "image": "https://dblegends.net/assets/equips/EqIco_1495.webp",
+        "name": "A proud warrior!",
+        "rarity": "rarity awakenedgold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Blast Defense 10.00 ~ 20.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Strike Attack 8.00 ~ 15.00 % Base Blast Defense 8.00 ~ 15.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "3.00 ~ 5.00 % to own Strike & Blast Defense for each \"Tag: God Ki\" or \"Episode: DRAGON BALL XENOVERSE 2\" battle member."
+            }
+        ],
+        "conditions_data": [
+            [
+                "God Ki",
+                "Future"
+            ],
+            [
+                "God Ki",
+                "DRAGON BALL XENOVERSE 2"
+            ]
+        ],
+        "condition_logic": "OR",
+        "condition_desc": "Must meet requirements of Group 1 OR Group 2..."
+    },
+    {
+        "id": "50203",
+        "url": "https://dblegends.net/equip/50203",
+        "image": "https://dblegends.net/assets/equips/EqIco_1381.webp",
+        "name": "Hurry up and die!",
+        "rarity": "rarity awakenedgold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Ki Recovery 10.00 ~ 22.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Special Move Damage 8.00 ~ 15.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Blast Attack 12.00 ~ 20.00 % 3.00 ~ 6.00 % to own Blast Attack per \"Battle Style: Ranged Type\" battle member."
+            }
+        ],
+        "conditions_data": [
+            [
                 "Ranged Type"
             ]
         ],
@@ -21051,11 +21724,11 @@
             },
             {
                 "slot_index": 2,
-                "effect": "1.00 ~ 3.00 % to Blast Attack for each \"Battle Style: Ranged Type\" battle member. - OR - 1.00 ~ 3.00 % to Strike Attack for each \"Battle Style: Melee Type\" battle member. 1.50 ~ 4.00 % to Blast Defense for each \"Battle Style: Support Type\" battle member. - OR - 1.50 ~ 4.00 % to Strike Defense for each \"Battle Style: Defense Type\" battle member."
+                "effect": "1.00 ~ 3.00 % to own Blast Attack per \"Battle Style: Ranged Type\" battle member. - OR - 1.00 ~ 3.00 % to Strike Attack for each \"Battle Style: Melee Type\" battle member. 1.50 ~ 4.00 % to Blast Defense for each \"Battle Style: Support Type\" battle member. - OR - 1.50 ~ 4.00 % to Strike Defense for each \"Battle Style: Defense Type\" battle member."
             },
             {
                 "slot_index": 3,
-                "effect": "1.00 ~ 3.00 % to Blast Attack for each \"Battle Style: Ranged Type\" battle member. - OR - 1.00 ~ 3.00 % to Strike Attack for each \"Battle Style: Melee Type\" battle member. 1.50 ~ 4.00 % to Blast Defense for each \"Battle Style: Support Type\" battle member. - OR - 1.50 ~ 4.00 % to Strike Defense for each \"Battle Style: Defense Type\" battle member."
+                "effect": "1.00 ~ 3.00 % to own Blast Attack per \"Battle Style: Ranged Type\" battle member. - OR - 1.00 ~ 3.00 % to Strike Attack for each \"Battle Style: Melee Type\" battle member. 1.50 ~ 4.00 % to Blast Defense for each \"Battle Style: Support Type\" battle member. - OR - 1.50 ~ 4.00 % to Strike Defense for each \"Battle Style: Defense Type\" battle member."
             }
         ],
         "conditions_data": [],
@@ -22599,6 +23272,175 @@
         "conditions_data": [
             [
                 "Regeneration"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2029",
+        "url": "https://dblegends.net/equip/2029",
+        "image": "https://dblegends.net/assets/equips/EqIco_2029.webp",
+        "name": "Hope Comes Dashing In",
+        "rarity": "rarity gold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Special Move Damage 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Health 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Ultimate Damage 5.00 ~ 12.00 % 5.00 ~ 10.00 % to Strike & Blast Attack if this character is \"Tag: Hybrid Saiyan\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Future"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2048",
+        "url": "https://dblegends.net/equip/2048",
+        "image": "https://dblegends.net/assets/equips/EqIco_2048.webp",
+        "name": "Follow-Up Attack from a Blind Spot",
+        "rarity": "rarity gold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Special Move Damage 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Health 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Strike Defense 8.00 ~ 20.00 % 8.00 ~ 20.00 % to Strike Defense if this character is \"Tag: Super Saiyan 3\" or \"Tag: Weapon Wielder\""
+            }
+        ],
+        "conditions_data": [
+            [
+                "DAIMA"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2035",
+        "url": "https://dblegends.net/equip/2035",
+        "image": "https://dblegends.net/assets/equips/EqIco_2035.webp",
+        "name": "Blood-Crimson Determination",
+        "rarity": "rarity gold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Health Restoration 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Health 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Strike Defense 5.00 ~ 15.00 % 5.00 ~ 12.00 % to Strike & Blast Defense if this character is \"Episode: Anime Original Sagas\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Saiyan"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "1271",
+        "url": "https://dblegends.net/equip/1271",
+        "image": "https://dblegends.net/assets/equips/EqIco_1271.webp",
+        "name": "Heh...",
+        "rarity": "rarity gold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Strike Defense 5.00 ~ 12.00 % Base Blast Defense 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Health 5.00 ~ 10.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Health Restoration 5.00 ~ 10.00 % 5.00 ~ 10.00 % to Strike & Blast Defense if this character is \"Battle Style: Defense Type\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Saiyan"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "2059",
+        "url": "https://dblegends.net/equip/2059",
+        "image": "https://dblegends.net/assets/equips/EqIco_2059.webp",
+        "name": "Advancing With the Power of a God",
+        "rarity": "rarity gold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Blast Attack 5.00 ~ 15.00 % Base Strike Defense 5.00 ~ 15.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Health 5.00 ~ 12.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "5.00 ~ 10.00 % to Blast Attack & Defense if this character is \"Tag: God Ki\"."
+            }
+        ],
+        "conditions_data": [
+            [
+                "Fusion Warrior"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "1700",
+        "url": "https://dblegends.net/equip/1700",
+        "image": "https://dblegends.net/assets/equips/EqIco_1700.webp",
+        "name": "I don't share Kakarot's taste for forgiveness.",
+        "rarity": "rarity gold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Strike Defense 10.00 ~ 22.00 % Base Blast Defense 10.00 ~ 22.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Strike Attack 10.00 ~ 22.00 % Base Blast Attack 10.00 ~ 22.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Health 5.00 ~ 10.00 % Special Move Damage 5.00 ~ 10.00 %"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Event Exclusive",
+                "Frieza Resurrected Saga (S)"
             ]
         ],
         "condition_logic": "AND",
@@ -24274,6 +25116,30 @@
             {
                 "slot_index": 2,
                 "effect": "Base Health 1.40 ~ 1.40 %"
+            }
+        ],
+        "conditions_data": [],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
+        "id": "59999",
+        "url": "https://dblegends.net/equip/59999",
+        "image": "https://dblegends.net/assets/equips/EqIco_1000.webp",
+        "name": "Let's Hold 'Em Back!",
+        "rarity": "rarity awakenedbronze",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 10.00 ~ 10.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Strike Defense 10.00 ~ 10.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Blast Defense 10.00 ~ 10.00 %"
             }
         ],
         "conditions_data": [],

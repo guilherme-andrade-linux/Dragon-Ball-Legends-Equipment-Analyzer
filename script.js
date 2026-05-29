@@ -1,7 +1,7 @@
 // Import modules
-import { handleFileUpload, fetchFromFirebase, filterAndRenderCharacters } from './scripts/character-manager.js';
+import { handleFileUpload, fetchFromFirebase, filterAndRenderCharacters, loadLocalCharacters } from './scripts/character-manager.js';
 import { updateTagFilterUI, initializeTags } from './scripts/character-tags.js';
-import { handleEquipFileUpload, fetchEquipmentsFromFirebase } from './scripts/equipment-manager.js';
+import { handleEquipFileUpload, fetchEquipmentsFromFirebase, loadLocalEquipments } from './scripts/equipment-manager.js';
 import { renderSlots } from './scripts/equipment-slots.js';
 import { renderEquipEffectFilters, renderEquipRarityFilters } from './scripts/equipment-filters.js';
 import { clearSelectedTags } from './scripts/state.js';
@@ -101,4 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial Slot Render
     renderSlots();
+
+    // Load local data
+    loadLocalCharacters();
+    loadLocalEquipments();
 });
+
