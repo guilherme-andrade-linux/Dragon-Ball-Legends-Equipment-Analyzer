@@ -560,6 +560,46 @@
             </div>
           </div>
         </div>
+
+        <!-- Equipment Recommendations -->
+        <div id="recommendations-card" class="bg-panel-dark border border-border-dark rounded-xl p-6 relative overflow-hidden mt-6 hidden animate-fade-in-up">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                <span class="material-symbols-outlined text-yellow-400">auto_awesome</span>
+                Sugestões de Equipamento
+              </h3>
+              <p class="text-xs text-[#929bc9] mt-0.5">Custom gear suggestions tailored for <span id="recommend-char-name" class="font-bold text-white">this character</span></p>
+            </div>
+            <!-- Tab buttons -->
+            <div class="flex p-1 bg-[#101322] rounded-lg border border-border-dark shrink-0 gap-1">
+              <button id="tab-solo-rec" onclick="switchRecTab('solo')" class="px-4 py-1.5 rounded-md text-xs font-bold text-white bg-primary transition-all">
+                Foco Solo (Sem Equipa)
+              </button>
+              <button id="tab-team-rec" onclick="switchRecTab('team')" class="px-4 py-1.5 rounded-md text-xs font-bold text-[#929bc9] hover:text-white transition-all">
+                Sinergia de Equipa
+              </button>
+              <button id="tab-gold-rec" onclick="switchRecTab('gold')" class="px-4 py-1.5 rounded-md text-xs font-bold text-[#929bc9] hover:text-white transition-all">
+                Acessível (Apenas Gold)
+              </button>
+            </div>
+          </div>
+
+          <!-- Solo recommendations list -->
+          <div id="solo-recommendations" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Dynamic solo recs -->
+          </div>
+
+          <!-- Team recommendations list -->
+          <div id="team-recommendations" class="grid grid-cols-1 md:grid-cols-3 gap-4 hidden">
+            <!-- Dynamic team recs -->
+          </div>
+
+          <!-- Gold recommendations list -->
+          <div id="gold-recommendations" class="grid grid-cols-1 md:grid-cols-3 gap-4 hidden">
+            <!-- Dynamic gold recs -->
+          </div>
+        </div>
       </div>
     </section>
   </main>

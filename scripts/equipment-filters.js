@@ -332,4 +332,9 @@ export function updateEquipmentList() {
 
     const filtered = filterEquipments(currentSelectedCharacter, allEquipments);
     renderEquipList(filtered);
+
+    // Dynamically trigger recommendations to avoid circular dependency
+    import('./equipment-recommendations.js').then(module => {
+        module.generateRecommendations();
+    });
 }

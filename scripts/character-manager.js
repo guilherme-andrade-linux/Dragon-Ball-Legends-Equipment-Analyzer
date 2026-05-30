@@ -220,6 +220,11 @@ export function selectCharacter(char) {
 
     // Recalculate stats as they may depend on the character (e.g. conditional effects)
     calculateStats();
+
+    // Dynamically trigger recommendations to avoid circular dependency
+    import('./equipment-recommendations.js').then(module => {
+        module.generateRecommendations();
+    });
 }
 
 export function getElementColor(el) {

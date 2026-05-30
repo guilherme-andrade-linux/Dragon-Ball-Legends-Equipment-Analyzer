@@ -5,6 +5,7 @@ import { handleEquipFileUpload, fetchEquipmentsFromFirebase, loadLocalEquipments
 import { renderSlots } from './scripts/equipment-slots.js';
 import { renderEquipEffectFilters, renderEquipRarityFilters } from './scripts/equipment-filters.js';
 import { clearSelectedTags } from './scripts/state.js';
+import './scripts/equipment-recommendations.js';
 
 // --- INIT ---
 document.addEventListener('DOMContentLoaded', () => {

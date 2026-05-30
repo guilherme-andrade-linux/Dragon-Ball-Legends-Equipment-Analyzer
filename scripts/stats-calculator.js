@@ -90,7 +90,7 @@ export function calculateStats() {
                 const multiplier = equip.multiplier !== undefined ? equip.multiplier : 0;
 
                 // --- NEW: Handle "if this character is" Logic ---
-                const ifRegex = /([+]?\d+(?:\.\d+)?)(?:\s*~\s*([+]?\d+(?:\.\d+)?))?\s*%\s*to\s*([^.]+?)\s*if\s*this character is\s*"([^"]+)"/gi;
+                const ifRegex = /([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%\s*to\s*([^.]+?)\s*if\s*this character is\s*"([^"]+)"/gi;
 
                 remainingText = remainingText.replace(ifRegex, (match, val1, val2, statName, conditionTag) => {
                     let value = parseFloat(val1);
@@ -134,7 +134,7 @@ export function calculateStats() {
                 // Regex for "scaling" effects (Per Member)
                 // e.g. "8.00 ~ 12.50 % to Strike & Blast Defense per 'Tag: Son Family' battle member."
                 // e.g. "for each 'Tag: Son Family' battle member"
-                const scalingRegex = /([+]?\d+(?:\.\d+)?)(?:\s*~\s*([+]?\d+(?:\.\d+)?))?\s*%\s*to\s*([^.]+?)\s*(?:per|for each)\s*(?:.*?)\s*member/gi;
+                const scalingRegex = /([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%\s*to\s*([^.]+?)\s*(?:per|for each)\s*(?:.*?)\s*member/gi;
 
                 remainingText = remainingText.replace(scalingRegex, (match, val1, val2, statName) => {
                     let value = parseFloat(val1);
@@ -170,7 +170,7 @@ export function calculateStats() {
 
                 // Regex for "threshold" effects (When ... is a battle member)
                 // e.g. "8.00 ~ 20.00 % to Blast Defense when 'Tag: Saiyan' and 'Tag: Potara' is a battle member."
-                const thresholdRegex = /([+]?\d+(?:\.\d+)?)(?:\s*~\s*([+]?\d+(?:\.\d+)?))?\s*%\s*to\s*([^.]+?)\s*when\s*(?:.*?)\s*is a battle member/gi;
+                const thresholdRegex = /([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%\s*to\s*([^.]+?)\s*when\s*(?:.*?)\s*is a battle member/gi;
 
                 remainingText = remainingText.replace(thresholdRegex, (match, val1, val2, statName) => {
                     let value = parseFloat(val1);
@@ -192,15 +192,15 @@ export function calculateStats() {
 
 
                 // 2. Handle Compounds
-                processMatch(/Base Strike & Blast Attack\s*([+]?\d+(?:\.\d+)?)(?:\s*~\s*([+]?\d+(?:\.\d+)?))?\s*%/gi, ["Base Strike Attack", "Base Blast Attack"]);
-                processMatch(/Base Strike & Blast Defense\s*([+]?\d+(?:\.\d+)?)(?:\s*~\s*([+]?\d+(?:\.\d+)?))?\s*%/gi, ["Base Strike Defense", "Base Blast Defense"]);
-                processMatch(/(?<!Base\s+)Strike & Blast Attack\s*([+]?\d+(?:\.\d+)?)(?:\s*~\s*([+]?\d+(?:\.\d+)?))?\s*%/gi, ["Strike Attack", "Blast Attack"]);
-                processMatch(/(?<!Base\s+)Strike & Blast Defense\s*([+]?\d+(?:\.\d+)?)(?:\s*~\s*([+]?\d+(?:\.\d+)?))?\s*%/gi, ["Strike Defense", "Blast Defense"]);
+                processMatch(/Base Strike & Blast Attack\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/gi, ["Base Strike Attack", "Base Blast Attack"]);
+                processMatch(/Base Strike & Blast Defense\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/gi, ["Base Strike Defense", "Base Blast Defense"]);
+                processMatch(/(?<!Base\s+)Strike & Blast Attack\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/gi, ["Strike Attack", "Blast Attack"]);
+                processMatch(/(?<!Base\s+)Strike & Blast Defense\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/gi, ["Strike Defense", "Blast Defense"]);
 
                 // 3. Handle Single Stats
                 for (const key in STAT_MAPPING) {
                     const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                    const regex = new RegExp(`${escapedKey}\\s*([+]?\\d+(?:\\.\\d+)?)(?:\\s*~\\s*([+]?\\d+(?:\\.\\d+)?))?\\s*%`, 'gi');
+                    const regex = new RegExp(`${escapedKey}\\s*([+-]?\\d+(?:\\.\\d+)?)(?:\\s*~\\s*([+-]?\\d+(?:\\.\\d+)?))?\\s*%`, 'gi');
                     processMatch(regex, [key]);
                 }
 
