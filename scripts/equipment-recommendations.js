@@ -123,32 +123,28 @@ function doesCharacterSatisfySlotCondition(text) {
 
 // Calculate the quality score of an equipment piece for a given character type and focus
 export function scoreEquipmentForCharacter(equip, charType, assumeFullTeam = false) {
-    let strikeAtk = 0;
-    let blastAtk = 0;
-    let strikeDef = 0;
-    let blastDef = 0;
-    let critical = 0;
-    let kiRecovery = 0;
-    let health = 0;
-    let restoration = 0;
-    let specialMoveDmg = 0;
-    let ultimateDmg = 0;
+    let strikeVal = 0;
+    let blastVal = 0;
+    let generalOffVal = 0;
+    let survivalVal = 0;
+    let critVal = 0;
+    let strikeDefVal = 0;
+    let blastDefVal = 0;
+    let generalDefVal = 0;
 
     if (equip.slots) {
         equip.slots.forEach(slot => {
             if (!slot.effect) return;
             const parts = slot.effect.split(/- OR -/i);
             
-            let maxStrikeAtk = 0;
-            let maxBlastAtk = 0;
-            let maxStrikeDef = 0;
-            let maxBlastDef = 0;
-            let maxCritical = 0;
-            let maxKiRecovery = 0;
-            let maxHealth = 0;
-            let maxRestoration = 0;
-            let maxSpecialMoveDmg = 0;
-            let maxUltimateDmg = 0;
+            let maxStrikeVal = 0;
+            let maxBlastVal = 0;
+            let maxGeneralOffVal = 0;
+            let maxSurvivalVal = 0;
+            let maxCritVal = 0;
+            let maxStrikeDefVal = 0;
+            let maxBlastDefVal = 0;
+            let maxGeneralDefVal = 0;
 
             parts.forEach(part => {
                 // Enforce condition validation first
@@ -156,67 +152,80 @@ export function scoreEquipmentForCharacter(equip, charType, assumeFullTeam = fal
                     return;
                 }
 
-                const baseSAtk = getStatValueFromText(part, "Base Strike Attack", assumeFullTeam);
-                const pureSAtk = getStatValueFromText(part, "Strike Attack", assumeFullTeam);
-                const dmgInflicted = getStatValueFromText(part, "Inflicted Damage", assumeFullTeam);
+                // 1. Melee/Strike Offensive
+                const bSAtk = getStatValueFromText(part, "Base Strike Attack", assumeFullTeam);
+                const pSAtk = getStatValueFromText(part, "Strike Attack", assumeFullTeam);
+                const sDmg = getStatValueFromText(part, "Strike Damage Inflicted", assumeFullTeam);
+                const sVal = bSAtk + (pSAtk + sDmg) * 1.5;
 
-                const baseBAtk = getStatValueFromText(part, "Base Blast Attack", assumeFullTeam);
-                const pureBAtk = getStatValueFromText(part, "Blast Attack", assumeFullTeam);
+                // 2. Ranged/Blast Offensive
+                const bBAtk = getStatValueFromText(part, "Base Blast Attack", assumeFullTeam);
+                const pBAtk = getStatValueFromText(part, "Blast Attack", assumeFullTeam);
+                const bDmg = getStatValueFromText(part, "Blast Damage Inflicted", assumeFullTeam);
+                const bVal = bBAtk + (pBAtk + bDmg) * 1.5;
 
-                const baseSDef = getStatValueFromText(part, "Base Strike Defense", assumeFullTeam);
-                const pureSDef = getStatValueFromText(part, "Strike Defense", assumeFullTeam);
+                // 3. General Offensive Utility
+                const iDmg = getStatValueFromText(part, "Inflicted Damage", assumeFullTeam);
+                const spM = getStatValueFromText(part, "Special Move Damage", assumeFullTeam);
+                const ultM = getStatValueFromText(part, "Ultimate Damage", assumeFullTeam);
+                const cDmg = getStatValueFromText(part, "Critical Damage", assumeFullTeam);
+                const goVal = (iDmg + spM + ultM + cDmg) * 1.5;
 
-                const baseBDef = getStatValueFromText(part, "Base Blast Defense", assumeFullTeam);
-                const pureBDef = getStatValueFromText(part, "Blast Defense", assumeFullTeam);
+                // 4. Survival & Ki Utility
+                const bHp = getStatValueFromText(part, "Base Health", assumeFullTeam);
+                const hRest = getStatValueFromText(part, "Health Restoration", assumeFullTeam);
+                const bKi = getStatValueFromText(part, "Base Ki Recovery", assumeFullTeam);
+                const vRec = getStatValueFromText(part, "Vanishing Gauge Recovery", assumeFullTeam);
+                const uGg = getStatValueFromText(part, "Unique Gauge Charge Rate", assumeFullTeam);
+                const survVal = bHp * 1.5 + hRest + bKi + vRec * 1.5 + uGg * 1.5;
 
-                const baseCrit = getStatValueFromText(part, "Base Critical", assumeFullTeam);
-                const pureCrit = getStatValueFromText(part, "Critical", assumeFullTeam);
+                // 5. Critical
+                const bCrit = getStatValueFromText(part, "Base Critical", assumeFullTeam);
+                const pCrit = getStatValueFromText(part, "Critical", assumeFullTeam);
+                const crVal = bCrit + pCrit * 1.5;
 
-                const ki = getStatValueFromText(part, "Base Ki Recovery", assumeFullTeam);
-                const hp = getStatValueFromText(part, "Base Health", assumeFullTeam);
-                const rest = getStatValueFromText(part, "Health Restoration", assumeFullTeam);
-                const spMove = getStatValueFromText(part, "Special Move Damage", assumeFullTeam);
-                const ult = getStatValueFromText(part, "Ultimate Damage", assumeFullTeam);
+                // 6. Strike Defense
+                const bSDef = getStatValueFromText(part, "Base Strike Defense", assumeFullTeam);
+                const pSDef = getStatValueFromText(part, "Strike Defense", assumeFullTeam);
+                const sdVal = bSDef + pSDef * 1.5;
 
-                // Pure modifiers (including Inflicted Damage) are multiplied by 1.5x as they are more valuable in DBL calculations
-                const sAtkVal = baseSAtk + (pureSAtk + dmgInflicted) * 1.5;
-                const bAtkVal = baseBAtk + (pureBAtk + dmgInflicted) * 1.5;
-                const sDefVal = baseSDef + pureSDef * 1.5;
-                const bDefVal = baseBDef + pureBDef * 1.5;
-                const critVal = baseCrit + pureCrit * 1.5;
+                // 7. Blast Defense
+                const bBDef = getStatValueFromText(part, "Base Blast Defense", assumeFullTeam);
+                const pBDef = getStatValueFromText(part, "Blast Defense", assumeFullTeam);
+                const bdVal = bBDef + pBDef * 1.5;
 
-                maxStrikeAtk = Math.max(maxStrikeAtk, sAtkVal);
-                maxBlastAtk = Math.max(maxBlastAtk, bAtkVal);
-                maxStrikeDef = Math.max(maxStrikeDef, sDefVal);
-                maxBlastDef = Math.max(maxBlastDef, bDefVal);
-                maxCritical = Math.max(maxCritical, critVal);
+                // 8. General Defense Cuts / Guard
+                const dGrd = getStatValueFromText(part, "Damage Guard", assumeFullTeam);
+                const sCut = getStatValueFromText(part, "Sustained Damage CUT", assumeFullTeam);
+                const gdVal = (dGrd + sCut) * 1.5;
 
-                maxKiRecovery = Math.max(maxKiRecovery, ki);
-                maxHealth = Math.max(maxHealth, hp);
-                maxRestoration = Math.max(maxRestoration, rest);
-                maxSpecialMoveDmg = Math.max(maxSpecialMoveDmg, spMove);
-                maxUltimateDmg = Math.max(maxUltimateDmg, ult);
+                maxStrikeVal = Math.max(maxStrikeVal, sVal);
+                maxBlastVal = Math.max(maxBlastVal, bVal);
+                maxGeneralOffVal = Math.max(maxGeneralOffVal, goVal);
+                maxSurvivalVal = Math.max(maxSurvivalVal, survVal);
+                maxCritVal = Math.max(maxCritVal, crVal);
+                maxStrikeDefVal = Math.max(maxStrikeDefVal, sdVal);
+                maxBlastDefVal = Math.max(maxBlastDefVal, bdVal);
+                maxGeneralDefVal = Math.max(maxGeneralDefVal, gdVal);
             });
 
-            strikeAtk += maxStrikeAtk;
-            blastAtk += maxBlastAtk;
-            strikeDef += maxStrikeDef;
-            blastDef += maxBlastDef;
-            critical += maxCritical;
-            kiRecovery += maxKiRecovery;
-            health += maxHealth;
-            restoration += maxRestoration;
-            specialMoveDmg += maxSpecialMoveDmg;
-            ultimateDmg += maxUltimateDmg;
+            strikeVal += maxStrikeVal;
+            blastVal += maxBlastVal;
+            generalOffVal += maxGeneralOffVal;
+            survivalVal += maxSurvivalVal;
+            critVal += maxCritVal;
+            strikeDefVal += maxStrikeDefVal;
+            blastDefVal += maxBlastDefVal;
+            generalDefVal += maxGeneralDefVal;
         });
     }
 
     let finalScore = 0;
 
     if (charType === "hybrid") {
-        finalScore = strikeAtk * 1.5 + blastAtk * 1.5 + (strikeDef + blastDef) * 1.5 + health * 2.0 + kiRecovery * 1.5 + restoration * 1.0 + critical * 1.0;
+        finalScore = strikeVal * 1.5 + blastVal * 1.5 + generalOffVal * 1.5 + survivalVal * 1.8 + critVal * 1.2 + (strikeDefVal + blastDefVal + generalDefVal) * 1.5;
     } else if (charType === "utility") {
-        let score = health * 3.0 + kiRecovery * 2.5 + specialMoveDmg * 2.5 + ultimateDmg * 2.5 + restoration * 2.0 + critical * 1.5;
+        let score = survivalVal * 3.0 + critVal * 2.0 + generalOffVal * 2.5 + generalDefVal * 2.0;
         
         let actualCharType = "Melee Type";
         if (currentSelectedCharacter && currentSelectedCharacter.visual_tags) {
@@ -226,35 +235,67 @@ export function scoreEquipmentForCharacter(equip, charType, assumeFullTeam = fal
         }
 
         if (actualCharType === "Melee Type") {
-            score += strikeAtk * 2.5;
+            score += strikeVal * 2.5;
         } else if (actualCharType === "Ranged Type") {
-            score += blastAtk * 2.5;
+            score += blastVal * 2.5;
         } else if (actualCharType === "Defense Type") {
-            score += (strikeDef + blastDef) * 2.5;
+            score += (strikeDefVal + blastDefVal) * 2.5;
         } else if (actualCharType === "Support Type") {
-            score += (strikeDef + blastDef) * 1.5 + kiRecovery * 1.5;
+            score += survivalVal * 1.5 + (strikeDefVal + blastDefVal) * 1.5;
         }
         finalScore = score;
     } else {
-        // Standard focus
-        let score = health * 1.5 + kiRecovery * 1.0 + critical * 1.0;
-        if (charType === "Melee Type") {
-            score += strikeAtk * 3.0;
-            score += blastAtk * 0.5;
-            score += (strikeDef + blastDef) * 0.5;
-        } else if (charType === "Ranged Type") {
-            score += blastAtk * 3.0;
-            score += strikeAtk * 0.5;
-            score += (strikeDef + blastDef) * 0.5;
-        } else if (charType === "Defense Type") {
-            score += (strikeDef + blastDef) * 3.0;
-            score += (strikeAtk + blastAtk) * 0.5;
-        } else if (charType === "Support Type") {
-            score += (strikeDef + blastDef) * 2.0;
-            score += kiRecovery * 3.0;
-            score += (strikeAtk + blastAtk) * 0.5;
+        // Standard focus (Primary / Principal) based strictly on foco_de_tipo.md
+        let activeCharType = charType;
+        if (activeCharType === "Melee Type" || activeCharType === "Ranged Type" || activeCharType === "Defense Type" || activeCharType === "Support Type") {
+            // Valid character type
+        } else {
+            // Fallback checking visual_tags
+            activeCharType = "Melee Type";
+            if (currentSelectedCharacter && currentSelectedCharacter.visual_tags) {
+                if (currentSelectedCharacter.visual_tags.includes("Ranged Type")) activeCharType = "Ranged Type";
+                else if (currentSelectedCharacter.visual_tags.includes("Defense Type")) activeCharType = "Defense Type";
+                else if (currentSelectedCharacter.visual_tags.includes("Support Type")) activeCharType = "Support Type";
+            }
         }
-        finalScore = score;
+
+        if (activeCharType === "Melee Type") {
+            finalScore = (
+                strikeVal * 3.5 +
+                generalOffVal * 2.8 +
+                survivalVal * 2.0 +
+                critVal * 1.4 +
+                (strikeDefVal + generalDefVal) * 0.8 +
+                blastVal * 0.4 +
+                blastDefVal * 0.2
+            );
+        } else if (activeCharType === "Ranged Type") {
+            finalScore = (
+                blastVal * 3.5 +
+                generalOffVal * 2.8 +
+                survivalVal * 2.0 +
+                critVal * 1.4 +
+                (blastDefVal + generalDefVal) * 0.8 +
+                strikeVal * 0.4 +
+                strikeDefVal * 0.2
+            );
+        } else if (activeCharType === "Defense Type") {
+            finalScore = (
+                (strikeDefVal + blastDefVal + generalDefVal) * 3.5 +
+                survivalVal * 2.5 +
+                critVal * 1.8 +
+                (strikeVal + blastVal) * 1.2 +
+                generalOffVal * 0.8
+            );
+        } else if (activeCharType === "Support Type") {
+            finalScore = (
+                survivalVal * 3.5 +
+                critVal * 2.5 +
+                generalOffVal * 1.8 +
+                (strikeVal + blastVal) * 1.2 +
+                (strikeDefVal + blastDefVal + generalDefVal) * 0.8
+            );
+        }
     }
 
     // Apply a major penalty (70%) to unrealistic, multi-attribute team conditional equipments

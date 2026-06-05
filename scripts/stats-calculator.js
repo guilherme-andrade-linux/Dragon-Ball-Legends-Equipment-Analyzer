@@ -1,23 +1,34 @@
 import { selectedEquipments, currentSelectedCharacter } from './state.js';
 
 export const STAT_MAPPING = {
+    // Offensive
     "Base Strike Attack": "stat-base-strike-attack",
     "Base Blast Attack": "stat-base-blast-attack",
     "Strike Attack": "stat-strike-attack",
     "Blast Attack": "stat-blast-attack",
+    "Strike Damage Inflicted": "stat-strike-damage-inflicted",
+    "Blast Damage Inflicted": "stat-blast-damage-inflicted",
     "Inflicted Damage": "stat-inflicted-damage",
     "Special Move Damage": "stat-special-move-damage",
     "Ultimate Damage": "stat-ultimate-damage",
+    "Critical Damage": "stat-critical-damage",
+
+    // Defensive
     "Base Strike Defense": "stat-base-strike-defense",
     "Base Blast Defense": "stat-base-blast-defense",
     "Strike Defense": "stat-strike-defense",
     "Blast Defense": "stat-blast-defense",
-    "Health Restoration": "stat-health-restoration",
-    "Base Health": "stat-base-health",
     "Damage Guard": "stat-damage-guard",
+    "Sustained Damage CUT": "stat-sustained-damage-cut",
+
+    // Utility
+    "Base Health": "stat-base-health",
+    "Health Restoration": "stat-health-restoration",
     "Base Ki Recovery": "stat-base-ki-recovery",
     "Base Critical": "stat-base-critical",
-    "Critical": "stat-critical"
+    "Critical": "stat-critical",
+    "Vanishing Gauge Recovery": "stat-vanishing-gauge-recovery",
+    "Unique Gauge Charge Rate": "stat-unique-gauge-charge-rate"
 };
 
 export function calculateStats() {
@@ -66,6 +77,38 @@ export function calculateStats() {
             partsToProcess.forEach(part => {
                 let remainingText = part;
 
+                // Helper to map a clean stat name to keys in STAT_MAPPING
+                const mapStatName = (statName) => {
+                    const cleanStat = statName.toLowerCase().trim();
+                    const isBase = cleanStat.includes("base");
+                    const matchedKeys = [];
+
+                    for (const key in STAT_MAPPING) {
+                        const keyLower = key.toLowerCase();
+                        if (keyLower.includes("base") !== isBase) continue;
+
+                        // Specific Exclusions
+                        if (key === "Inflicted Damage" && (cleanStat.includes("strike") || cleanStat.includes("blast") || cleanStat.includes("special") || cleanStat.includes("ultimate"))) continue;
+                        if (key === "Critical" && cleanStat.includes("damage")) continue;
+                        if (key === "Base Critical" && cleanStat.includes("damage")) continue;
+                        if (key === "Unique Gauge Charge Rate" && !cleanStat.includes("charge") && !cleanStat.includes("rate")) continue;
+
+                        let matchKey = true;
+                        const keyWords = keyLower.replace("&", "").split(/\s+/).filter(w => w.length > 0);
+                        for (const word of keyWords) {
+                            if (!cleanStat.includes(word)) {
+                                matchKey = false;
+                                break;
+                            }
+                        }
+
+                        if (matchKey) {
+                            matchedKeys.push(key);
+                        }
+                    }
+                    return matchedKeys;
+                };
+
                 // 1. Helper to Process Matches
                 const processMatch = (regex, keys) => {
                     remainingText = remainingText.replace(regex, (match, val1, val2) => {
@@ -77,13 +120,15 @@ export function calculateStats() {
                         keys.forEach(k => {
                             if (stats[k] !== undefined) {
                                 stats[k] += value;
+                                if (isConditional) {
+                                    conditionalStats[k] = true;
+                                }
                             }
                         });
 
                         return "";
                     });
                 };
-
 
                 // --- NEW: Handle "Per Member" / "When ... is member" Logic with Multiplier ---
                 // We check this BEFORE standard processing to consume the text.
@@ -99,32 +144,22 @@ export function calculateStats() {
                     const cleanCondition = conditionTag.replace(/^(Tag: |Episode: |Element: |Character: )/, "");
 
                     // Check if current character matches the condition
-                    // We need `currentSelectedCharacter` which is global
                     let hasTag = false;
                     if (currentSelectedCharacter && currentSelectedCharacter.visual_tags) {
                         hasTag = currentSelectedCharacter.visual_tags.includes(cleanCondition);
-                        // Fallback for Name match if not in tags (sometimes names are used like "Broly")
                         if (!hasTag && currentSelectedCharacter.name.includes(cleanCondition)) hasTag = true;
                     }
 
                     if (hasTag) {
-                        const textIsBase = statName.includes("Base ");
-                        const keywords = ["Strike", "Blast", "Attack", "Defense", "Health", "Ki", "Damage", "Critical", "Restoration", "Inflicted", "Special", "Ultimate", "Move"];
-
-                        for (const key in STAT_MAPPING) {
-                            if (key.includes("Base ") !== textIsBase) continue;
-
-                            let matchKey = true;
-                            for (const word of keywords) {
-                                if (key.includes(word) && !statName.includes(word)) {
-                                    matchKey = false;
-                                    break;
+                        const keys = mapStatName(statName);
+                        keys.forEach(k => {
+                            if (stats[k] !== undefined) {
+                                stats[k] += value;
+                                if (isConditional) {
+                                    conditionalStats[k] = true;
                                 }
                             }
-                            if (matchKey) {
-                                stats[key] += value;
-                            }
-                        }
+                        });
                         return ""; // Consume text
                     } else {
                         return match; // Keep text for Other Effects
@@ -132,8 +167,6 @@ export function calculateStats() {
                 });
 
                 // Regex for "scaling" effects (Per Member)
-                // e.g. "8.00 ~ 12.50 % to Strike & Blast Defense per 'Tag: Son Family' battle member."
-                // e.g. "for each 'Tag: Son Family' battle member"
                 const scalingRegex = /([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%\s*to\s*([^.]+?)\s*(?:per|for each)\s*(?:.*?)\s*member/gi;
 
                 remainingText = remainingText.replace(scalingRegex, (match, val1, val2, statName) => {
@@ -142,54 +175,38 @@ export function calculateStats() {
 
                     const boostedValue = value * multiplier;
 
-                    // Map stat name to keys
-                    // Logic from existing stats mapping needed here, but statName might be "Strike & Blast Defense"
-                    // We can reuse the key mapping logic
-
-                    for (const key in STAT_MAPPING) {
-                        // Check if key is inside the statName text (e.g. "Strike Defense" in "Strike & Blast Defense")
-                        // Standardize check
-                        const cleanKey = key.replace("Base ", ""); // stats usually say "to Strike Attack", not "to Base Strike Attack" in these sentences?
-                        // Let's check both
-
-                        if (statName.includes(key) || statName.includes(cleanKey)) {
-                            // Correct mapping check:
-                            // If statName is "Strike & Blast Defense", it matches "Strike Defense" and "Blast Defense".
-                            if (stats[key] !== undefined) {
-                                // Basic duplicate check for "Strike" matching "Strike Defense" and "Strike Attack"
-                                // unique identifiers: "Defense", "Attack"
-                                if (key.includes("Defense") && !statName.includes("Defense")) continue;
-                                if (key.includes("Attack") && !statName.includes("Attack")) continue;
-
-                                stats[key] += boostedValue;
+                    const keys = mapStatName(statName);
+                    keys.forEach(k => {
+                        if (stats[k] !== undefined) {
+                            stats[k] += boostedValue;
+                            if (isConditional) {
+                                conditionalStats[k] = true;
                             }
                         }
-                    }
+                    });
                     return ""; // Consume
                 });
 
                 // Regex for "threshold" effects (When ... is a battle member)
-                // e.g. "8.00 ~ 20.00 % to Blast Defense when 'Tag: Saiyan' and 'Tag: Potara' is a battle member."
                 const thresholdRegex = /([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%\s*to\s*([^.]+?)\s*when\s*(?:.*?)\s*is a battle member/gi;
 
                 remainingText = remainingText.replace(thresholdRegex, (match, val1, val2, statName) => {
                     let value = parseFloat(val1);
                     if (val2 && !isNaN(parseFloat(val2))) value = parseFloat(val2);
 
-                    // Threshold logic: Max if multiplier > 0
                     const boostedValue = (multiplier > 0) ? value : 0;
 
-                    for (const key in STAT_MAPPING) {
-                        const cleanKey = key.replace("Base ", "");
-                        if (statName.includes(key) || statName.includes(cleanKey)) {
-                            if (key.includes("Defense") && !statName.includes("Defense")) continue;
-                            if (key.includes("Attack") && !statName.includes("Attack")) continue;
-                            stats[key] += boostedValue;
+                    const keys = mapStatName(statName);
+                    keys.forEach(k => {
+                        if (stats[k] !== undefined) {
+                            stats[k] += boostedValue;
+                            if (isConditional) {
+                                conditionalStats[k] = true;
+                            }
                         }
-                    }
+                    });
                     return ""; // Consume
                 });
-
 
                 // 2. Handle Compounds
                 processMatch(/Base Strike & Blast Attack\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/gi, ["Base Strike Attack", "Base Blast Attack"]);
@@ -197,12 +214,33 @@ export function calculateStats() {
                 processMatch(/(?<!Base\s+)Strike & Blast Attack\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/gi, ["Strike Attack", "Blast Attack"]);
                 processMatch(/(?<!Base\s+)Strike & Blast Defense\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/gi, ["Strike Defense", "Blast Defense"]);
 
-                // 3. Handle Single Stats
+                // 3. Handle Single Stats (standard suffix percentage)
                 for (const key in STAT_MAPPING) {
                     const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
                     const regex = new RegExp(`${escapedKey}\\s*([+-]?\\d+(?:\\.\\d+)?)(?:\\s*~\\s*([+-]?\\d+(?:\\.\\d+)?))?\\s*%`, 'gi');
                     processMatch(regex, [key]);
                 }
+
+                // 4. Handle Prefix-Percentage Stats (e.g. "+20% to damage inflicted")
+                const prefixRegex = /([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%\s*to\s+([^.,;]+?)(?=\s*(?:if|per|for each|when|only|once|upon|$|\.))/gi;
+                remainingText = remainingText.replace(prefixRegex, (match, val1, val2, statName) => {
+                    let value = parseFloat(val1);
+                    if (val2 && !isNaN(parseFloat(val2))) {
+                        value = parseFloat(val2);
+                    }
+
+                    const keys = mapStatName(statName);
+                    keys.forEach(k => {
+                        if (stats[k] !== undefined) {
+                            stats[k] += value;
+                            if (isConditional) {
+                                conditionalStats[k] = true;
+                            }
+                        }
+                    });
+
+                    return "";
+                });
 
                 // Clean up remaining text
                 remainingText = remainingText.replace(/\s+/g, ' ').trim();

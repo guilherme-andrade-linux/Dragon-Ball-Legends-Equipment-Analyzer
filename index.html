@@ -382,6 +382,28 @@
                   <!-- Stat Row -->
                   <div>
                     <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Strike Damage Inflicted</span>
+                      <span id="stat-strike-damage-inflicted-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-strike-damage-inflicted-bar"
+                        class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Blast Damage Inflicted</span>
+                      <span id="stat-blast-damage-inflicted-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-blast-damage-inflicted-bar"
+                        class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
                       <span class="text-[#929bc9]">Special Move Damage</span>
                       <span id="stat-special-move-damage-value" class="text-primary font-bold">0%</span>
                     </div>
@@ -398,6 +420,17 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-ultimate-damage-bar"
+                        class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Critical Damage</span>
+                      <span id="stat-critical-damage-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-critical-damage-bar"
                         class="h-full progress-offensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
@@ -464,24 +497,22 @@
                   <!-- Stat Row -->
                   <div>
                     <div class="flex justify-between text-sm mb-1">
-                      <span class="text-[#929bc9]">Base Health</span>
-                      <span id="stat-base-health-value" class="text-primary font-bold">0%</span>
-                    </div>
-                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
-                      <div id="stat-base-health-bar"
-                        class="h-full progress-defensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip">
-                        <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Stat Row -->
-                  <div>
-                    <div class="flex justify-between text-sm mb-1">
                       <span class="text-[#929bc9]">Damage Guard</span>
                       <span id="stat-damage-guard-value" class="text-primary font-bold">0%</span>
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-damage-guard-bar"
+                        class="h-full progress-defensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Sustained Damage CUT</span>
+                      <span id="stat-sustained-damage-cut-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-sustained-damage-cut-bar"
                         class="h-full progress-defensive w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>
@@ -501,6 +532,19 @@
                 </button>
                 <!-- Folder Content -->
                 <div class="accordion-content open p-4 space-y-4 bg-[#111422]/60 border-t border-border-dark">
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Base Health</span>
+                      <span id="stat-base-health-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-base-health-bar"
+                        class="h-full progress-utility w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip">
+                        <div class="absolute right-0 top-0 bottom-0 w-1 bg-white/50"></div>
+                      </div>
+                    </div>
+                  </div>
                   <!-- Stat Row -->
                   <div>
                     <div class="flex justify-between text-sm mb-1">
@@ -542,6 +586,28 @@
                     </div>
                     <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
                       <div id="stat-critical-bar"
+                        class="h-full progress-utility w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Vanishing Gauge Recovery</span>
+                      <span id="stat-vanishing-gauge-recovery-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-vanishing-gauge-recovery-bar"
+                        class="h-full progress-utility w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
+                    </div>
+                  </div>
+                  <!-- Stat Row -->
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span class="text-[#929bc9]">Unique Gauge Charge Rate</span>
+                      <span id="stat-unique-gauge-charge-rate-value" class="text-primary font-bold">0%</span>
+                    </div>
+                    <div class="h-2 w-full bg-[#101322] rounded-full overflow-hidden">
+                      <div id="stat-unique-gauge-charge-rate-bar"
                         class="h-full progress-utility w-[0%] rounded-full relative transition-all duration-500 progress-glow-tip"></div>
                     </div>
                   </div>

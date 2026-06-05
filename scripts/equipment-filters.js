@@ -220,41 +220,43 @@ export function filterEquipments(char, equips) {
                 if (!slot.effect) return false;
                 for (const effectKey of selectedEquipEffects) {
                     const text = slot.effect;
+                    const textLower = text.toLowerCase();
+                    const effectKeyLower = effectKey.toLowerCase();
                     const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
                     if (effectKey.startsWith("Base ")) {
-                        if (text.includes(effectKey)) return true;
-                        if (effectKey === "Base Strike Attack" && text.includes("Base Strike & Blast Attack")) return true;
-                        if (effectKey === "Base Blast Attack" && text.includes("Base Strike & Blast Attack")) return true;
-                        if (effectKey === "Base Strike Defense" && text.includes("Base Strike & Blast Defense")) return true;
-                        if (effectKey === "Base Blast Defense" && text.includes("Base Strike & Blast Defense")) return true;
+                        if (textLower.includes(effectKeyLower)) return true;
+                        if (effectKey === "Base Strike Attack" && textLower.includes("base strike & blast attack")) return true;
+                        if (effectKey === "Base Blast Attack" && textLower.includes("base strike & blast attack")) return true;
+                        if (effectKey === "Base Strike Defense" && textLower.includes("base strike & blast defense")) return true;
+                        if (effectKey === "Base Blast Defense" && textLower.includes("base strike & blast defense")) return true;
                     } else {
                         try {
-                            const strictRegex = new RegExp(`(?<!Base\\s+)${escape(effectKey)}`);
-                            if (strictRegex.test(text)) return true;
+                            const strictRegex = new RegExp(`(?<!base\\s+)${escape(effectKeyLower)}`, 'i');
+                            if (strictRegex.test(textLower)) return true;
                         } catch (e) {
-                            if (text.includes(effectKey)) {
-                                const idx = text.indexOf(effectKey);
+                            if (textLower.includes(effectKeyLower)) {
+                                const idx = textLower.indexOf(effectKeyLower);
                                 const start = Math.max(0, idx - 5);
-                                const prefix = text.substring(start, idx);
-                                if (!prefix.includes("Base ")) return true;
+                                const prefix = textLower.substring(start, idx);
+                                if (!prefix.includes("base ")) return true;
                             }
                         }
 
                         let compoundKey = "";
-                        if (effectKey === "Strike Attack" || effectKey === "Blast Attack") compoundKey = "Strike & Blast Attack";
-                        if (effectKey === "Strike Defense" || effectKey === "Blast Defense") compoundKey = "Strike & Blast Defense";
+                        if (effectKey === "Strike Attack" || effectKey === "Blast Attack") compoundKey = "strike & blast attack";
+                        if (effectKey === "Strike Defense" || effectKey === "Blast Defense") compoundKey = "strike & blast defense";
 
                         if (compoundKey) {
                             try {
-                                const strictCompoundRegex = new RegExp(`(?<!Base\\s+)${escape(compoundKey)}`);
-                                if (strictCompoundRegex.test(text)) return true;
+                                const strictCompoundRegex = new RegExp(`(?<!base\\s+)${escape(compoundKey)}`, 'i');
+                                if (strictCompoundRegex.test(textLower)) return true;
                             } catch (e) {
-                                if (text.includes(compoundKey)) {
-                                    const idx = text.indexOf(compoundKey);
+                                if (textLower.includes(compoundKey)) {
+                                    const idx = textLower.indexOf(compoundKey);
                                     const start = Math.max(0, idx - 5);
-                                    const prefix = text.substring(start, idx);
-                                    if (!prefix.includes("Base ")) return true;
+                                    const prefix = textLower.substring(start, idx);
+                                    if (!prefix.includes("base ")) return true;
                                 }
                             }
                         }
