@@ -1,6 +1,6 @@
 import { allEquipments, currentSelectedCharacter, selectedEquipments } from './state.js';
 import { filterEquipments } from './equipment-filters.js';
-import { getRarityBorder, renderSlots } from './equipment-slots.js';
+import { getRarityBorder, renderSlots, addEquipment } from './equipment-slots.js';
 import { getElementColor } from './character-manager.js';
 import { calculateStats } from './stats-calculator.js';
 
@@ -17,6 +17,84 @@ export function isTeamEquipment(equip) {
     return equip.slots.some(s => s.effect && teamKeywords.test(s.effect));
 }
 
+// Calculate precise multiplier for per-member scaling effects
+function getPerMemberMultiplier(text, assumeFullTeam) {
+    const tagRegex = /(?:per|for each)\s+["']?([^"'\n]+?)["']?\s+battle\s+member/i;
+    const match = tagRegex.exec(text);
+    if (!match) {
+        return assumeFullTeam ? 2 : 0;
+    }
+
+    const requiredTag = match[1].trim();
+    const cleanTag = requiredTag.replace(/^(Tag: |Episode: |Element: |Character: )/i, "");
+
+    let activeCharacterMatches = false;
+    if (currentSelectedCharacter && currentSelectedCharacter.visual_tags) {
+        activeCharacterMatches = currentSelectedCharacter.visual_tags.some(t => t.trim().toLowerCase() === cleanTag.toLowerCase());
+        
+        // Element color fallback
+        if (!activeCharacterMatches && currentSelectedCharacter.element) {
+            if (currentSelectedCharacter.element.toLowerCase() === cleanTag.toLowerCase()) {
+                activeCharacterMatches = true;
+            }
+        }
+        // Substring fallback
+        if (!activeCharacterMatches) {
+            activeCharacterMatches = currentSelectedCharacter.visual_tags.some(t => t.toLowerCase().includes(cleanTag.toLowerCase()));
+        }
+        if (!activeCharacterMatches && currentSelectedCharacter.name.toLowerCase().includes(cleanTag.toLowerCase())) {
+            activeCharacterMatches = true;
+        }
+    }
+
+    if (assumeFullTeam) {
+        // Other 2 battle members match. Active character matches -> x3, doesn't match -> x2.
+        return activeCharacterMatches ? 3 : 2;
+    } else {
+        // Solo mode. Active character matches -> x1, doesn't match -> x0.
+        return activeCharacterMatches ? 1 : 0;
+    }
+}
+
+// Detect if equipment scales on a tag/episode/element that the active character does NOT have
+function hasScalingTagMismatch(equip) {
+    if (!equip.slots) return false;
+    
+    // Check if any slot has a "per ... member", "for each ... member", or "when ... is a battle member"
+    const regex = /(?:per|for each|when|if)\s+["']?((?:Tag|Episode|Element|Character):[^"'\n]+?)["']?/i;
+    
+    for (const slot of equip.slots) {
+        if (!slot.effect) continue;
+        const parts = slot.effect.split(/- OR -/i);
+        for (const part of parts) {
+            const match = regex.exec(part);
+            if (match) {
+                const reqTag = match[1].trim();
+                const cleanTag = reqTag.replace(/^(Tag: |Episode: |Element: |Character: )/i, "");
+                
+                let hasTag = false;
+                if (currentSelectedCharacter && currentSelectedCharacter.visual_tags) {
+                    hasTag = currentSelectedCharacter.visual_tags.some(t => t.trim().toLowerCase() === cleanTag.toLowerCase());
+                    if (!hasTag && currentSelectedCharacter.element) {
+                        if (currentSelectedCharacter.element.toLowerCase() === cleanTag.toLowerCase()) hasTag = true;
+                    }
+                    if (!hasTag) {
+                        hasTag = currentSelectedCharacter.visual_tags.some(t => t.toLowerCase().includes(cleanTag.toLowerCase()));
+                    }
+                    if (!hasTag && currentSelectedCharacter.name.toLowerCase().includes(cleanTag.toLowerCase())) {
+                        hasTag = true;
+                    }
+                }
+                
+                if (!hasTag) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
 // Extract numeric values from slot effect texts
 function getStatValueFromText(text, statName, assumeFullTeam = false) {
     const escapedKey = statName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -26,49 +104,69 @@ function getStatValueFromText(text, statName, assumeFullTeam = false) {
     if (match) {
         const val1 = parseFloat(match[1]);
         const val2 = match[2] ? parseFloat(match[2]) : val1;
-        return (val1 + val2) / 2;
+        let avgVal = (val1 + val2) / 2;
+        if (text.toLowerCase().includes("per ") || text.toLowerCase().includes("for each ")) {
+            avgVal *= getPerMemberMultiplier(text, assumeFullTeam);
+        }
+        return avgVal;
     }
 
     // Compound stats check
     if (statName === "Base Strike Attack" || statName === "Base Blast Attack") {
-        const compRegex = /Base Strike & Blast Attack\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/i;
+        const compRegex = /Base Strike & Blast Attack\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\\s*%/i;
         const m = compRegex.exec(text);
         if (m) {
             const val1 = parseFloat(m[1]);
             const val2 = m[2] ? parseFloat(m[2]) : val1;
-            return (val1 + val2) / 2;
+            let avgVal = (val1 + val2) / 2;
+            if (text.toLowerCase().includes("per ") || text.toLowerCase().includes("for each ")) {
+                avgVal *= getPerMemberMultiplier(text, assumeFullTeam);
+            }
+            return avgVal;
         }
     }
     if (statName === "Base Strike Defense" || statName === "Base Blast Defense") {
-        const compRegex = /Base Strike & Blast Defense\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/i;
+        const compRegex = /Base Strike & Blast Defense\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\\s*%/i;
         const m = compRegex.exec(text);
         if (m) {
             const val1 = parseFloat(m[1]);
             const val2 = m[2] ? parseFloat(m[2]) : val1;
-            return (val1 + val2) / 2;
+            let avgVal = (val1 + val2) / 2;
+            if (text.toLowerCase().includes("per ") || text.toLowerCase().includes("for each ")) {
+                avgVal *= getPerMemberMultiplier(text, assumeFullTeam);
+            }
+            return avgVal;
         }
     }
     if (statName === "Strike Attack" || statName === "Blast Attack") {
-        const compRegex = /(?<!Base\s+)Strike & Blast Attack\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/i;
+        const compRegex = /(?<!Base\s+)Strike & Blast Attack\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\\s*%/i;
         const m = compRegex.exec(text);
         if (m) {
             const val1 = parseFloat(m[1]);
             const val2 = m[2] ? parseFloat(m[2]) : val1;
-            return (val1 + val2) / 2;
+            let avgVal = (val1 + val2) / 2;
+            if (text.toLowerCase().includes("per ") || text.toLowerCase().includes("for each ")) {
+                avgVal *= getPerMemberMultiplier(text, assumeFullTeam);
+            }
+            return avgVal;
         }
     }
     if (statName === "Strike Defense" || statName === "Blast Defense") {
-        const compRegex = /(?<!Base\s+)Strike & Blast Defense\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%/i;
+        const compRegex = /(?<!Base\s+)Strike & Blast Defense\s*([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\\s*%/i;
         const m = compRegex.exec(text);
         if (m) {
             const val1 = parseFloat(m[1]);
             const val2 = m[2] ? parseFloat(m[2]) : val1;
-            return (val1 + val2) / 2;
+            let avgVal = (val1 + val2) / 2;
+            if (text.toLowerCase().includes("per ") || text.toLowerCase().includes("for each ")) {
+                avgVal *= getPerMemberMultiplier(text, assumeFullTeam);
+            }
+            return avgVal;
         }
     }
 
     // Scaling / Threshold stats check
-    const scalingRegex = /([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\s*%\s*to\s*([^.]+?)\s*(?:per|for each|when|if)\s*/i;
+    const scalingRegex = /([+-]?\d+(?:\.\d+)?)(?:\s*~\s*([+-]?\d+(?:\.\d+)?))?\\s*%\\s*to\\s*([^.]+?)\\s*(?:per|for each|when|if)\\s*/i;
     const sMatch = scalingRegex.exec(text);
     if (sMatch) {
         const statPart = sMatch[3];
@@ -80,7 +178,7 @@ function getStatValueFromText(text, statName, assumeFullTeam = false) {
             const val2 = sMatch[2] ? parseFloat(sMatch[2]) : val1;
             let avgVal = (val1 + val2) / 2;
             if (text.toLowerCase().includes("per") || text.toLowerCase().includes("each")) {
-                avgVal *= assumeFullTeam ? 3 : 2; // Full team scales by 3 battle members!
+                avgVal *= getPerMemberMultiplier(text, assumeFullTeam);
             } else if (text.toLowerCase().includes("when") || text.toLowerCase().includes("if")) {
                 avgVal *= 1.0;
             }
@@ -104,7 +202,7 @@ function doesCharacterSatisfySlotCondition(text) {
     if (currentSelectedCharacter && currentSelectedCharacter.visual_tags) {
         hasTag = currentSelectedCharacter.visual_tags.some(t => t.trim().toLowerCase() === cleanCondition.toLowerCase());
         
-        // Element color fallback (e.g. cleanCondition is "RED", character element matches RED)
+        // Element color fallback
         if (!hasTag && currentSelectedCharacter.element) {
             if (currentSelectedCharacter.element.toLowerCase() === cleanCondition.toLowerCase()) {
                 hasTag = true;
@@ -152,13 +250,13 @@ export function scoreEquipmentForCharacter(equip, charType, assumeFullTeam = fal
                     return;
                 }
 
-                // 1. Melee/Strike Offensive
+                // 1. Strike Offensive
                 const bSAtk = getStatValueFromText(part, "Base Strike Attack", assumeFullTeam);
                 const pSAtk = getStatValueFromText(part, "Strike Attack", assumeFullTeam);
                 const sDmg = getStatValueFromText(part, "Strike Damage Inflicted", assumeFullTeam);
                 const sVal = bSAtk + (pSAtk + sDmg) * 1.5;
 
-                // 2. Ranged/Blast Offensive
+                // 2. Blast Offensive
                 const bBAtk = getStatValueFromText(part, "Base Blast Attack", assumeFullTeam);
                 const pBAtk = getStatValueFromText(part, "Blast Attack", assumeFullTeam);
                 const bDmg = getStatValueFromText(part, "Blast Damage Inflicted", assumeFullTeam);
@@ -245,12 +343,10 @@ export function scoreEquipmentForCharacter(equip, charType, assumeFullTeam = fal
         }
         finalScore = score;
     } else {
-        // Standard focus (Primary / Principal) based strictly on foco_de_tipo.md
         let activeCharType = charType;
         if (activeCharType === "Melee Type" || activeCharType === "Ranged Type" || activeCharType === "Defense Type" || activeCharType === "Support Type") {
             // Valid character type
         } else {
-            // Fallback checking visual_tags
             activeCharType = "Melee Type";
             if (currentSelectedCharacter && currentSelectedCharacter.visual_tags) {
                 if (currentSelectedCharacter.visual_tags.includes("Ranged Type")) activeCharType = "Ranged Type";
@@ -356,7 +452,6 @@ function selectUniqueOptionSet(sortedPool, existingSignatures, requireAtLeastOne
         return getUniqueSet(uniquePool, 3);
     }
 
-    // Check if there are any team items in the unique pool at all
     const hasAnyTeamItemInPool = uniquePool.some(eq => isTeamEquipment(eq));
 
     const maxScan = Math.min(uniquePool.length, 12);
@@ -373,7 +468,6 @@ function selectUniqueOptionSet(sortedPool, existingSignatures, requireAtLeastOne
         }
     }
 
-    // Sort by sum of indices ascending to prefer the absolute highest scoring items
     combinations.sort((a, b) => {
         if (a.indexSum !== b.indexSum) return a.indexSum - b.indexSum;
         return a.indices[0] - b.indices[0];
@@ -383,10 +477,9 @@ function selectUniqueOptionSet(sortedPool, existingSignatures, requireAtLeastOne
         const [i, j, k] = comb.indices;
         const candidateSet = [uniquePool[i], uniquePool[j], uniquePool[k]];
 
-        // If team item is required and pool actually has team items, ensure at least one item is team equipment!
         if (requireAtLeastOneTeamItem && hasAnyTeamItemInPool) {
             const hasTeamItem = candidateSet.some(eq => isTeamEquipment(eq));
-            if (!hasTeamItem) continue; // Skip combinations with 0 team items
+            if (!hasTeamItem) continue;
         }
 
         const signature = getOptionSignature(candidateSet);
@@ -396,7 +489,6 @@ function selectUniqueOptionSet(sortedPool, existingSignatures, requireAtLeastOne
         }
     }
 
-    // Fallback if all permutations are duplicates or filtered out
     let fallback = [uniquePool[0], uniquePool[1], uniquePool[2]];
     if (requireAtLeastOneTeamItem && hasAnyTeamItemInPool) {
         const hasTeamItem = fallback.some(eq => isTeamEquipment(eq));
@@ -471,14 +563,14 @@ function renderRecommendationList(containerId, options, typeLabel, borderGlowCol
                 let imageHTML;
                 if (borderImage) {
                     imageHTML = `
-                        <div class="relative size-14 shrink-0 rounded overflow-hidden shadow-sm cursor-pointer" title="${eq.name} (${eq.rarity.replace(/^rarity\s*/i, '').toUpperCase()})">
+                        <div class="relative size-14 shrink-0 rounded overflow-hidden shadow-sm cursor-pointer">
                             <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("${imageUrl}"); bg-color: #101322;'></div>
                             <div class="absolute inset-0 pointer-events-none" style='background-image: url("${borderImage}"); background-size: 110%; background-position: center; background-repeat: no-repeat;'></div>
                         </div>
                     `;
                 } else {
                     imageHTML = `
-                        <div class="relative size-14 shrink-0 rounded overflow-hidden bg-gradient-to-br from-gray-700 to-gray-500 p-0.5 shadow-sm cursor-pointer" title="${eq.name}">
+                        <div class="relative size-14 shrink-0 rounded overflow-hidden bg-gradient-to-br from-gray-700 to-gray-500 p-0.5 shadow-sm cursor-pointer">
                             <div class="w-full h-full bg-[#101322] rounded-[2px] bg-cover bg-center" style='background-image: url("${imageUrl}");'></div>
                         </div>
                     `;
@@ -510,11 +602,118 @@ function renderRecommendationList(containerId, options, typeLabel, borderGlowCol
             </button>
         `;
 
+        // Attach mouse hover events to each thumbnail in this loadout
+        const thumbs = optionCard.querySelectorAll('.relative.size-14');
+        thumbs.forEach((thumbElem, thumbIdx) => {
+            const eq = option[thumbIdx];
+            if (eq) {
+                thumbElem.addEventListener('mouseenter', (e) => showEquipmentTooltip(eq, e));
+                thumbElem.addEventListener('mousemove', (e) => positionTooltip(e));
+                thumbElem.addEventListener('mouseleave', () => hideEquipmentTooltip());
+            }
+        });
+
         optionCard.querySelector('.apply-rec-btn').addEventListener('click', () => {
             applyLoadout(idx, typeLabel);
         });
 
         container.appendChild(optionCard);
+    });
+}
+
+// Render the Honorable Mentions grid (conditional alternatives with scaling mismatches)
+function renderHonorableMentions(containerId, mismatchList, borderGlowColor) {
+    const container = document.getElementById(containerId);
+    const parentContainer = document.getElementById(containerId + '-container');
+    if (!container || !parentContainer) return;
+
+    // Filter to top 4 unique honorable mentions
+    const uniqueMentions = [];
+    const seen = new Set();
+    for (const item of mismatchList) {
+        if (!item || !item.eq) continue;
+        const key = item.eq.id !== undefined ? item.eq.id.toString() : item.eq.name;
+        if (!seen.has(key)) {
+            seen.add(key);
+            uniqueMentions.push(item.eq);
+            if (uniqueMentions.length === 4) break;
+        }
+    }
+
+    if (uniqueMentions.length === 0) {
+        parentContainer.classList.add('hidden');
+        return;
+    }
+
+    parentContainer.classList.remove('hidden');
+    container.innerHTML = '';
+
+    uniqueMentions.forEach(eq => {
+        const itemCard = document.createElement('div');
+        itemCard.className = "flex items-center gap-3 bg-[#101322] border border-[#2d3455]/40 hover:border-primary/50 rounded-lg p-2.5 transition-all relative group cursor-help";
+
+        const borderImage = getRarityBorder(eq.rarity);
+        const imageUrl = eq.image || 'https://dblegends.net/assets/equips/EqIco_1578.webp';
+        
+        let imageHTML;
+        if (borderImage) {
+            imageHTML = `
+                <div class="relative size-10 shrink-0 rounded overflow-hidden shadow-sm">
+                    <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("${imageUrl}");'></div>
+                    <div class="absolute inset-0 pointer-events-none" style='background-image: url("${borderImage}"); background-size: 110%; background-position: center; background-repeat: no-repeat;'></div>
+                </div>
+            `;
+        } else {
+            imageHTML = `
+                <div class="relative size-10 shrink-0 rounded overflow-hidden bg-gradient-to-br from-gray-700 to-gray-500 p-0.5 shadow-sm">
+                    <div class="w-full h-full bg-[#101322] rounded-[2px] bg-cover bg-center" style='background-image: url("${imageUrl}");'></div>
+                </div>
+            `;
+        }
+
+        let mainStatsText = "Bónus condicional forte";
+        if (eq.slots && eq.slots.length > 0) {
+            const firstSlot = eq.slots.find(s => s.effect);
+            if (firstSlot) {
+                mainStatsText = firstSlot.effect.split(/- OR -/i)[0].replace(/\(.*?\)/g, "").trim();
+                if (mainStatsText.length > 50) {
+                    mainStatsText = mainStatsText.substring(0, 47) + "...";
+                }
+            }
+        }
+
+        itemCard.innerHTML = `
+            ${imageHTML}
+            <div class="flex-1 min-w-0">
+                <div class="text-[11px] font-bold text-white truncate" title="${eq.name}">${eq.name}</div>
+                <div class="text-[9px] text-[#8a96c7] truncate" title="${mainStatsText}">${mainStatsText}</div>
+            </div>
+            <button class="equip-mention-btn size-7 bg-[#151a2d] hover:bg-primary border border-border-dark hover:border-primary text-white rounded flex items-center justify-center transition-all shadow-sm active:scale-95" title="Equipar Slot Ativo">
+                <span class="material-symbols-outlined text-[14px]">playlist_add</span>
+            </button>
+        `;
+
+        // Attach hover & click event listeners to the entire item card
+        itemCard.addEventListener('mouseenter', (e) => showEquipmentTooltip(eq, e));
+        itemCard.addEventListener('mousemove', (e) => positionTooltip(e));
+        itemCard.addEventListener('mouseleave', () => hideEquipmentTooltip());
+        itemCard.addEventListener('click', (e) => {
+            if (e.target.closest('.equip-mention-btn')) {
+                return;
+            }
+            showEquipmentTooltip(eq, e);
+        });
+
+        itemCard.querySelector('.equip-mention-btn').addEventListener('click', (e) => {
+            e.stopPropagation(); // Avoid conflicts with mouse events on the card
+            const clonedEq = { ...eq };
+            clonedEq.multiplier = isTeamEquipment(clonedEq) ? 3 : 0;
+            
+            // Delegate to addEquipment to automatically verify duplicates and place in first empty slot
+            addEquipment(clonedEq);
+        });
+
+        container.appendChild(itemCard);
     });
 }
 
@@ -575,15 +774,28 @@ export function generateRecommendations() {
 
     const usableEquips = filterEquipments(currentSelectedCharacter, allEquipments);
 
-    // 1. Split global pools for Solo vs Team
+    const compatibleEquips = usableEquips.filter(eq => !hasScalingTagMismatch(eq));
+    const mismatchEquips = usableEquips.filter(eq => hasScalingTagMismatch(eq));
+
+    // 1. Split compatible pools for Solo vs Team
     const teamBasePool = [];
     const soloBasePool = [];
-
-    usableEquips.forEach(eq => {
+    compatibleEquips.forEach(eq => {
         if (isTeamEquipment(eq)) {
             teamBasePool.push(eq);
         } else {
             soloBasePool.push(eq);
+        }
+    });
+
+    // 2. Split mismatch pools for Solo vs Team (Honorable Mentions)
+    const mismatchTeamBasePool = [];
+    const mismatchSoloBasePool = [];
+    mismatchEquips.forEach(eq => {
+        if (isTeamEquipment(eq)) {
+            mismatchTeamBasePool.push(eq);
+        } else {
+            mismatchSoloBasePool.push(eq);
         }
     });
 
@@ -640,7 +852,7 @@ export function generateRecommendations() {
     // ----------------------------------------------------
     // BUILD ACCESSIBLE GOLD-ONLY OPTIONS (strictly Gold rarity)
     // ----------------------------------------------------
-    const goldEquips = usableEquips.filter(eq => {
+    const goldEquips = compatibleEquips.filter(eq => {
         if (!eq.rarity) return false;
         const normalized = eq.rarity.toLowerCase().trim().replace(/\s+/g, '');
         return normalized === 'raritygold' || normalized === 'gold';
@@ -691,6 +903,34 @@ export function generateRecommendations() {
     renderRecommendationList('solo-recommendations', soloOptions, 'solo', borderGlowColor);
     renderRecommendationList('team-recommendations', teamOptions, 'team', borderGlowColor);
     renderRecommendationList('gold-recommendations', goldOptions, 'gold', borderGlowColor);
+
+    // ----------------------------------------------------
+    // BUILD AND RENDER HONORABLE MENTIONS (mismatched)
+    // ----------------------------------------------------
+    // Solo Honorable pool (all mismatched equipments, scored with assumeFullTeam = false)
+    const soloHonorableScored = mismatchEquips.map(eq => {
+        return { eq, score: scoreEquipmentForCharacter(eq, charType, false) };
+    }).sort((a, b) => b.score - a.score);
+
+    // Team Honorable pool (team + solo, mismatched)
+    const teamHonorableScored = [];
+    mismatchTeamBasePool.forEach(eq => teamHonorableScored.push({ eq, score: scoreEquipmentForCharacter(eq, charType, true) }));
+    mismatchSoloBasePool.forEach(eq => teamHonorableScored.push({ eq, score: scoreEquipmentForCharacter(eq, charType, true) }));
+    teamHonorableScored.sort((a, b) => b.score - a.score);
+
+    // Gold Honorable pool (mismatched gold)
+    const goldMismatchEquips = mismatchEquips.filter(eq => {
+        if (!eq.rarity) return false;
+        const normalized = eq.rarity.toLowerCase().trim().replace(/\s+/g, '');
+        return normalized === 'raritygold' || normalized === 'gold';
+    });
+    const goldHonorableScored = goldMismatchEquips.map(eq => {
+        return { eq, score: scoreEquipmentForCharacter(eq, charType, true) };
+    }).sort((a, b) => b.score - a.score);
+
+    renderHonorableMentions('solo-honorable', soloHonorableScored, borderGlowColor);
+    renderHonorableMentions('team-honorable', teamHonorableScored, borderGlowColor);
+    renderHonorableMentions('gold-honorable', goldHonorableScored, borderGlowColor);
 }
 
 // Expose tab switcher globally
@@ -698,9 +938,9 @@ window.switchRecTab = function(type) {
     const tabSolo = document.getElementById('tab-solo-rec');
     const tabTeam = document.getElementById('tab-team-rec');
     const tabGold = document.getElementById('tab-gold-rec');
-    const listSolo = document.getElementById('solo-recommendations');
-    const listTeam = document.getElementById('team-recommendations');
-    const listGold = document.getElementById('gold-recommendations');
+    const listSolo = document.getElementById('solo-recommendations-container');
+    const listTeam = document.getElementById('team-recommendations-container');
+    const listGold = document.getElementById('gold-recommendations-container');
 
     if (!tabSolo || !tabTeam || !tabGold || !listSolo || !listTeam || !listGold) return;
 
@@ -726,3 +966,168 @@ window.switchRecTab = function(type) {
         listGold.classList.remove('hidden');
     }
 };
+
+// -----------------------------------------------------------------------------
+// DYNAMIC TOOLTIP MINI-PANEL FOR EQUIPMENT DETAILS ON HOVER
+// -----------------------------------------------------------------------------
+export function showEquipmentTooltip(equip, event) {
+    let tooltip = document.getElementById('equipment-tooltip');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.id = 'equipment-tooltip';
+        tooltip.className = "absolute pointer-events-none hidden z-50 bg-[#0c0f1c]/95 border border-[#2d3455] rounded-xl p-4 shadow-[0_12px_40px_rgba(0,0,0,0.7)] w-80 backdrop-blur-md transition-all duration-150 ease-out";
+        document.body.appendChild(tooltip);
+    }
+
+    let backdrop = document.getElementById('equipment-tooltip-backdrop');
+    if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.id = 'equipment-tooltip-backdrop';
+        backdrop.className = "fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden transition-opacity duration-200";
+        document.body.appendChild(backdrop);
+        backdrop.addEventListener('click', hideEquipmentTooltip);
+    }
+
+    if (!equip) {
+        tooltip.classList.add('hidden');
+        backdrop.classList.add('hidden');
+        return;
+    }
+
+    const isMobile = window.innerWidth < 1024;
+    if (isMobile) {
+        backdrop.classList.remove('hidden');
+        tooltip.classList.remove('pointer-events-none');
+    } else {
+        backdrop.classList.add('hidden');
+        tooltip.classList.add('pointer-events-none');
+    }
+
+    let slotsHTML = "";
+    if (equip.slots && equip.slots.length > 0) {
+        equip.slots.forEach((slot, idx) => {
+            const cleanEffect = slot.effect ? slot.effect.replace(/- OR -/g, '<span class="text-primary font-semibold text-[9px] block my-0.5">--- OU ---</span>') : "Nenhum efeito";
+            slotsHTML += `
+                <div class="mt-2 text-[10px] bg-[#141829] border border-[#242c4a] rounded p-2">
+                    <span class="text-[9px] font-bold text-[#8a96c7] uppercase">Slot ${idx + 1}</span>
+                    <p class="text-white mt-0.5 leading-relaxed font-medium">${cleanEffect}</p>
+                </div>
+            `;
+        });
+    } else {
+        slotsHTML = `<div class="text-[10px] text-gray-500 italic mt-1">Nenhum efeito disponível</div>`;
+    }
+
+    const rarityBadgeColor = getRarityBadgeColor(equip.rarity);
+    const borderImage = getRarityBorder(equip.rarity);
+    const imageUrl = equip.image || 'https://dblegends.net/assets/equips/EqIco_1578.webp';
+    
+    let imageHTML;
+    if (borderImage) {
+        imageHTML = `
+            <div class="relative size-12 shrink-0 rounded overflow-hidden shadow-sm">
+                <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("${imageUrl}");'></div>
+                <div class="absolute inset-0 pointer-events-none" style='background-image: url("${borderImage}"); background-size: 110%; background-position: center; background-repeat: no-repeat;'></div>
+            </div>
+        `;
+    } else {
+        imageHTML = `
+            <div class="relative size-12 shrink-0 rounded overflow-hidden bg-gradient-to-br from-gray-700 to-gray-500 p-0.5 shadow-sm">
+                <div class="w-full h-full bg-[#101322] rounded-[2px] bg-cover bg-center" style='background-image: url("${imageUrl}");'></div>
+            </div>
+        `;
+    }
+
+    const closeBtnHTML = isMobile ? `
+        <button onclick="hideEquipmentTooltip()" class="text-[#929bc9] hover:text-white size-8 flex items-center justify-center rounded-full bg-[#1c213a] border border-[#2d3455] active:scale-95 transition-transform">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+    ` : '';
+
+    const dbLinkHTML = equip.url ? `
+        <a href="${equip.url}" target="_blank" class="mt-3 w-full flex items-center justify-center gap-1.5 py-2 rounded bg-primary/20 hover:bg-primary/30 text-primary hover:text-white text-xs font-bold transition-all border border-primary/30 active:scale-[0.98]">
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+            Ver na Database
+        </a>
+    ` : '';
+
+    tooltip.innerHTML = `
+        <div class="flex items-center justify-between gap-3 border-b border-[#2d3455]/50 pb-3">
+            <div class="flex items-center gap-3 min-w-0">
+                ${imageHTML}
+                <div class="flex-1 min-w-0">
+                    <h4 class="text-xs font-bold text-white leading-snug break-words">${equip.name}</h4>
+                    <div class="flex items-center gap-1.5 mt-1">
+                        <span class="text-[8px] font-extrabold uppercase px-1.5 py-0.5 rounded-full ${rarityBadgeColor.bg} ${rarityBadgeColor.text}">
+                            ${equip.rarity ? equip.rarity.replace(/^rarity\s*/i, '').toUpperCase() : 'GOLD'}
+                        </span>
+                        ${isTeamEquipment(equip) ? `<span class="text-[8px] font-extrabold uppercase px-1.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400">TEAM</span>` : ''}
+                    </div>
+                </div>
+            </div>
+            ${closeBtnHTML}
+        </div>
+        <div class="mt-2.5 max-h-60 overflow-y-auto pr-1 select-none custom-scrollbar">
+            ${slotsHTML}
+        </div>
+        ${dbLinkHTML}
+    `;
+
+    tooltip.classList.remove('hidden');
+    positionTooltip(event);
+}
+
+window.hideEquipmentTooltip = hideEquipmentTooltip;
+
+function getRarityBadgeColor(rarity) {
+    if (!rarity) return { bg: 'bg-yellow-500/20', text: 'text-yellow-400' };
+    const norm = rarity.toLowerCase().trim().replace(/\s+/g, '');
+    switch(norm) {
+        case 'rarityunique':
+        case 'rarityawakenedunique':
+            return { bg: 'bg-purple-500/20', text: 'text-purple-400' };
+        case 'rarityplatinum':
+            return { bg: 'bg-blue-400/20', text: 'text-blue-300' };
+        case 'raritygold':
+        case 'rarityawakenedgold':
+            return { bg: 'bg-yellow-500/20', text: 'text-yellow-400' };
+        case 'raritysilver':
+        case 'rarityawakenedsilver':
+            return { bg: 'bg-gray-400/20', text: 'text-gray-300' };
+        default:
+            return { bg: 'bg-gray-600/20', text: 'text-gray-400' };
+    }
+}
+
+export function hideEquipmentTooltip() {
+    const tooltip = document.getElementById('equipment-tooltip');
+    if (tooltip) {
+        tooltip.classList.add('hidden');
+    }
+    const backdrop = document.getElementById('equipment-tooltip-backdrop');
+    if (backdrop) {
+        backdrop.classList.add('hidden');
+    }
+}
+
+export function positionTooltip(event) {
+    if (window.innerWidth < 1024) return; // Centered fixed on mobile via CSS
+    const tooltip = document.getElementById('equipment-tooltip');
+    if (!tooltip || tooltip.classList.contains('hidden')) return;
+
+    const tooltipWidth = tooltip.offsetWidth;
+    const tooltipHeight = tooltip.offsetHeight;
+
+    let x = event.pageX + 15;
+    let y = event.pageY + 15;
+
+    if (x + tooltipWidth > window.innerWidth + window.scrollX) {
+        x = event.pageX - tooltipWidth - 15;
+    }
+    if (y + tooltipHeight > window.innerHeight + window.scrollY) {
+        y = event.pageY - tooltipHeight - 15;
+    }
+
+    tooltip.style.left = `${x}px`;
+    tooltip.style.top = `${y}px`;
+}

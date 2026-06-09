@@ -122,8 +122,8 @@ export function renderGrid(chars) {
 
         div.innerHTML = `
             ${imageContent}
-            <div class="absolute bottom-0 left-0 w-full bg-black/80 p-1.5 backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform">
-                <p class="text-[10px] text-white font-bold truncate leading-tight">${char.name}</p>
+            <div class="absolute bottom-0 left-0 w-full bg-black/85 p-1 lg:p-1.5 backdrop-blur-sm lg:transform lg:translate-y-full lg:group-hover:translate-y-0 transition-transform">
+                <p class="text-[9px] lg:text-[10px] text-white font-bold truncate leading-tight text-center">${char.name}</p>
             </div>
             <div class="absolute top-1 right-1 size-3 rounded-full border border-white/20 shadow-sm" style="background-color: ${elColor};"></div>
         `;

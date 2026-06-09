@@ -14,18 +14,18 @@ export function renderGenericFilterButtons(containerId, items, selectedSet, upda
         const isSelected = selectedSet.has(item);
 
         btn.className = isSelected
-            ? "px-2 py-0.5 rounded text-[10px] border border-primary text-primary bg-primary/20 transition-all font-medium"
-            : "px-2 py-0.5 rounded text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
+            ? "px-2.5 py-1 lg:px-2 lg:py-0.5 rounded text-[11px] lg:text-[10px] border border-primary text-primary bg-primary/20 transition-all font-medium"
+            : "px-2.5 py-1 lg:px-2 lg:py-0.5 rounded text-[11px] lg:text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
 
         btn.textContent = item;
 
         btn.onclick = () => {
             if (selectedSet.has(item)) {
                 selectedSet.delete(item);
-                btn.className = "px-2 py-0.5 rounded text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
+                btn.className = "px-2.5 py-1 lg:px-2 lg:py-0.5 rounded text-[11px] lg:text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
             } else {
                 selectedSet.add(item);
-                btn.className = "px-2 py-0.5 rounded text-[10px] border border-primary text-primary bg-primary/20 transition-all font-medium";
+                btn.className = "px-2.5 py-1 lg:px-2 lg:py-0.5 rounded text-[11px] lg:text-[10px] border border-primary text-primary bg-primary/20 transition-all font-medium";
             }
             if (countId) {
                 const countSpan = document.getElementById(countId);

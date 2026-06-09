@@ -1,5 +1,6 @@
 import { selectedEquipments } from './state.js';
 import { calculateStats } from './stats-calculator.js';
+import { showEquipmentTooltip, hideEquipmentTooltip, positionTooltip } from './equipment-recommendations.js';
 
 // Helper function to get rarity border image
 export function getRarityBorder(rarity) {
@@ -50,6 +51,18 @@ export function renderSlots() {
             const card = document.createElement('div');
             card.className = "relative size-24 rounded-xl bg-[#1e233b] border-2 border-primary/50 shadow-[0_0_15px_rgba(19,55,236,0.2)] flex items-center justify-center cursor-pointer hover:bg-[#252b46] transition-all hover:scale-105 group select-none animate-scale-in pulse-active-border";
 
+            // Attach tooltip hover & click events
+            card.addEventListener('mouseenter', (e) => showEquipmentTooltip(equip, e));
+            card.addEventListener('mousemove', (e) => positionTooltip(e));
+            card.addEventListener('mouseleave', () => hideEquipmentTooltip());
+            card.addEventListener('click', (e) => {
+                // Ignore if clicked on remove button or multiplier button
+                if (e.target.closest('.equip-multiplier-btn') || e.target.closest('.absolute.bg-red-500')) {
+                    return;
+                }
+                showEquipmentTooltip(equip, e);
+            });
+
             // Rarity Dot (Mock)
             const dot = document.createElement('div');
             dot.className = "absolute top-1 right-1 size-2 rounded-full bg-green-500 shadow-[0_0_5px_rgba(34,197,94,0.8)]";
@@ -82,10 +95,14 @@ export function renderSlots() {
             }
 
             // Add Click Listener to Open URL
+            // Add Click Listener to Open URL
             if (equip.url) {
                 imgContainer.style.cursor = 'pointer';
                 imgContainer.title = "Click to open equipment details";
                 imgContainer.addEventListener('click', (e) => {
+                    if (window.innerWidth < 1024) {
+                        return; // Let click bubble up to show tooltip on mobile
+                    }
                     e.stopPropagation();
                     window.open(equip.url, '_blank');
                 });
@@ -95,7 +112,7 @@ export function renderSlots() {
 
             // Remove Button
             const removeBtn = document.createElement('div');
-            removeBtn.className = "absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-md z-10 hover:scale-110 cursor-pointer";
+            removeBtn.className = "absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 lg:opacity-0 opacity-100 lg:group-hover:opacity-100 transition-opacity shadow-md z-10 hover:scale-110 cursor-pointer size-7 flex items-center justify-center";
             removeBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">close</span>';
             removeBtn.title = "Remove equipment";
             card.appendChild(removeBtn);

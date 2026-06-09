@@ -4,6 +4,7 @@ import { allEquipments, setAllEquipments } from './state.js';
 import { updateEquipmentList, renderEquipRarityFilters } from './equipment-filters.js';
 import { getRarityBorder } from './equipment-slots.js';
 import { addEquipment } from './equipment-slots.js';
+import { showEquipmentTooltip, hideEquipmentTooltip, positionTooltip } from './equipment-recommendations.js';
 
 export function handleEquipFileUpload(event) {
     const file = event.target.files[0];
@@ -206,14 +207,33 @@ export function renderEquipList(equips) {
           <div class="flex flex-col flex-1 min-w-0 justify-center">
             <h4 class="text-sm font-bold text-white truncate group-hover:text-primary transition-colors">${equip.name || 'Unknown Equipment'}</h4>
           </div>
-          <div class="flex items-center">
+          <div class="flex items-center gap-2">
+            <button class="equip-info-btn text-[#566089] hover:text-white p-1 size-8 flex items-center justify-center rounded-full active:scale-90 transition-transform" title="Ver detalhes">
+              <span class="material-symbols-outlined" style="font-size: 20px;">info</span>
+            </button>
             <span class="material-symbols-outlined text-[#566089] group-hover:text-white"
               style="font-size: 20px;">add_circle</span>
           </div>
         `;
 
         // Add click listener
-        div.addEventListener('click', () => addEquipment(equip));
+        div.addEventListener('click', (e) => {
+            if (e.target.closest('.equip-info-btn')) {
+                return;
+            }
+            addEquipment(equip);
+        });
+
+        // Add details click listener
+        div.querySelector('.equip-info-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            showEquipmentTooltip(equip, e);
+        });
+
+        // Add tooltip hover listeners
+        div.addEventListener('mouseenter', (e) => showEquipmentTooltip(equip, e));
+        div.addEventListener('mousemove', (e) => positionTooltip(e));
+        div.addEventListener('mouseleave', () => hideEquipmentTooltip());
 
         list.appendChild(div);
     });

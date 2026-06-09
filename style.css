@@ -204,7 +204,10 @@
         display: flex !important;
         flex-direction: column !important;
         overflow: hidden !important;
-        padding-bottom: 84px !important; /* Leave space for floating dock */
+    }
+    
+    #charGrid, #equipList, #rightPanel {
+        padding-bottom: 96px !important;
     }
     
     /* Ensure lists expand correctly */
@@ -260,8 +263,8 @@
     }
     
     .size-24 {
-        width: 6.5rem;
-        height: 6.5rem;
+        width: 5.5rem;
+        height: 5.5rem;
     }
     
     #selectedUnitContainer {
@@ -272,6 +275,26 @@
     #equipmentSlotsContainer {
         gap: 0.5rem !important;
         justify-content: center;
+    }
+
+    /* Mobile Tooltip Modal & Backdrop */
+    #equipment-tooltip {
+        position: fixed !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 92% !important;
+        max-width: 360px !important;
+        max-height: 85vh !important;
+        z-index: 50 !important;
+        pointer-events: auto !important;
+        background-color: rgba(21, 26, 45, 0.98) !important;
+        border: 1px solid rgba(19, 55, 236, 0.4) !important;
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.8), 0 0 25px rgba(19, 55, 236, 0.35) !important;
+    }
+
+    #equipment-tooltip-backdrop {
+        z-index: 40 !important;
     }
 }
 

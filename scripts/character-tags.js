@@ -32,7 +32,7 @@ export function renderTagFilters(tags) {
     tags.forEach(tag => {
         const btn = document.createElement('button');
         // Default Style
-        btn.className = "px-2 py-0.5 rounded text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
+        btn.className = "px-2.5 py-1 lg:px-2 lg:py-0.5 rounded text-[11px] lg:text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
         btn.textContent = tag;
 
         btn.onclick = () => {
@@ -61,9 +61,9 @@ export function updateTagFilterUI() {
     btns.forEach(btn => {
         const tag = btn.textContent;
         if (selectedTags.has(tag)) {
-            btn.className = "px-2 py-0.5 rounded text-[10px] border border-primary text-primary bg-primary/20 transition-all";
+            btn.className = "px-2.5 py-1 lg:px-2 lg:py-0.5 rounded text-[11px] lg:text-[10px] border border-primary text-primary bg-primary/20 transition-all";
         } else {
-            btn.className = "px-2 py-0.5 rounded text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
+            btn.className = "px-2.5 py-1 lg:px-2 lg:py-0.5 rounded text-[11px] lg:text-[10px] border border-[#2d3455] text-[#929bc9] hover:text-white hover:border-[#566089] transition-all bg-[#1e233b]";
         }
     });
     updateTagCount();

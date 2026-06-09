@@ -55,17 +55,18 @@
       <div class="size-8 flex items-center justify-center bg-primary/20 rounded-lg text-primary">
         <span class="material-symbols-outlined">analytics</span>
       </div>
-      <h2 class="text-white text-xl font-bold leading-tight tracking-tight">DBL Equipment Analyzer</h2>
+      <h2 class="text-white text-base sm:text-xl font-bold leading-tight tracking-tight">DBL Equipment Analyzer</h2>
     </div>
     <div class="flex gap-3">
       <a href="sub_pagina/equip_tier.html"
         class="flex items-center gap-2 px-4 py-2 rounded-lg bg-border-dark text-white text-sm font-bold hover:bg-[#323b67] transition-colors">
         <span class="material-symbols-outlined text-[16px]">leaderboard</span>
       </a>
-      <button
+      <a href="https://guilherme-andrade-linux.github.io/Dragon-Ball-Legends-Team-Builder/"
         class="flex items-center gap-2 px-4 py-2 rounded-lg bg-border-dark text-white text-sm font-bold hover:bg-[#323b67] transition-colors">
-        <a href="https://guilherme-andrade-linux.github.io/Dragon-Ball-Legends-Team-Builder/">DBL Team Builder</a>
-      </button>
+        <span class="material-symbols-outlined text-[16px]">groups</span>
+        <span class="hidden sm:inline">DBL Team Builder</span>
+      </a>
     </div>
   </header>
   <!-- Main Layout -->
@@ -238,13 +239,13 @@
       <div
         class="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-[#1337ec]/10 to-transparent pointer-events-none">
       </div>
-      <div class="p-8 max-w-5xl mx-auto w-full flex flex-col gap-8 relative z-10">
+      <div class="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto w-full flex flex-col gap-6 lg:gap-8 relative z-10">
 
         <!-- Unit & Slots Area -->
         <div class="flex flex-col gap-6">
 
           <!-- Top Row: Unit (Left) vs Slots (Right) -->
-          <div class="flex flex-col lg:flex-row items-start justify-between gap-6 w-full">
+          <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 w-full">
 
             <!-- Selected Unit (Left) -->
             <div class="flex flex-col items-center lg:items-start gap-4">
@@ -269,25 +270,25 @@
                     class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none">
                   </div>
                 </div>
+              </div>
 
-                <!-- Name Container -->
-                <div id="selectedUnitInfo"
-                  class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-64 text-center hidden pointer-events-none z-10">
-                  <h1 id="selectedUnitName" class="text-lg font-bold text-white tracking-wide drop-shadow-md truncate">
-                  </h1>
-                  <p id="selectedUnitTag" class="text-[10px] text-primary font-medium tracking-widest uppercase"></p>
-                </div>
+              <!-- Name Container -->
+              <div id="selectedUnitInfo"
+                class="w-64 text-center lg:text-left hidden mt-2 pointer-events-none z-10">
+                <h1 id="selectedUnitName" class="text-lg font-bold text-white tracking-wide drop-shadow-md truncate">
+                </h1>
+                <p id="selectedUnitTag" class="text-[10px] text-primary font-medium tracking-widest uppercase"></p>
               </div>
             </div>
 
             <!-- Equipment Slots (Right) -->
-            <div class="flex flex-col gap-4">
-              <h3 class="text-primary font-bold text-lg flex items-center gap-2 justify-end">
+            <div class="flex flex-col gap-4 w-full lg:w-auto">
+              <h3 class="text-primary font-bold text-lg flex items-center gap-2 justify-center lg:justify-end">
                 <span class="material-symbols-outlined text-yellow-400">swords</span>
                 Equipment Loadout
               </h3>
-              <div class="bg-panel-dark border border-border-dark rounded-xl p-6 shadow-sm">
-                <div id="equipmentSlotsContainer" class="flex gap-4 items-center select-none">
+              <div class="bg-panel-dark border border-border-dark rounded-xl p-4 sm:p-6 shadow-sm">
+                <div id="equipmentSlotsContainer" class="flex gap-3 sm:gap-4 items-center justify-center select-none">
                   <!-- Dynamic Slots injected by script.js -->
                 </div>
               </div>
@@ -628,7 +629,7 @@
         </div>
 
         <!-- Equipment Recommendations -->
-        <div id="recommendations-card" class="bg-panel-dark border border-border-dark rounded-xl p-6 relative overflow-hidden mt-6 hidden animate-fade-in-up">
+        <div id="recommendations-card" class="bg-panel-dark border border-border-dark rounded-xl p-4 sm:p-6 relative overflow-hidden mt-6 hidden animate-fade-in-up">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
             <div>
               <h3 class="text-lg font-bold text-white flex items-center gap-2">
@@ -638,32 +639,59 @@
               <p class="text-xs text-[#929bc9] mt-0.5">Custom gear suggestions tailored for <span id="recommend-char-name" class="font-bold text-white">this character</span></p>
             </div>
             <!-- Tab buttons -->
-            <div class="flex p-1 bg-[#101322] rounded-lg border border-border-dark shrink-0 gap-1">
-              <button id="tab-solo-rec" onclick="switchRecTab('solo')" class="px-4 py-1.5 rounded-md text-xs font-bold text-white bg-primary transition-all">
-                Foco Solo (Sem Equipa)
+            <div class="flex p-1 bg-[#101322] rounded-lg border border-border-dark shrink-0 gap-1 overflow-x-auto scrollbar-none max-w-full">
+              <button id="tab-solo-rec" onclick="switchRecTab('solo')" class="px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold text-white bg-primary transition-all whitespace-nowrap">
+                Foco Solo <span class="hidden sm:inline">(Sem Equipa)</span>
               </button>
-              <button id="tab-team-rec" onclick="switchRecTab('team')" class="px-4 py-1.5 rounded-md text-xs font-bold text-[#929bc9] hover:text-white transition-all">
-                Sinergia de Equipa
+              <button id="tab-team-rec" onclick="switchRecTab('team')" class="px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold text-[#929bc9] hover:text-white transition-all whitespace-nowrap">
+                Sinergia <span class="hidden sm:inline">de Equipa</span>
               </button>
-              <button id="tab-gold-rec" onclick="switchRecTab('gold')" class="px-4 py-1.5 rounded-md text-xs font-bold text-[#929bc9] hover:text-white transition-all">
-                Acessível (Apenas Gold)
+              <button id="tab-gold-rec" onclick="switchRecTab('gold')" class="px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold text-[#929bc9] hover:text-white transition-all whitespace-nowrap">
+                Acessível <span class="hidden sm:inline">(Apenas Gold)</span>
               </button>
             </div>
           </div>
 
-          <!-- Solo recommendations list -->
-          <div id="solo-recommendations" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <!-- Dynamic solo recs -->
+          <!-- Solo recommendations list container -->
+          <div id="solo-recommendations-container">
+            <div id="solo-recommendations" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <!-- Dynamic solo recs -->
+            </div>
+            <div id="solo-honorable-container" class="mt-5 border-t border-[#2d3455]/40 pt-4 hidden">
+              <div class="text-[10px] font-bold text-[#8a96c7] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-xs text-yellow-500 font-bold">workspace_premium</span>
+                Menções Honrosas (Alternativas Condicionais)
+              </div>
+              <div id="solo-honorable" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3"></div>
+            </div>
           </div>
 
-          <!-- Team recommendations list -->
-          <div id="team-recommendations" class="grid grid-cols-1 md:grid-cols-3 gap-4 hidden">
-            <!-- Dynamic team recs -->
+          <!-- Team recommendations list container -->
+          <div id="team-recommendations-container" class="hidden">
+            <div id="team-recommendations" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <!-- Dynamic team recs -->
+            </div>
+            <div id="team-honorable-container" class="mt-5 border-t border-[#2d3455]/40 pt-4 hidden">
+              <div class="text-[10px] font-bold text-[#8a96c7] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-xs text-yellow-500 font-bold">workspace_premium</span>
+                Menções Honrosas (Alternativas Condicionais)
+              </div>
+              <div id="team-honorable" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3"></div>
+            </div>
           </div>
 
-          <!-- Gold recommendations list -->
-          <div id="gold-recommendations" class="grid grid-cols-1 md:grid-cols-3 gap-4 hidden">
-            <!-- Dynamic gold recs -->
+          <!-- Gold recommendations list container -->
+          <div id="gold-recommendations-container" class="hidden">
+            <div id="gold-recommendations" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <!-- Dynamic gold recs -->
+            </div>
+            <div id="gold-honorable-container" class="mt-5 border-t border-[#2d3455]/40 pt-4 hidden">
+              <div class="text-[10px] font-bold text-[#8a96c7] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-xs text-yellow-500 font-bold">workspace_premium</span>
+                Menções Honrosas (Alternativas Condicionais)
+              </div>
+              <div id="gold-honorable" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3"></div>
+            </div>
           </div>
         </div>
       </div>

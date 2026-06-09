@@ -7408,6 +7408,35 @@
         "condition_desc": "Must meet all tags in the group"
     },
     {
+        "id": "1945",
+        "url": "https://dblegends.net/equip/1945",
+        "image": "https://dblegends.net/assets/equips/EqIco_1945.webp",
+        "name": "Blind-firing Into the Water",
+        "rarity": "rarity unique",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Health 10.00 ~ 20.00 % Base Strike Defense 35.00 ~ 70.00 % Base Blast Defense 35.00 ~ 70.00 % Damage Guard 70.00 ~ 200.00 % When hit by enemy Arts, if health is 50% or lower, restore health by 10.00 ~ 25.00 % (2 times)"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Inflicted Damage 60.00 ~ 170.00 % Base Strike Attack 35.00 ~ 70.00 % Base Blast Attack 35.00 ~ 70.00 % Special Move damage 10.00 ~ 30.00 % Base Ki Recovery 30.00 ~ 60.00 %"
+            },
+            {
+                "slot_index": 3,
+                "effect": "All Arts costs -7 Unique Gauge charge rate +50% On transformation, nullify Element disadvantages (15 counts) When on battlefield and enemy activates Special Move/Ultimate/Awakened Arts, ally sub counts -5"
+            }
+        ],
+        "conditions_data": [
+            [
+                "Broly",
+                "DBL74-03S"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
         "id": "50001",
         "url": "https://dblegends.net/equip/50001",
         "image": "https://dblegends.net/assets/equips/EqIco_1068.webp",
@@ -12393,6 +12422,34 @@
         "condition_desc": "Must meet all tags in the group"
     },
     {
+        "id": "50204",
+        "url": "https://dblegends.net/equip/50204",
+        "image": "https://dblegends.net/assets/equips/EqIco_1280.webp",
+        "name": "?!!",
+        "rarity": "rarity awakenedgold",
+        "slots": [
+            {
+                "slot_index": 1,
+                "effect": "Base Strike Attack 10.00 ~ 20.00 %"
+            },
+            {
+                "slot_index": 2,
+                "effect": "Base Strike Defense 8.00 ~ 15.00 % 5.00 ~ 12.00 % to own Strike Defense if a battle member other than this character is both \"Tag: Saiyan\" and \"Tag: Powerful Opponent\""
+            },
+            {
+                "slot_index": 3,
+                "effect": "Base Strike Attack 8.00 ~ 18.00 % 5.00 ~ 12.00 % to own Strike Attack if a battle member other than this character is both \"Tag: Saiyan\" and \"Episode: Sagas From the Movies\""
+            }
+        ],
+        "conditions_data": [
+            [
+                "Broly"
+            ]
+        ],
+        "condition_logic": "AND",
+        "condition_desc": "Must meet all tags in the group"
+    },
+    {
         "id": "1006",
         "url": "https://dblegends.net/equip/1006",
         "image": "https://dblegends.net/assets/equips/EqIco_1006.webp",
@@ -15830,30 +15887,7 @@
         "id": "1269",
         "url": "https://dblegends.net/equip/1269",
         "image": "https://dblegends.net/assets/equips/EqIco_1269.webp",
-        "name": "Why don't you try me on for size?",
-        "rarity": "rarity gold",
-        "slots": [
-            {
-                "slot_index": 1,
-                "effect": "Base Blast Defense 6.00 ~ 15.00 %"
-            },
-            {
-                "slot_index": 2,
-                "effect": "Base Strike Attack 8.00 ~ 20.00 %"
-            },
-            {
-                "slot_index": 3,
-                "effect": "Special Move Damage 5.00 ~ 12.50 %"
-            }
-        ],
-        "conditions_data": [
-            [
-                "Sagas From the Movies",
-                "GRN"
-            ]
-        ],
-        "condition_logic": "AND",
-        "condition_desc": "Must meet all tags in the group"
+        "name": "Unknown"
     },
     {
         "id": "1270",
